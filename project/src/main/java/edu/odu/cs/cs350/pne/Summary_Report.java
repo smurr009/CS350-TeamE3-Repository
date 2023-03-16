@@ -15,6 +15,13 @@ public class Summary_Report
     {
         XSSFWorkbook test = new XSSFWorkbook();
         XSSFSheet spreadsheet = workbook.createSheet("Detailed Summary Report");
+
+        XSSF row;
+
+        test.put("1", new Object[]{"Historical", "Current", "Projected"});
+        FileOutputStream out = new FileOutputStream(new File("C:/savedexcel/GFGsheet.xlsx"));
+        workbook.write(out);
+        out.close();
         
     }
 }
