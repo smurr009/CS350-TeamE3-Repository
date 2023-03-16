@@ -1,0 +1,22 @@
+plugins {
+   id 'java'
+   id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+application { 
+    mainClass = 'packages.edu.odu.cs.Highway'
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.7.0'
+    testImplementation 'org.hamcrest:hamcrest-library:2.2'
+}
+
+test {
+    ignoreFailures = true
+    useJUnitPlatform()
+}
