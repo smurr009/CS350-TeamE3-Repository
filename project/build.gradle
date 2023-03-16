@@ -8,7 +8,7 @@ repositories {
 }
 
 application { 
-    mainClass = 'packages.edu.odu.cs.Highway'
+    mainClass = 'packages.edu.odu.cs.cs350.pne.Summary_Report'
 }
 
 dependencies {
