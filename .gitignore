@@ -1,0 +1,7 @@
+# Compiled class file
+**/*.class
+**/.gradle/
+**/.vscode/
+**/*.jar
+**/build/
+**/bin/
