@@ -15,7 +15,7 @@ public class testSemester{
 
     /* This test will examine the semester code functionality of each semester directory */
     @Test
-    public void testSemesterCode() {
+    public void testSemesterCodeCreation() {
 
         int code = 10;
         // each new semester directory must be constructed with two parameters start date and end date in YYYY,MM,DD format and then an int of semester code
@@ -24,8 +24,10 @@ public class testSemester{
         // test the constructor
         assertThat(semester.getStartDate(), equalTo(LocalDate.of(2000, 9, 30)));
         assertThat(semester.getEndDate(), equalTo(LocalDate.of(2000, 12, 30)));
-        assertThat(semester.getSemesterCode(), equals(10));
+        assertThat(semester.getSemesterCode(), equalTo(10));
 
+        // creation of a Semester name according to the year and semester
+        assertThat(semester.nameString(), equalTo(200010));
         
 
     }
