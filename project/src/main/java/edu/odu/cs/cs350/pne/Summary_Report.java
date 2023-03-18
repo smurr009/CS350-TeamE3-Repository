@@ -4,9 +4,11 @@ import java.io.File;
 import java.io.FileOutputStream;
 
 import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.xssf.usermodel.row;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.util.CellReference;
+import org.apache.poi.xssf.streaming.SXSSFWorkbook;
 
 // org.apache.poi was added to the gradle depenancies list to resovle the first one
 // check the remaining "xssf" imports, these dont seem to exist
@@ -18,15 +20,7 @@ public class Summary_Report
     public static void WriteToExcel(String[] args) throws Exception
     {
         System.out.println("Starting detailed summary report...");
-        XSSFWorkbook test = new XSSFWorkbook();
-        XSSFSheet spreadsheet = workbook.createSheet("Detailed Summary Report");
-
-        XSSF row;
-
-        test.put("1", new Object[]{"Historical", "Current", "Projected"});
-        FileOutputStream out = new FileOutputStream(new File("writeExcelinJava.xlsx"));
-        workbook.write(out);
-        out.close();
+        
         System.out.println("writeExcelinJava.xlsx written successfully on disk.");
 
     }
