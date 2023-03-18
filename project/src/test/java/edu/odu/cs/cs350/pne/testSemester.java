@@ -22,8 +22,8 @@ public class testSemester{
         Semester semester = new Semester(LocalDate.of(2000, 9, 30), LocalDate.of(2000, 12, 30), code);
         
         // test the constructor
-        assertThat(semester.getStartDate(), equalTo(LocalDate.of(2000, 9, 30)));
-        assertThat(semester.getEndDate(), equalTo(LocalDate.of(2000, 12, 30)));
+        assertThat(semester.getAddDate(), equalTo(LocalDate.of(2000, 9, 30)));
+        assertThat(semester.getDropDate(), equalTo(LocalDate.of(2000, 12, 30)));
         assertThat(semester.getSemesterCode(), equalTo(10));
 
         // creation of a Semester name according to the year and semester
