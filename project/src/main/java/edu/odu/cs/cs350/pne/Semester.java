@@ -30,11 +30,14 @@ public class Semester {
         return semesterCode;
     }
 
-    /*// appending of the year and semester code to create the name string
+    // appending of the year and semester code to create the name string
     public String nameString(){
         String name;
 
-        name.append("");
+        // create the integer for the year and append it to the semester Code
+        int year = addDate.getYear();
+        name = Integer.toString(year) + Integer.toString(semesterCode); 
+
         return name;
-    }*/
+    }
 }
