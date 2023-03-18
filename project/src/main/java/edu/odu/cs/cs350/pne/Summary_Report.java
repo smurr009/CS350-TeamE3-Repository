@@ -17,10 +17,11 @@ import org.apache.poi.xssf.streaming.SXSSFWorkbook;
 //This prints an excel worksheet
 public class Summary_Report
 {
-    public static void WriteToExcel(String[] args) throws Exception
+    public static void WriteToExcel() throws Exception
     {
         System.out.println("Starting detailed summary report...");
-        
+        SXSSFWorkbook wb = new SXSSFWorkbook();
+        Sheet sh = wb.createSheet();
         System.out.println("writeExcelinJava.xlsx written successfully on disk.");
 
     }
