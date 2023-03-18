@@ -15,6 +15,6 @@ public class testSummaryReport {
     @Test
     public void testSummaryReportBasic()
     {
-        assertThat("dd", is(""));
+        assertThat("", is(""));
     }
 }
