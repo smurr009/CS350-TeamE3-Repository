@@ -22,5 +22,6 @@ public class Course {
 
     public void setCourseName(String CName) { CourseName = CName; }
     public void setRegistrationDate(LocalDate RegDate) { RegistrationDate = RegDate; }
+    
 
 }

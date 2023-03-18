@@ -40,8 +40,8 @@ public class testCourse {
         // Apply Mutators
         c.setCourseName("CS350");
         c.setRegistrationDate(regDate);
-        assertThat(c1.getCourseName(), is("CS350"));
-        assertThat(c1.getRegistrationDate(), is(regDate));
+        assertThat(c.getCourseName(), is("CS350"));
+        assertThat(c.getRegistrationDate(), is(regDate));
     }
 
 
