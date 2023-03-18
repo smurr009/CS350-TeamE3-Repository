@@ -9,6 +9,9 @@ import static org.hamcrest.Matchers.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+// inclusion of the io file libraries
+import java.io.File;
+
 public class testSemester{
 
   
@@ -31,5 +34,26 @@ public class testSemester{
         
 
     }
-    //recommit
+    
+    @Test
+    public void testDatesTXTCreation(){
+
+            int code = 10;
+            Semester semester = new Semester(LocalDate.of(2000, 9, 30), LocalDate.of(2000, 12, 30), code);
+            assertThat(semester.getPreRegistrationDate(), equalTo(LocalDate.of(2000, 9, 30)));
+            assertThat(semester.getAddDeadlineDate(), equalTo(LocalDate.of(2000, 12, 30)));
+            assertThat(semester.getSemesterCode(), equalTo(10));
+            assertThat(semester.nameString(), equalTo("200010"));
+
+
+            // creation of dates.txt file based on the provided parameters
+            //File dates = new File("dates.txt");
+            assertThat(dates.exists(), equalTo(1));
+
+
+
+
+
+
+    }
 }
