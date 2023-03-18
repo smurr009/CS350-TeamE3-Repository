@@ -17,9 +17,15 @@ public class testSemester{
     @Test
     public void testSemesterCode() {
 
-        // each new semester directory must be constructed with two parameters start date and end date in YYYY,MM,DD format
-        Semester semester = new Semester(LocalDate.of(2000, 9, 30), LocalDate.of(2000, 12, 30));
+        int code = 10;
+        // each new semester directory must be constructed with two parameters start date and end date in YYYY,MM,DD format and then an int of semester code
+        Semester semester = new Semester(LocalDate.of(2000, 9, 30), LocalDate.of(2000, 12, 30), code);
         
+        // test the constructor
+        assertThat(semester.getStartDate(), equalTo(LocalDate.of(2000, 9, 30)));
+        assertThat(semester.getEndDate(), equalTo(LocalDate.of(2000, 12, 30)));
+        assertThat(semester.getSemesterCode(), equals(10));
+
         
 
     }
