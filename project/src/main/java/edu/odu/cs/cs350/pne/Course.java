@@ -2,7 +2,7 @@ package edu.odu.cs.cs350.pne;
 
 import java.lang.String;
 
-public class Course {
+public class Course{
     private String CourseNumber;
     private String Subject;
 
