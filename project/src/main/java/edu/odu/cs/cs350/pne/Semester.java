@@ -14,4 +14,19 @@ public class Semester {
         this.endDate = end;
         this.semesterCode = semester;
     }
+
+    // creation of LocalDate variable start date
+    public LocalDate getStartDate(){
+        return startDate;
+    }
+
+    // creation of LocalDate variable end date
+    public LocalDate getEndDate(){
+        return endDate;
+    }
+
+    // creation of int variable semester code
+    public int getSemesterCode(){
+        return semesterCode;
+    }
 }
