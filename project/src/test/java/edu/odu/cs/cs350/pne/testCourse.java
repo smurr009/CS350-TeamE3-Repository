@@ -6,8 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.hamcrest.MatcherAssert.assertThat; 
 import static org.hamcrest.Matchers.*;
 
-import java.lang.String;
-import java.time.LocalDate;
+//import java.lang.String;
 
 import edu.odu.cs.cs350.pne.Course;
 
@@ -17,34 +16,42 @@ public class testCourse {
     public void testDefaultConstructor() {
         // Testing Default Constructor
         Course c = new Course();
+        assertThat(c.getSubect(), is(""));
+        assertThat(c.getCourseNumber(), is(""));
         assertThat(c.getCourseName(), is(""));
-        assertThat(c.getRegistrationDate(), is(LocalDate.now()));
     }
 
     @Test
     public void testNonDefaultConstrutor() {
         // Testing Non-default Constructor
-        LocalDate regDate = LocalDate.of(2023, 1, 2);
-        Course c1 = new Course("CS350", regDate);
-        assertThat(c1.getCourseName(), is("CS350"));
-        assertThat(c1.getRegistrationDate(), is(regDate));
+        Course c = new Course("CS", "350");
+        assertThat(c.getSubect(), is("CS"));
+        assertThat(c.getCourseNumber(), is("350"));
+        assertThat(c.getCourseName(), is("CS350"));
     }
 
     @Test
     public void testMutators() {
-        // Testing Default Constructor
+        // Create Empty Course
         Course c = new Course();
-        LocalDate regDate = LocalDate.of(2023, 1, 2);
+        assertThat(c.getSubect(), is(""));
+        assertThat(c.getCourseNumber(), is(""));
         assertThat(c.getCourseName(), is(""));
-        assertThat(c.getRegistrationDate(), is(LocalDate.now()));
         // Apply Mutators
-        c.setCourseName("CS350");
-        c.setRegistrationDate(regDate);
+        c.setSubject("CS");
+        c.setCourseNumber("350");
+        assertThat(c.getSubect(), is("CS"));
+        assertThat(c.getCourseNumber(), is("350"));
         assertThat(c.getCourseName(), is("CS350"));
-        assertThat(c.getRegistrationDate(), is(regDate));
     }
 
-
-
+    @Test
+    public void testEquality() {
+        Course c1 = new Course("CS", "350");
+        Course c2 = c1;
+        Course c3 = new Course("CS", "150");
+        assertThat(c1, equalTo(c2));
+        assertThat(c1, not(equalTo(c3)));
+    }
 
 }
