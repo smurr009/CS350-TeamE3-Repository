@@ -1,27 +1,25 @@
 package edu.odu.cs.cs350.pne;
 
 import java.lang.String;
-import java.time.LocalDate;
 
 public class Course {
-    private String CourseName;
-    private LocalDate RegistrationDate;
+    private String CourseNumber;
+    private String Subject;
 
     public Course() {
-        CourseName = "";
-        RegistrationDate = LocalDate.now();
+        CourseNumber = "";
+        Subject = "";
     }
 
-    public Course(String CName, LocalDate RegDate) {
-        CourseName = CName;
-        RegistrationDate = RegDate;
+    public Course(String _Subject, String _CourseNumber) {
+        Subject = _Subject;
+        CourseNumber = _CourseNumber;
     }
 
-    public String getCourseName() { return CourseName; }
-    public LocalDate getRegistrationDate() { return RegistrationDate; }
+    public String getCourseName() { return Subject + CourseNumber; }
+    public String getCourseNumber() { return CourseNumber; }
+    public String getSubect() { return Subject; }
 
-    public void setCourseName(String CName) { CourseName = CName; }
-    public void setRegistrationDate(LocalDate RegDate) { RegistrationDate = RegDate; }
-    
-
+    public void setCourseNumber(String _CourseNumber) { CourseNumber = _CourseNumber; }
+    public void setSubject(String _Subject) { Subject = _Subject; }
 }
