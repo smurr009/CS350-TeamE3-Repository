@@ -13,15 +13,9 @@ public class testOffering {
 
     @BeforeEach
     public void setup() {
-        s1 = new Section("CS", "350", "12345");
-        s2 = new Section("CS", "350", "13569");
-        s3 = new Section("CS", "350", "14821");
-        s1.setEnrollmentCap(20);
-        s1.setEnrolled(15);
-        s2.setEnrollmentCap(20);
-        s2.setEnrolled(5);
-        s3.setEnrollmentCap(20);
-        s3.setEnrolled(10);
+        s1 = new Section("CS", "350", "12345", 20, 15);
+        s2 = new Section("CS", "350", "13569", 20, 5);
+        s3 = new Section("CS", "350", "14821", 20, 10);
     }
 
     @Test
@@ -31,6 +25,7 @@ public class testOffering {
         assertThat(o.getNumOfSections(), is(0));
         assertThat(o.getOverallCap(), is(0));
         assertThat(o.getOverallEnrollment(), is(0));
+        assertThat(o.getOpenSeats(), is(0));
     }
 
     @Test
@@ -40,6 +35,21 @@ public class testOffering {
         assertThat(o.getNumOfSections(), is(0));
         assertThat(o.getOverallCap(), is(50));
         assertThat(o.getOverallEnrollment(), is(0));
+        assertThat(o.getOpenSeats(), is(50));
+    }
+
+    @Test
+    public void testChangeCapacity() {
+        Offering o = new Offering();
+        assertThat(o.getNumOfSections(), is(0));
+        assertThat(o.getOverallCap(), is(0));
+        assertThat(o.getOverallEnrollment(), is(0));
+        assertThat(o.getOpenSeats(), is(0));
+        // Apply Mutator
+        o.setOverallCap(20);
+        assertThat(o.getOverallCap(), is(20));
+        assertThat(o.getOverallEnrollment(), is(0));
+        assertThat(o.getOpenSeats(), is(20));
     }
 
     @Test
@@ -48,13 +58,20 @@ public class testOffering {
         assertThat(o.getNumOfSections(), is(0));
         assertThat(o.getOverallCap(), is(50));
         assertThat(o.getOverallEnrollment(), is(0));
+        assertThat(o.getOpenSeats(), is(50));
         o.addSection(s1);
         assertThat(o.getNumOfSections(), is(1));
         assertThat(o.getOverallEnrollment(), is(15));
+        assertThat(o.getOpenSeats(), is(35));
         o.addSection(s2);
         o.addSection(s3);
         assertThat(o.getNumOfSections(), is(3));
         assertThat(o.getOverallEnrollment(), is(30));
+        assertThat(o.getOpenSeats(), is(20));
+        o.addSection(s2);
+        assertThat(o.getNumOfSections(), is(3));
+        assertThat(o.getOverallEnrollment(), is(30));
+        assertThat(o.getOpenSeats(), is(20));
     }
 
     @Test

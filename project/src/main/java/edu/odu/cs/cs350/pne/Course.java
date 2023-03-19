@@ -6,20 +6,52 @@ public class Course{
     private String CourseNumber;
     private String Subject;
 
+    /**
+     * Create new "blank" Course
+     */
     public Course() {
         CourseNumber = "";
         Subject = "";
     }
 
-    public Course(String _Subject, String _CourseNumber) {
-        Subject = _Subject;
-        CourseNumber = _CourseNumber;
+    /**
+     * Create new Course
+     * @param subj course subject e.g. "CS"
+     * @param cnum numeric course identifier e.g. "350"
+     */
+    public Course(String subj, String cnum) {
+        Subject = subj;
+        CourseNumber = cnum;
     }
 
+    /**
+     * Get Course Name for this Course
+     * @return concatenation of Subject and Course Number
+     */
     public String getCourseName() { return Subject + CourseNumber; }
+
+    /**
+     * Get Course Number for this Course
+     * @return Course Number
+     */
     public String getCourseNumber() { return CourseNumber; }
+
+    /**
+     * Get Subject for this Course
+     * @return Subject
+     */
     public String getSubect() { return Subject; }
 
-    public void setCourseNumber(String _CourseNumber) { CourseNumber = _CourseNumber; }
-    public void setSubject(String _Subject) { Subject = _Subject; }
+    /**
+     * Set Subject for this Course
+     * @param subj course subject e.g. "CS"
+     */
+    public void setSubject(String subj) { Subject = subj; }
+
+    /**
+     * Set Course Number for this Course
+     * @param cnum numeric course identifier e.g. "350"
+     */
+    public void setCourseNumber(String cnum) { CourseNumber = cnum; }
+    
 }
