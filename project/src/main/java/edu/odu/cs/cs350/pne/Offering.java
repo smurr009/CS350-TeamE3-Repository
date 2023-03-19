@@ -78,7 +78,8 @@ public class Offering {
     public Boolean checkForSection(String CRN) {
         try {
             Section lookup = getSectionByCRN(CRN);
-            return true;
+            if(lookup == null) return false;
+            else return true;
         } catch(NullPointerException ex) { 
             return false;
         }
@@ -95,6 +96,9 @@ public class Offering {
      * Section is not added if another with the same CRN already exists
      * @param sect A Section to be added
      */
-    public void addSection(Section sect) { sections.add(sect); }
+    public void addSection(Section sect) { 
+        if(!checkForSection(sect.getCRN()))
+            sections.add(sect);
+    }
 
 }
