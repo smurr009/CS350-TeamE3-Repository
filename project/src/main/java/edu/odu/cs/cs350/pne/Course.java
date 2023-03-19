@@ -3,8 +3,8 @@ package edu.odu.cs.cs350.pne;
 import java.lang.String;
 
 public class Course{
-    private String CourseNumber;
-    private String Subject;
+    protected String CourseNumber;
+    protected String Subject;
 
     /**
      * Create new "blank" Course

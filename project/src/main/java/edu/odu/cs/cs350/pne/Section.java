@@ -97,4 +97,24 @@ public class Section extends Course {
     public void addToEnrollment(int numStudents) {
         if(numStudents <= getOpenSeats()) Enrolled = Enrolled + numStudents;
     }
+
+    /**
+     * Check for equality between two Offerings
+     * @return Ture if Equal, False if Not Equal
+     */
+    public boolean equals(Object rhs) {
+        // Check if same object type
+        if(!(rhs instanceof Section)) return false;
+        // Convert object type to Section
+        Section rhsSection = (Section)rhs;
+        
+        if(Subject != rhsSection.Subject) return false;
+        if(CourseNumber != rhsSection.CourseNumber) return false;
+        if(CRN != rhsSection.CRN) return false;
+        if(EnrollmentCap != rhsSection.EnrollmentCap) return false;
+        if(Enrolled != rhsSection.Enrolled) return false;
+        
+        // Must be the same, so return True
+        return true;
+    }
 }

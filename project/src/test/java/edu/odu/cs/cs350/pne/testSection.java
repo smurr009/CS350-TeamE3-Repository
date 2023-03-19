@@ -1,8 +1,8 @@
 package edu.odu.cs.cs350.pne;
 
-import org.junit.jupiter.api.BeforeEach;
+//import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+//import static org.junit.jupiter.api.Assertions.*;
 import static org.hamcrest.MatcherAssert.assertThat; 
 import static org.hamcrest.Matchers.*;
 
@@ -100,10 +100,22 @@ public class testSection {
 
     @Test
     public void testEquality() {
+        // Set One Object Equal To Another
         Section s1 = new Section("CS", "350", "123456");
         Section s2 = s1;
-        Section s3 = new Section("CS", "350", "987651");
+        assertThat(s2.getSubect(), is("CS"));
+        assertThat(s2.getCourseNumber(), is("350"));
+        assertThat(s2.getCourseName(), is("CS350"));
+        assertThat(s2.getCRN(), is("123456"));
+        assertThat(s2.getEnrollmentCap(), is(0));
+        assertThat(s2.getEnrolled(), is(0));
+        assertThat(s2.getOpenSeats(), is(0));
         assertThat(s1, equalTo(s2));
+        // Create An Object with a Different Value
+        Section s3 = new Section("CS", "350", "987651");
         assertThat(s1, not(equalTo(s3)));
+        // Make a new one with the same values
+        Section s4 = new Section("CS", "350", "123456");
+        assertThat(s1, equalTo(s4));
     }
 }

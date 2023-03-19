@@ -2,7 +2,7 @@ package edu.odu.cs.cs350.pne;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+//import static org.junit.jupiter.api.Assertions.*;
 import static org.hamcrest.MatcherAssert.assertThat; 
 import static org.hamcrest.Matchers.*;
 
@@ -85,7 +85,56 @@ public class testOffering {
         // Test Lookup Invaid Section Number
         try {
             Section lookup = o.getSectionByCRN("987654");
+            assertThat(lookup, is(null));
         } catch(NullPointerException ex) { }
+    }
+
+    @Test
+    public void testEquality() {
+        // Create two Offerings to play with
+        Offering o1 = new Offering();
+        Offering o2 = new Offering();
+        
+        // Compare to a different object type
+        assertThat(o1, not(equalTo(s1)));
+
+        // Compare two empty Offerings
+        assertThat(o1, equalTo(o2));
+        
+        // Change Overall Cap then Compare
+        o2.setOverallCap(50);
+        assertThat(o1, not(equalTo(o2))); // Different
+        o1.setOverallCap(50);
+        assertThat(o1, equalTo(o2)); // Now the same
+
+        // Check Adding A Single Section
+        o2.addSection(s1);
+        assertThat(o1, not(equalTo(o2))); // Different
+        o1.addSection(s1);
+        assertThat(o1, equalTo(o1)); // Now the same
+
+        // Check Adding A Multiple Sections
+        o2.addSection(s2);
+        o2.addSection(s3);
+        assertThat(o1, not(equalTo(o2))); // Different
+        o1.addSection(s2);
+        o1.addSection(s3);
+        assertThat(o1, equalTo(o1)); // Now the same
+    }
+
+    @Test
+    public void testClone() {
+        // Create two Offerings to play with
+        Offering o1 = new Offering();
+        o1.addSection(s1);
+        o1.addSection(s2);
+        o1.addSection(s3);
+        // Generate Offering with Copy Constructor
+        Offering o2 = o1;
+        assertThat(o1, equalTo(o2));
+        // Generate Clone of Offering
+        Offering o3 = o1.clone();
+        assertThat(o1, equalTo(o3));
     }
 
 }

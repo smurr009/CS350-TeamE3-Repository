@@ -30,6 +30,15 @@ public class Offering {
     }
 
     /**
+     * Offering Copy Constructor
+     * @param src source Offering obeject to copy
+     */
+    public Offering(Offering src) {
+        OverallCap = src.OverallCap;
+        sections = src.sections;
+    }
+
+    /**
      * Get Number of Sections in this Offering
      * @return Number of entries in sections container
      */
@@ -99,6 +108,30 @@ public class Offering {
     public void addSection(Section sect) { 
         if(!checkForSection(sect.getCRN()))
             sections.add(sect);
+    }
+
+    /**
+     * Generate clone of this object with deep copy
+     * @return clone of this Offering
+     */
+    public Offering clone() {
+        Offering copy = new Offering(this);
+        return copy;
+    }
+
+    /**
+     * Check for equality between two Offerings
+     * @return Ture if Equal, False if Not Equal
+     */
+    public boolean equals(Object rhs) {
+        // Check if same object type
+        if(!(rhs instanceof Offering)) return false;
+        // Convert object type to Offering
+        Offering rhsOffering = (Offering)rhs;
+        // Check if OverallCap is the same
+        if(OverallCap != rhsOffering.OverallCap) return false;
+        
+        return this.sections.equals(rhsOffering.sections);
     }
 
 }
