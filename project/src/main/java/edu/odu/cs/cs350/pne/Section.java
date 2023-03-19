@@ -1,7 +1,6 @@
 package edu.odu.cs.cs350.pne;
 
 import java.lang.String;
-import edu.odu.cs.cs350.pne.Course;
 
 public class Section extends Course {
     private String CRN;

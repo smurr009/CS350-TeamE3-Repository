@@ -9,12 +9,15 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.hamcrest.MatcherAssert.assertThat; 
 import static org.hamcrest.Matchers.*;
 
-import edu.odu.cs.cs350.pne.Summary_Report;
+import edu.odu.cs.cs350.pne.Detailed_Report;
 
-public class testSummaryReport {
+public class testDetailedReport {
     @Test
     public void testSummaryReportBasic()
     {
-        assertThat("", is(""));
+        Detailed_Report test = new Detailed_Report();
+        try {
+            test.WriteToExcel();
+        } catch(Exception ex) { fail("failed to create excel"); }
     }
 }
