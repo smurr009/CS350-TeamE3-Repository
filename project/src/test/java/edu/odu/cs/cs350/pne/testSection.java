@@ -11,7 +11,7 @@ public class testSection {
     public void testDefaultConstructor() {
         // Testing Default Constructor
         Section s = new Section();
-        assertThat(s.getSubect(), is(""));
+        assertThat(s.getSubject(), is(""));
         assertThat(s.getCourseNumber(), is(""));
         assertThat(s.getCourseName(), is(""));
         assertThat(s.getCRN(), is(""));
@@ -24,7 +24,7 @@ public class testSection {
     public void testNonDefaultConstructor() {
         // Testing Non-Default Constructor
         Section s = new Section("CS", "350", "123456");
-        assertThat(s.getSubect(), is("CS"));
+        assertThat(s.getSubject(), is("CS"));
         assertThat(s.getCourseNumber(), is("350"));
         assertThat(s.getCourseName(), is("CS350"));
         assertThat(s.getCRN(), is("123456"));
@@ -33,7 +33,7 @@ public class testSection {
         assertThat(s.getOpenSeats(), is(0));
         // Testing Alt Non-Default Constructor
         Section s1 = new Section("CS", "350", "359881", 25, 13);
-        assertThat(s1.getSubect(), is("CS"));
+        assertThat(s1.getSubject(), is("CS"));
         assertThat(s1.getCourseNumber(), is("350"));
         assertThat(s1.getCourseName(), is("CS350"));
         assertThat(s1.getCRN(), is("359881"));
@@ -46,7 +46,7 @@ public class testSection {
     public void testMutators() {
         // Create Empty Course
         Section s = new Section();
-        assertThat(s.getSubect(), is(""));
+        assertThat(s.getSubject(), is(""));
         assertThat(s.getCourseNumber(), is(""));
         assertThat(s.getCourseName(), is(""));
         assertThat(s.getCRN(), is(""));
@@ -59,7 +59,7 @@ public class testSection {
         s.setCRN("987654");
         s.setEnrollmentCap(15);
         s.setEnrolled(10);
-        assertThat(s.getSubect(), is("CS"));
+        assertThat(s.getSubject(), is("CS"));
         assertThat(s.getCourseNumber(), is("350"));
         assertThat(s.getCourseName(), is("CS350"));
         assertThat(s.getCRN(), is("987654"));
@@ -75,7 +75,7 @@ public class testSection {
     public void testAddingEnrollment() {
         // Testing NonDefault Constructor
         Section s = new Section("CS", "350", "123456");
-        assertThat(s.getSubect(), is("CS"));
+        assertThat(s.getSubject(), is("CS"));
         assertThat(s.getCourseNumber(), is("350"));
         assertThat(s.getCourseName(), is("CS350"));
         assertThat(s.getCRN(), is("123456"));
@@ -103,7 +103,7 @@ public class testSection {
         // Set One Object Equal To Another
         Section s1 = new Section("CS", "350", "123456");
         Section s2 = s1;
-        assertThat(s2.getSubect(), is("CS"));
+        assertThat(s2.getSubject(), is("CS"));
         assertThat(s2.getCourseNumber(), is("350"));
         assertThat(s2.getCourseName(), is("CS350"));
         assertThat(s2.getCRN(), is("123456"));

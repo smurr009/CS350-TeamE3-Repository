@@ -11,7 +11,8 @@ public class Section extends Course {
      * Create an "blank" Section
      */
     public Section() {
-        super("", "");
+        Subject = "";
+        CourseNumber = "";
         CRN = "";
         EnrollmentCap = 0;
         Enrolled = 0;
@@ -24,7 +25,8 @@ public class Section extends Course {
      * @param crn 6-digit course registration number e.g. "15641"
      */
     public Section(String subj, String cnum, String crn) {
-        super(subj, cnum);
+        Subject = subj;
+        CourseNumber = cnum;
         CRN = crn;
     }
 
@@ -38,7 +40,8 @@ public class Section extends Course {
      */
     public Section(String subj, String cnum, String crn, int cap, int numStudents)
     {
-        super(subj, cnum);
+        Subject = subj;
+        CourseNumber = cnum;
         CRN = crn;
         EnrollmentCap = cap;
         Enrolled = numStudents;

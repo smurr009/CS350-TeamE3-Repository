@@ -12,7 +12,7 @@ public class testCourse {
     public void testDefaultConstructor() {
         // Testing Default Constructor
         Course c = new Course();
-        assertThat(c.getSubect(), is(""));
+        assertThat(c.getSubject(), is(""));
         assertThat(c.getCourseNumber(), is(""));
         assertThat(c.getCourseName(), is(""));
     }
@@ -21,7 +21,7 @@ public class testCourse {
     public void testNonDefaultConstrutor() {
         // Testing Non-default Constructor
         Course c = new Course("CS", "350");
-        assertThat(c.getSubect(), is("CS"));
+        assertThat(c.getSubject(), is("CS"));
         assertThat(c.getCourseNumber(), is("350"));
         assertThat(c.getCourseName(), is("CS350"));
     }
@@ -30,13 +30,13 @@ public class testCourse {
     public void testMutators() {
         // Create Empty Course
         Course c = new Course();
-        assertThat(c.getSubect(), is(""));
+        assertThat(c.getSubject(), is(""));
         assertThat(c.getCourseNumber(), is(""));
         assertThat(c.getCourseName(), is(""));
         // Apply Mutators
         c.setSubject("CS");
         c.setCourseNumber("350");
-        assertThat(c.getSubect(), is("CS"));
+        assertThat(c.getSubject(), is("CS"));
         assertThat(c.getCourseNumber(), is("350"));
         assertThat(c.getCourseName(), is("CS350"));
     }

@@ -40,7 +40,7 @@ public class Course{
      * Get Subject for this Course
      * @return Subject
      */
-    public String getSubect() { return Subject; }
+    public String getSubject() { return Subject; }
 
     /**
      * Set Subject for this Course
