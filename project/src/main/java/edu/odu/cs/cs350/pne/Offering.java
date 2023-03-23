@@ -7,7 +7,7 @@ public class Offering {
     /**
      * Container of Course Sections in this Offering
      */
-    private List<Section> sections = new ArrayList<>();
+    private List<Section> Sections = new ArrayList<>();
 
     /**
      * Overall Capacity for this Section
@@ -35,14 +35,14 @@ public class Offering {
      */
     public Offering(Offering src) {
         OverallCap = src.OverallCap;
-        sections = src.sections;
+        Sections = src.Sections;
     }
 
     /**
      * Get Number of Sections in this Offering
      * @return Number of entries in sections container
      */
-    public int getNumOfSections() { return sections.size(); }
+    public int getNumOfSections() { return Sections.size(); }
 
     /**
      * Get Overall Capacity
@@ -62,7 +62,7 @@ public class Offering {
      */
     public int getOverallEnrollment() { 
         int TotalEnrollment = 0;
-        for(Section sect: sections) 
+        for(Section sect: Sections) 
             TotalEnrollment = TotalEnrollment + sect.getEnrolled();
         return TotalEnrollment;
     }
@@ -73,7 +73,7 @@ public class Offering {
      * @return Section found or Null if not found
      */
     public Section getSectionByCRN(String CRN) {
-        for(Section sect: sections)
+        for(Section sect: Sections)
             if(CRN == sect.getCRN()) return sect;
         // Return Null if No Section was found
         return null;
@@ -107,7 +107,7 @@ public class Offering {
      */
     public void addSection(Section sect) { 
         if(!checkForSection(sect.getCRN()))
-            sections.add(sect);
+            Sections.add(sect);
     }
 
     /**
@@ -131,7 +131,7 @@ public class Offering {
         // Check if OverallCap is the same
         if(OverallCap != rhsOffering.OverallCap) return false;
         
-        return this.sections.equals(rhsOffering.sections);
+        return this.Sections.equals(rhsOffering.Sections);
     }
 
 }
