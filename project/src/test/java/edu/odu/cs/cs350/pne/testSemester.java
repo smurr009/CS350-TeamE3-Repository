@@ -45,15 +45,7 @@ public class testSemester{
             assertThat(semester.getSemesterCode(), equalTo(10));
             assertThat(semester.nameString(), equalTo("200010"));
 
-
-            // creation of dates.txt file based on the provided parameters
-            //File dates = new File("dates.txt");
-            //assertThat(dates.exists(), equalTo(1));
-
-
-
-
-
+            
 
     }
 }

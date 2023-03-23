@@ -1,12 +1,15 @@
 package edu.odu.cs.cs350.pne;
 
 import java.time.LocalDate;
+import java.io.File;
 
 public class Semester {
     
     int semesterCode; 
     LocalDate PreRegistrationDate;
     LocalDate AddDeadlineDate;
+    String semesterName;
+    
 
     /* creation of each semester directory should have a defined start date, end date, and semesterCode */
     public Semester(LocalDate start, LocalDate end, int semester) {
@@ -32,12 +35,14 @@ public class Semester {
 
     // appending of the year and semester code to create the name string
     public String nameString(){
-        String name;
+        String semesterName;
 
         // create the integer for the year and append it to the semester Code
         int year = PreRegistrationDate.getYear();
-        name = Integer.toString(year) + Integer.toString(semesterCode); 
+        semesterName = Integer.toString(year) + Integer.toString(semesterCode); 
 
-        return name;
+        return semesterName;
     }
+
+    // code to 
 }
