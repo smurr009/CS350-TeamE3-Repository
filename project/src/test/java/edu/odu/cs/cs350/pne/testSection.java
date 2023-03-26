@@ -72,33 +72,6 @@ public class testSection {
     }
 
     @Test
-    public void testAddingEnrollment() {
-        // Testing NonDefault Constructor
-        Section s = new Section("CS", "350", "123456");
-        assertThat(s.getSubject(), is("CS"));
-        assertThat(s.getCourseNumber(), is("350"));
-        assertThat(s.getCourseName(), is("CS350"));
-        assertThat(s.getCRN(), is("123456"));
-        assertThat(s.getEnrollmentCap(), is(0));
-        assertThat(s.getEnrolled(), is(0));
-        assertThat(s.getOpenSeats(), is(0));
-        // Setup Current Enrolmlent
-        s.setEnrollmentCap(25);
-        s.setEnrolled(15);
-        assertThat(s.getEnrollmentCap(), is(25));
-        assertThat(s.getEnrolled(), is(15));
-        assertThat(s.getOpenSeats(), is(10));
-        // Add More Students
-        s.addToEnrollment(5);
-        assertThat(s.getEnrolled(), is(20));
-        assertThat(s.getOpenSeats(), is(5));
-        // Add Too Many Students
-        s.addToEnrollment(9);
-        assertThat(s.getEnrolled(), is(20)); // Did not change
-        assertThat(s.getOpenSeats(), is(5));
-    }
-
-    @Test
     public void testEquality() {
         // Set One Object Equal To Another
         Section s1 = new Section("CS", "350", "123456");

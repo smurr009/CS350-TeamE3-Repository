@@ -22,41 +22,68 @@ public class testOffering {
     public void testDefaultConstructor() {
         // Testing Default Constructor
         Offering o = new Offering();
-        assertThat(o.getNumOfSections(), is(0));
+        assertThat(o.getCourseName(), is(""));
+        assertThat(o.getInstructor(), is(""));
         assertThat(o.getOverallCap(), is(0));
+        assertThat(o.getXlstGroup(), is(""));
+        assertThat(o.getNumOfSections(), is(0));
         assertThat(o.getOverallEnrollment(), is(0));
         assertThat(o.getOpenSeats(), is(0));
     }
 
     @Test
-    public void testNonDefaultConstructor() {
+    public void testNonDefaultConstructors() {
         // Testing NonDefault Constructor
-        Offering o = new Offering(50);
-        assertThat(o.getNumOfSections(), is(0));
+        Offering o = new Offering("CS350", "POLAWAR,NISHA", 50);
+        assertThat(o.getCourseName(), is("CS350"));
+        assertThat(o.getInstructor(), is("POLAWAR,NISHA"));
         assertThat(o.getOverallCap(), is(50));
+        assertThat(o.getXlstGroup(), is(""));
+        assertThat(o.getNumOfSections(), is(0));
         assertThat(o.getOverallEnrollment(), is(0));
         assertThat(o.getOpenSeats(), is(50));
+        // Testing Alternate NonDefault Constructor
+        Offering o1 = new Offering("CS350", "POLAWAR,NISHA", 50, "SC051");
+        assertThat(o1.getCourseName(), is("CS350"));
+        assertThat(o1.getInstructor(), is("POLAWAR,NISHA"));
+        assertThat(o1.getOverallCap(), is(50));
+        assertThat(o1.getXlstGroup(), is("SC051"));
+        assertThat(o1.getNumOfSections(), is(0));
+        assertThat(o1.getOverallEnrollment(), is(0));
+        assertThat(o1.getOpenSeats(), is(50));
     }
 
     @Test
     public void testChangeCapacity() {
         Offering o = new Offering();
-        assertThat(o.getNumOfSections(), is(0));
+        assertThat(o.getCourseName(), is(""));
+        assertThat(o.getInstructor(), is(""));
         assertThat(o.getOverallCap(), is(0));
+        assertThat(o.getXlstGroup(), is(""));
+        assertThat(o.getNumOfSections(), is(0));
         assertThat(o.getOverallEnrollment(), is(0));
         assertThat(o.getOpenSeats(), is(0));
-        // Apply Mutator
+        // Apply Mutators
+        o.setCourseName("CS350");
+        o.setInstructor("POLAWAR,NISHA");
         o.setOverallCap(20);
+        o.setXlstGroup("SC051");
+        assertThat(o.getCourseName(), is("CS350"));
+        assertThat(o.getInstructor(), is("POLAWAR,NISHA"));
         assertThat(o.getOverallCap(), is(20));
+        assertThat(o.getXlstGroup(), is("SC051"));
         assertThat(o.getOverallEnrollment(), is(0));
         assertThat(o.getOpenSeats(), is(20));
     }
 
     @Test
     public void testAddSections() {
-        Offering o = new Offering(50);
-        assertThat(o.getNumOfSections(), is(0));
+        Offering o = new Offering("CS350", "POLAWAR,NISHA", 50);
+        assertThat(o.getCourseName(), is("CS350"));
+        assertThat(o.getInstructor(), is("POLAWAR,NISHA"));
         assertThat(o.getOverallCap(), is(50));
+        assertThat(o.getXlstGroup(), is(""));
+        assertThat(o.getNumOfSections(), is(0));
         assertThat(o.getOverallEnrollment(), is(0));
         assertThat(o.getOpenSeats(), is(50));
         o.addSection(s1);
@@ -68,25 +95,10 @@ public class testOffering {
         assertThat(o.getNumOfSections(), is(3));
         assertThat(o.getOverallEnrollment(), is(30));
         assertThat(o.getOpenSeats(), is(20));
-        o.addSection(s2);
+        o.addSection(s2); // Add duplicate Section
         assertThat(o.getNumOfSections(), is(3));
         assertThat(o.getOverallEnrollment(), is(30));
         assertThat(o.getOpenSeats(), is(20));
-    }
-
-    @Test
-    public void testSectionLookup() {
-        Offering o = new Offering(50);
-        o.addSection(s1);
-        o.addSection(s2);
-        o.addSection(s3);
-        // Test Lookup Known Section Number
-        assertThat(o.getSectionByCRN("13569"), equalTo(s2));
-        // Test Lookup Invaid Section Number
-        try {
-            Section lookup = o.getSectionByCRN("987654");
-            assertThat(lookup, is(null));
-        } catch(NullPointerException ex) { }
     }
 
     @Test
@@ -95,16 +107,31 @@ public class testOffering {
         Offering o1 = new Offering();
         Offering o2 = new Offering();
         
-        // Compare to a different object type
+        // Compare to a different object types
         assertThat(o1, not(equalTo(s1)));
 
         // Compare two empty Offerings
         assertThat(o1, equalTo(o2));
         
-        // Change Overall Cap then Compare
+        // Apply Mutators then Compare
+        o2.setCourseName("CS350");
+        assertThat(o1, not(equalTo(o2))); // Different
+        o1.setCourseName("CS350");
+        assertThat(o1, equalTo(o2)); // Now the same
+
+        o2.setInstructor("POLAWAR,NISHA");
+        assertThat(o1, not(equalTo(o2))); // Different
+        o1.setInstructor("POLAWAR,NISHA");
+        assertThat(o1, equalTo(o2)); // Now the same
+        
         o2.setOverallCap(50);
         assertThat(o1, not(equalTo(o2))); // Different
         o1.setOverallCap(50);
+        assertThat(o1, equalTo(o2)); // Now the same
+
+        o2.setXlstGroup("SC051");
+        assertThat(o1, not(equalTo(o2))); // Different
+        o1.setXlstGroup("SC051");
         assertThat(o1, equalTo(o2)); // Now the same
 
         // Check Adding A Single Section

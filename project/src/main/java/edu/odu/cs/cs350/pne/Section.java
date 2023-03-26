@@ -6,7 +6,7 @@ public class Section extends Course {
     private String CRN;
     private int EnrollmentCap;
     private int Enrolled;
-
+    
     /**
      * Create an "blank" Section
      */
@@ -90,15 +90,6 @@ public class Section extends Course {
      */
     public void setEnrolled(int numStudents) {
         if(numStudents <= EnrollmentCap) Enrolled = numStudents;
-    }
-
-    /**
-     * Adds provided number of students to Enrolled
-     * Enrolled is not changed if the added students exceeds Enrollment Cap
-     * @param numStudents number of additional students enrolled
-     */
-    public void addToEnrollment(int numStudents) {
-        if(numStudents <= getOpenSeats()) Enrolled = Enrolled + numStudents;
     }
 
     /**
