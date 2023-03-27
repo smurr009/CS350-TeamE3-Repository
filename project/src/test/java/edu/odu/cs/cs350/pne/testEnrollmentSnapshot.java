@@ -14,14 +14,14 @@ public class testEnrollmentSnapshot {
 
     @Test
     public void testDefaultConstructor() {
-        Enrollment_Snapshot e1 = new Enrollment_Snapshot();
+        EnrollmentSnapshot e1 = new EnrollmentSnapshot();
         assertThat(e1.getSnapshotDate(), is(today));
         assertThat(e1.getNumOfOfferings(), is(0));
     }
 
     @Test
     public void testNonDefaultConstructor() {
-        Enrollment_Snapshot e1 = new Enrollment_Snapshot(anyDay);
+        EnrollmentSnapshot e1 = new EnrollmentSnapshot(anyDay);
         assertThat(e1.getSnapshotDate(), is(anyDay));
         assertThat(e1.getNumOfOfferings(), is(0));
     }

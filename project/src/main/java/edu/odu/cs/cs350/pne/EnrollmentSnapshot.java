@@ -3,23 +3,17 @@ package edu.odu.cs.cs350.pne;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+//import com.opencsv.CSVReader;
 
-public class Enrollment_Snapshot
+public class EnrollmentSnapshot
 {
-    /**
-     * Container of Course Offerings
-     */
     private List<Offering> Offerings = new ArrayList<>();
-
-    /**
-     * Date of Snapshot
-     */
     private LocalDate SnapshotDate;
     
     /**
      * Create new Enrollment_Snapshot
      */
-    public Enrollment_Snapshot() {
+    public EnrollmentSnapshot() {
         SnapshotDate = LocalDate.now();
     }
 
@@ -27,7 +21,7 @@ public class Enrollment_Snapshot
      * Create new Enorllment_Snapshot
      * @param sDate Date of Snapshot
      */
-    public Enrollment_Snapshot(LocalDate sDate){
+    public EnrollmentSnapshot(LocalDate sDate){
         SnapshotDate = sDate;
     }
 
