@@ -21,7 +21,7 @@ public class testSummary_Report {
     public void testNonDefaultConstrutor() {
         // Testing Non-default Constructor
         Summary_Report c = new Course("CS350", 15);
-        assertThat(c.getCourse(), is("CS"));
+        assertThat(c.getCourse(), is("CS350"));
         assertThat(c.getPercentage(), is(15));
         //assertThat(c.getCourseName(), is("CS350"));
     }
