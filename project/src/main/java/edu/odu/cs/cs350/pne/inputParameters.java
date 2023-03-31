@@ -27,13 +27,16 @@ public class inputParameters{
         return this.userInput;
     }
 
-    public File findEnrollmentHistory(String directoryName) throws IllegalStateException
+    public File findEnrollmentHistory(String directoryName) throws IllegalStateException, FileNotFoundException
     {
         if (this.type == 2){
             // try to find the directory matching the provided directory name
             File fileLocation = new File ("/CS350-TeamE3-Repository/project/src/test/data/History/" + directoryName);
+
             if (fileLocation.exists() == true) {return fileLocation;}
-            else {return fileLocation;}
+            else {
+                throw new FileNotFoundException("file not found");
+            }
         }
         
         // if parameter is of wrong type throw exception
