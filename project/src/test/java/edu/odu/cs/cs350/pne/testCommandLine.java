@@ -36,6 +36,15 @@ public class testCommandLine {
         try {
         param.findEnrollmentHistory(); 
         } catch (IllegalStateException e) {}
+
+        // test the parameters ability to find a directory based on a string 
+        // if exists return directory location, if file does not exist throw exception
+        inputParameters param2 = new inputParameters(2);
+        param2.setString("202010");
+        assertThat(param.getString(), equalTo("202010"));
+        File filepath = fileparam2.findEnrollmentHistory(param.getString());
+        assertTrue(filepath.exists());
+
     }
 
 }
