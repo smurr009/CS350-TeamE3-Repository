@@ -62,4 +62,16 @@ public class testCommandLine {
 
     }
 
+        // test users ability to create an output file with a predetermined location 
+    // this output file will be subject to the reports (detailed and csv)
+    @Test
+    public void testInputParameters3()
+    {
+        inputParameters test1 = new inputParameters(3);
+        test1.setString("~/CS350-TeamE3-Repository/project/src/test/java/edu/odu/outputFile.txt");
+        assertThat(test1.getString(), equalTo("~/CS350-TeamE3-Repository/project/src/test/java/edu/odu/outputFile.txt"));
+        File outFile = new File(test1.getString());
+        test1.createOutputFile(outFile);
+        assertTrue(outFile.exists());
+    }
 }
