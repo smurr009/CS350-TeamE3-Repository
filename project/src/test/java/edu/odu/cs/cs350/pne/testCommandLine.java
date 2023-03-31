@@ -42,7 +42,7 @@ public class testCommandLine {
         inputParameters param2 = new inputParameters(2);
         param2.setString("202010");
         assertThat(param.getString(), equalTo("202010"));
-        File filepath = fileparam2.findEnrollmentHistory(param.getString());
+        File filepath = param2.findEnrollmentHistory(param.getString());
         assertTrue(filepath.exists());
 
     }

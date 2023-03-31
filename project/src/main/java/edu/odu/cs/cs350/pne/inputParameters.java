@@ -1,5 +1,8 @@
 package edu.odu.cs.cs350.pne;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+
 // each parameter entered in CLI.java would become a new inputParameter(int val)
 public class inputParameters{
 
@@ -24,9 +27,16 @@ public class inputParameters{
         return this.userInput;
     }
 
-    public void findEnrollmentHistory() throws IllegalStateException
+    public File findEnrollmentHistory(String directoryName) throws IllegalStateException
     {
-        if (this.type == 2){}
+        if (this.type == 2){
+            // try to find the directory matching the provided directory name
+            File fileLocation = new File ("/CS350-TeamE3-Repository/project/src/test/data/History/" + directoryName);
+            if (fileLocation.exists() == true) {return fileLocation;}
+            else {return fileLocation;}
+        }
+        
+        // if parameter is of wrong type throw exception
         else {throw new IllegalStateException("invalid parameter");}
     }
 
