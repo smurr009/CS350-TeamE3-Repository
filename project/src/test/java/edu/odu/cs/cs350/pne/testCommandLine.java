@@ -1,6 +1,7 @@
 package edu.odu.cs.cs350.pne;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -34,7 +35,7 @@ public class testCommandLine {
         // test if function is exclusive to type 2 parameters
         inputParameters param = new inputParameters(1);
         try {
-        param.findEnrollmentHistory(); 
+        param.findEnrollmentHistory("test"); 
         } catch (IllegalStateException e) {}
 
         // test the parameters ability to find a directory based on a string 
@@ -42,8 +43,18 @@ public class testCommandLine {
         inputParameters param2 = new inputParameters(2);
         param2.setString("202010");
         assertThat(param.getString(), equalTo("202010"));
-        File filepath = param2.findEnrollmentHistory(param.getString());
-        assertTrue(filepath.exists());
+        File filepath2 = param2.findEnrollmentHistory(param.getString());
+        assertTrue(filepath2.exists());
+
+        // test the parameters ability to notice non existing filepaths and throw exception
+        inputParameters param3 = new inputParameters(2);
+        param.setString("dumb");
+        assertThat(param.getString(), equalTo("dumb"));
+        try{
+        File filepath3 = param3.findEnrollmentHistory(param.getString());
+        assertFalse(filepath3.exists());
+        }
+        catch (FileNotFoundException e){}
 
     }
 
