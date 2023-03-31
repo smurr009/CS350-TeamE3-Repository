@@ -13,7 +13,7 @@ public class inputParameters{
     }
 
     // based on the parameters received, execute their desired instruction
-    private executeCLI(){
+    private void executeCLI(){
         
         /* Reference of input parameter types
          * 

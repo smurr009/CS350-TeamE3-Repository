@@ -15,9 +15,14 @@ public class testCommandLine {
     
 
     @Test 
-    public void testInputParameters()
+    public void testInputParametersCreation()
     {
-        inputParameters test = new inputParameters();
+        inputParameters param = new inputParameters(2);
+        String val = "directory";
+        param.setString(val);
+
+        assertThat(param.getString(), equals(val));
+
         
     }
 
