@@ -24,6 +24,12 @@ public class inputParameters{
         return this.userInput;
     }
 
+    public void findEnrollmentHistory() throws IllegalStateException
+    {
+        if (this.type == 2){}
+        else {throw new IllegalStateException("invalid parameter");}
+    }
+
     // based on the parameters received, execute their desired instruction
     private void executeCLI(){
         

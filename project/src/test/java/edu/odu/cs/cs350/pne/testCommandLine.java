@@ -29,13 +29,13 @@ public class testCommandLine {
     // test the attachment of the input parameters type 2
     // Type 2 being the connection to the enrollment projection files
     @Test
-    public void testInputParameters2
+    public void testInputParameters2()
     {
         // test if function is exclusive to type 2 parameters
         inputParameters param = new inputParameters(1);
         try {
         param.findEnrollmentHistory(); 
-        } catch (Exception e) {}
+        } catch (IllegalStateException e) {}
     }
 
 }
