@@ -21,7 +21,7 @@ public class testCommandLine {
         String val = "directory";
         param.setString(val);
 
-        assertThat(param.getString(), equals(val));
+        assertThat(param.getString(), equalTo(val));
 
         
     }

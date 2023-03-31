@@ -12,6 +12,18 @@ public class inputParameters{
         this.type = val;
     }
 
+    // allow user to set a string 
+    public void setString(String val)
+    {
+        this.userInput = val;
+    }
+
+    // allow user to retrieve an input string
+    public String getString()
+    {
+        return this.userInput;
+    }
+
     // based on the parameters received, execute their desired instruction
     private void executeCLI(){
         
