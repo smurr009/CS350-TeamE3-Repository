@@ -11,12 +11,13 @@ import edu.odu.cs.cs350.pne.Enrollment_Projections;
 public class testEnrollmentProjections
 {
     @Test
-    public void testCommandLineParamaters()
+    public void testDefaultConstructor()
     {
 
     }
+
     @Test
-    public void testCommandLineParamatersNoLine()
+    public void testNonDefaultConstructor()
     {
 
     }
