@@ -11,16 +11,16 @@ public class testSummary_Report {
     @Test
     public void testDefaultConstructor() {
         // Testing Default Constructor
-        Summary_Report c = new Course();
+        Summary_Report c = new Summary_Report();
         assertThat(c.getCourse(), is(""));
-        assertThat(c.getPercentage(), is(""));
+        assertThat(c.getPercentage(), is(0));
         //assertThat(c.getCourseName(), is(""));
     }
 
     @Test
     public void testNonDefaultConstrutor() {
         // Testing Non-default Constructor
-        Summary_Report c = new Course("CS350", 15);
+        Summary_Report c = new Summary_Report("CS350", 15);
         assertThat(c.getCourse(), is("CS350"));
         assertThat(c.getPercentage(), is(15));
         //assertThat(c.getCourseName(), is("CS350"));

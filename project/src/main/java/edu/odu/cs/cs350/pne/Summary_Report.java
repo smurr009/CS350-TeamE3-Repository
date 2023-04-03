@@ -26,8 +26,8 @@ public class Summary_Report {
      * Create new copy of the current Course
      */
     public Summary_Report(String c, int p) {
-        Course = "";
-        percent = 0;
+        Course = c;
+        percent = p;
     }
 /**
  * Return the course name
