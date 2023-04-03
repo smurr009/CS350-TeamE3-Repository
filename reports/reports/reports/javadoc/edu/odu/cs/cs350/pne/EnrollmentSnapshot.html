@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10};
+var data = {"i0":10,"i1":10,"i2":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -157,7 +157,8 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr class="rowColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.time.LocalDate)">EnrollmentSnapshot</a></span>&#8203;(java.time.LocalDate&nbsp;sDate)</code></th>
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.time.LocalDate,java.lang.String)">EnrollmentSnapshot</a></span>&#8203;(java.time.LocalDate&nbsp;sDate,
+                  java.lang.String&nbsp;path_to_csv)</code></th>
 <td class="colLast">
 <div class="block">Create new Enorllment_Snapshot</div>
 </td>
@@ -181,13 +182,18 @@ extends java.lang.Object</pre>
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addOffering(edu.odu.cs.cs350.pne.Offering)">addOffering</a></span>&#8203;(<a href="Offering.html" title="class in edu.odu.cs.cs350.pne">Offering</a>&nbsp;newOffering)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i1" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getNumOfOfferings()">getNumOfOfferings</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Get Number of Offerings in this Snapshot</div>
 </td>
 </tr>
-<tr id="i1" class="rowColor">
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>java.time.LocalDate</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSnapshotDate()">getSnapshotDate</a></span>()</code></th>
 <td class="colLast">
@@ -228,17 +234,24 @@ extends java.lang.Object</pre>
 <div class="block">Create new Enrollment_Snapshot</div>
 </li>
 </ul>
-<a id="&lt;init&gt;(java.time.LocalDate)">
+<a id="&lt;init&gt;(java.time.LocalDate,java.lang.String)">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>EnrollmentSnapshot</h4>
-<pre>public&nbsp;EnrollmentSnapshot&#8203;(java.time.LocalDate&nbsp;sDate)</pre>
+<pre>public&nbsp;EnrollmentSnapshot&#8203;(java.time.LocalDate&nbsp;sDate,
+                          java.lang.String&nbsp;path_to_csv)
+                   throws com.opencsv.exceptions.CsvValidationException,
+                          java.io.IOException</pre>
 <div class="block">Create new Enorllment_Snapshot</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>sDate</code> - Date of Snapshot</dd>
+<dd><code>path</code> - Path to Snapshot Source File (CSV)</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.io.IOException</code></dd>
+<dd><code>com.opencsv.exceptions.CsvValidationException</code></dd>
 </dl>
 </li>
 </ul>
@@ -269,7 +282,7 @@ extends java.lang.Object</pre>
 <a id="getNumOfOfferings()">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>getNumOfOfferings</h4>
 <pre class="methodSignature">public&nbsp;int&nbsp;getNumOfOfferings()</pre>
@@ -278,6 +291,15 @@ extends java.lang.Object</pre>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>Number of Offerings</dd>
 </dl>
+</li>
+</ul>
+<a id="addOffering(edu.odu.cs.cs350.pne.Offering)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>addOffering</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;addOffering&#8203;(<a href="Offering.html" title="class in edu.odu.cs.cs350.pne">Offering</a>&nbsp;newOffering)</pre>
 </li>
 </ul>
 </li>
