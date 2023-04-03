@@ -5,6 +5,6 @@ TEAM E3:
     Somjai Murrell Jr.
     James Powers
 
-[Tests](./reports/tests/test)
-[JavaDoc](./reports/javadoc)
-[ReadMe](./README.md)
+* [Tests](./reports/tests/test)
+* [JavaDoc](./reports/javadoc)
+* [ReadMe](./README.md)
