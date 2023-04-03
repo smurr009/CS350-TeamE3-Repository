@@ -28,3 +28,82 @@ test {
     useJUnitPlatform()
 }
 
+// Copies files prior to any website creation 
+task copyJavaDocs(type: Copy, dependsOn: 'javadoc') {
+    dependsOn 'javadoc'
+    from "build/docs"
+    into "build/reports"
+}
+
+task copyHTML(type: Copy, dependsOn: 'copyJavaDocs'){
+    from ("src/main/html")
+    into ("build/reports")
+}
+
+task newReadME (type: Copy){
+    from ("../README.md")
+    into ("build/reports")
+}
+
+def pagesDir = file("${project.rootDir}/website-temp").absolutePath
+
+task clearPages(type: Delete) {
+    delete pagesDir
+}
+
+task workTree(dependsOn: ['clearPages']) { 
+    doLast {
+        exec {
+            workingDir = '.'
+            commandLine = ['git', 'worktree', 'add', '-f', pagesDir, 'gh-pages']
+        }
+        exec {
+            workingDir = pagesDir
+            commandLine = ['git', 'checkout', 'gh-pages']
+        }
+        exec {
+            workingDir = pagesDir
+            commandLine = ['git', 'pull']
+        }
+    }
+}
+
+task reports (type: Copy, dependsOn: ['workTree', 'copyJavaDocs', 'copyHTML', 'newReadME']) {
+    from 'build/reports'
+    into pagesDir
+}
+
+
+task copyWebsite (dependsOn: ['reports'], type: Copy) {
+    from pagesDir
+    into ('../website-temp/reports')
+}
+
+task commitWebsite (dependsOn: 'copyWebsite') {
+    doLast {
+        Date now = new Date()
+
+        exec {
+            workingDir = pagesDir
+            commandLine = ['git', 'add', pagesDir]
+            ignoreExitValue = true
+        }
+        exec {
+            workingDir = pagesDir
+            commandLine = ['git', 'commit', '-m', 'Updating webpages at ' + now.toString()]
+            ignoreExitValue = true
+        }
+    }
+}
+
+task pushWebsite (type: Exec, dependsOn: 'commitWebsite') {
+    workingDir = pagesDir
+    commandLine = ['git', 'push']
+    ignoreExitValue = true
+}
+
+task deployReports (type: Delete, dependsOn: 'pushWebsite') {
+    group = "Reporting"
+    description  'Commit and push website changes to GitHub'
+    delete pagesDir
+}
