@@ -25,14 +25,18 @@ public class testEnrollmentSnapshot {
     }
 
     @Test
-    public void testNonDefaultConstructor() throws CsvValidationException, IOException {
+    public void testNonDefaultConstructor() {
+        // Attempt To Create Snapshot With Bad Paths/Filenames
+        try { 
+            EnrollmentSnapshot ebad1 = new EnrollmentSnapshot(anyDay, "");
+        } catch(Exception ex) {  }
+        try { 
+            EnrollmentSnapshot ebad2 = new EnrollmentSnapshot(anyDay, "");
+        } catch(Exception ex) {  }
         try {
             EnrollmentSnapshot e1 = new EnrollmentSnapshot(anyDay, "src/test/data/TestFile.csv");
             assertThat(e1.getSnapshotDate(), is(anyDay));
-            assertThat(e1.getNumOfOfferings(), is(0));
-        } 
-        catch(FileNotFoundException ex) { fail("File Does Exist"); }
-        
-        
+            assertThat(e1.getNumOfOfferings(), is(9));
+        } catch(Exception ex) { fail("File Does Exist"); }
     }
 }
