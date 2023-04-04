@@ -1,32 +1,50 @@
 package edu.odu.cs.cs350.pne;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
+import java.time.LocalDate;
 
-//I have to fix this later to make sure it runs with the program's requirements
-//I'm going to use an ArrayList to use
+//Needs to get data from EnrollmentSpanshots
 public class Enrollment_Projections {
-    public void CommandLineParameters(String[] args) throws IOException
+    LocalDate currentEndDate;
+    LocalDate historicalEndDate;
+
+    /**
+     * The default Constructor
+     */
+    public Enrollment_Projections()
     {
-        boolean semesterDirectoryhistorical = false;
-        boolean semesterDirectoryLocation = false;
-        //This doesn't take into consideration the last date option
-        if(args.length < 4)
-        {
-            for(int i = 0; i < args.length;i++)
-            {
-                if(args[i].contains("2022"))
-                {
-
-                }
-            }
-            
-        }
-        //I need to take into consideration the last date option and the list of semester directories
+        currentEndDate = LocalDate.now();
+        historicalEndDate =  LocalDate.now();
+    }
+    
+    /**
+     * Create a new Enrollment_Projection
+     * @param ceDate
+     * @param heDate
+     */
+    public Enrollment_Projections(LocalDate ceDate, LocalDate heDate)
+    {
+        currentEndDate = ceDate;
+        historicalEndDate = heDate;
+    }
+    /**
+     * Calculates the projection for the future semester with data from the current and historical snapshots
+     * @param cDate
+     * @param hDate
+     */
+    public void Enrollment_Projection_Formula(LocalDate cDate, LocalDate hDate)
+    {
         
-
+    }
+    
+    /**
+     * Calculates the interpolation between the current and historical snapshots
+     * @param cDate
+     * @param haDate
+     * @param hbDate
+     */
+    public void Interpolation(LocalDate cDate, LocalDate haDate, LocalDate hbDate)
+    {
+        //Current and historical enrollments as well (I don't understand the formula all that well)
+        //Fill in later
     }
 }

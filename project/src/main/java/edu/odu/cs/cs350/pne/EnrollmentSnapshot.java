@@ -23,7 +23,7 @@ public class EnrollmentSnapshot
     }
 
     /**
-     * Create new Enorllment_Snapshot
+     * Create new Enrollment_Snapshot
      * @param sDate Date of Snapshot
      * @param path Path to Snapshot Source File (CSV)
      * @throws IOException
@@ -90,7 +90,6 @@ public class EnrollmentSnapshot
         }
     }
 
-
     public boolean checkForOffering() { 
         return false;
     }
@@ -103,7 +102,4 @@ public class EnrollmentSnapshot
 
     public void addSectionToOffering() { }
 
-
-
-    
 }

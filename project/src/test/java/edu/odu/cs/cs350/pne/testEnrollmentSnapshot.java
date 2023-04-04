@@ -39,4 +39,10 @@ public class testEnrollmentSnapshot {
             assertThat(e1.getNumOfOfferings(), is(9));
         } catch(Exception ex) { fail("File Does Exist"); }
     }
+
+    @Test
+    public void testFilter()
+    {
+
+    }
 }

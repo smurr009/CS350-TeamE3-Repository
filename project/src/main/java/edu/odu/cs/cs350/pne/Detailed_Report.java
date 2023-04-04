@@ -34,4 +34,10 @@ public class Detailed_Report
 
         System.out.println("writeExcelinJava.xlsx written successfully on disk.");
     }
+    
+    //This takes a CSV file?
+    public void WriteMultipleToExcel()
+    {
+     
+    }
 }
