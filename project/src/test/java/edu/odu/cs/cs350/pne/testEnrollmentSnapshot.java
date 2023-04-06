@@ -36,13 +36,11 @@ public class testEnrollmentSnapshot {
         try {
             EnrollmentSnapshot e1 = new EnrollmentSnapshot(anyDay, "src/test/data/TestFile.csv");
             assertThat(e1.getSnapshotDate(), is(anyDay));
-            assertThat(e1.getNumOfOfferings(), is(9));
+            assertThat(e1.getNumOfOfferings(), is(4));
+            EnrollmentSnapshot e2 = new EnrollmentSnapshot(anyDay, "src/test/data/BigTestFile.csv");
+            assertThat(e2.getSnapshotDate(), is(anyDay));
+            assertThat(e2.getNumOfOfferings(), is(228));
         } catch(Exception ex) { fail("File Does Exist"); }
     }
 
-    @Test
-    public void testFilter()
-    {
-
-    }
 }
