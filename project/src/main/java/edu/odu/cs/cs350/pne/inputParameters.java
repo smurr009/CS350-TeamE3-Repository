@@ -2,6 +2,7 @@ package edu.odu.cs.cs350.pne;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 // each parameter entered in CLI.java would become a new inputParameter(int val)
 public class inputParameters{
@@ -41,6 +42,16 @@ public class inputParameters{
         
         // if parameter is of wrong type throw exception
         else {throw new IllegalStateException("invalid parameter");}
+    }
+
+    public void createOutputFile(String fileName) throws IOException
+    {
+        File filepath = new File(fileName);
+
+        if (filepath.createNewFile() == true){
+            
+        }
+        else {throw new IOException("filepath invalid");}
     }
 
     // based on the parameters received, execute their desired instruction

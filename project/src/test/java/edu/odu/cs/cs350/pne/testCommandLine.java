@@ -3,6 +3,7 @@ package edu.odu.cs.cs350.pne;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -68,10 +69,12 @@ public class testCommandLine {
     public void testInputParameters3()
     {
         inputParameters test1 = new inputParameters(3);
-        test1.setString("~/CS350-TeamE3-Repository/project/src/test/java/edu/odu/outputFile.txt");
-        assertThat(test1.getString(), equalTo("~/CS350-TeamE3-Repository/project/src/test/java/edu/odu/outputFile.txt"));
+        test1.setString("src/outputFile.txt");
+        assertThat(test1.getString(), equalTo("src/outputFile.txt"));
         File outFile = new File(test1.getString());
-        test1.createOutputFile(outFile);
+        try {
+        test1.createOutputFile("src/outputFile.txt"); 
+        } catch (IOException e){}
         assertTrue(outFile.exists());
     }
 }
