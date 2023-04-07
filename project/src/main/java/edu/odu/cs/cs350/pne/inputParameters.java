@@ -49,7 +49,7 @@ public class inputParameters{
         File filepath = new File(fileName);
 
         if (filepath.createNewFile() == true){
-            
+            this.filepath = fileName;
         }
         else {throw new IOException("filepath invalid");}
     }
@@ -71,4 +71,6 @@ public class inputParameters{
     else if (this.type ==  4){ /* YYYY-MM-DD format input */ }
 
     }
+
+    private String filepath;
 }
