@@ -29,6 +29,7 @@ public class testCommandLine {
     }
 
     // test the users ability to create a list of desired directory locations to search
+    @Test
     public void testInputParameters1()
     {
        // test user ability to request one directory to search (expecting YYYYSM format) 
