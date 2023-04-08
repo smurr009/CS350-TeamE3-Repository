@@ -88,7 +88,7 @@ public class inputParameters{
     }
 
     // based on the parameters received, execute their desired instruction
-    private void executeCLI(){
+    public void executeCLI(){
         
         /* Reference of input parameter types
          * 
