@@ -33,11 +33,31 @@ public class inputParameters{
 
     public void AddToList(String dirName) throws FileNotFoundException
     {
-        File fileLocation = new File("/CS350-TeamE3-Repository/project/src/test/data/History/" + dirName);
+        // prior to adding directories to the list check if string contains more than one
+        List <Integer> newStringLocations = new ArrayList<Integer>();
+        newStringLocations.add(0); // adds a value equal to the last char in the string
+        ParseEachDirName(dirName, newStringLocations);
+        newStringLocations.add(dirName.length() -1 ); // adds a value equal to the last char in the string
+        for(int j = 0; j < newStringLocations.size(); j++){
 
-        if (fileLocation.exists() == true){this.semesterDirList.add(fileLocation);}
-        else {
-            throw new FileNotFoundException("directory does not exist");
+            String tempString = dirName.substring(newStringLocations.get(j), newStringLocations.get(j+1));
+
+            File fileLocation = new File("/CS350-TeamE3-Repository/project/src/test/data/History/" + tempString);
+
+            if (fileLocation.exists() == true){this.semesterDirList.add(fileLocation);}
+            else {
+                throw new FileNotFoundException("directory does not exist");
+            }
+        }
+    }
+
+    private void ParseEachDirName(String dirName, List<Integer> newStringLocations) {
+        for (int i = 0; i < dirName.length(); i++)
+        {
+            if (dirName.charAt(i) == ' ')
+            {
+                newStringLocations.add(i);
+            }
         }
     }
 
