@@ -26,9 +26,8 @@ public class EnrollmentSnapshot {
     /**
      * Create new Enrollment_Snapshot
      * @param sDate Date of Snapshot
-     * @param path Path to Snapshot Source File (CSV)
-     * @throws IOException
-     * @throws CsvValidationException
+     * @param path_to_csv Path to Snapshot Source File (CSV)
+     * @throws Exception
      */
     public EnrollmentSnapshot(LocalDate sDate, String path_to_csv) throws Exception {
         SnapshotDate = sDate;
@@ -137,7 +136,7 @@ public class EnrollmentSnapshot {
     /**
      * Used to Collect Snapshot Data From CSV File
      * Generates A List of Offerings
-     * @param path Path to Snapshot Source File (CSV)
+     * @param path_to_csv Path to Snapshot Source File (CSV)
      * @throws Exception
      */
     public void collectSnapshotData(String path_to_csv) throws Exception {
