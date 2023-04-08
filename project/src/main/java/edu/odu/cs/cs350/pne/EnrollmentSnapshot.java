@@ -1,10 +1,9 @@
 package edu.odu.cs.cs350.pne;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -12,10 +11,9 @@ import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 import com.opencsv.exceptions.CsvValidationException;
 
-public class EnrollmentSnapshot
-{
+public class EnrollmentSnapshot {
     private List<Offering> Offerings = new ArrayList<>();
-    private Set<String> courses;
+    private Set<String> Courses = new HashSet<String>();
     private LocalDate SnapshotDate;
     
     /**
@@ -38,6 +36,16 @@ public class EnrollmentSnapshot
     }
 
     /**
+     * EnrollmentSnapshot Copy Constructor
+     * @param src source EnrollmentSnapshot to copy
+     */
+    public EnrollmentSnapshot(EnrollmentSnapshot src) {
+        SnapshotDate = src.SnapshotDate;
+        Offerings = src.Offerings;
+        Courses = src.Courses;
+    }
+
+    /**
      * Get Snapshot Date
      * @return Date of this Snapshot
      */
@@ -50,13 +58,89 @@ public class EnrollmentSnapshot
     public int getNumOfOfferings() { return Offerings.size(); }
 
     /**
+     * Get All Courses Contained in this Snapshot
+     * @return Set of Course Names from this Snapshot
+     */
+    public Set<String> getCourses() { return Courses; }
+
+    /**
+     * Get Total Enrolled Students for Course
+     * @param courseName Desired Course Name e.g. "CS350"
+     * @return Number of Enrolled Students
+     */
+    public int getOverallEnrollment(String courseName) {
+        int totalEnrolled = 0;
+        for(Offering offering: Offerings) {
+            if(courseName.equals(offering.getCourseName())){
+                totalEnrolled = totalEnrolled + offering.getOverallEnrollment();
+            }
+        }
+        return totalEnrolled;
+    }
+
+    /**
+     * Get Total Capacity for all Offerings of selected Course
+     * @param courseName Desired Course Name e.g. "CS350"
+     * @return Overall Capacity of all Offerings of Course
+     */
+    public int getOverallCap(String courseName) {
+        int totalCap = 0;
+        for(Offering offering: Offerings) {
+            if(courseName.equals(offering.getCourseName()))
+                totalCap = totalCap + offering.getOverallCap();
+        }
+        return totalCap;
+    }
+
+    /**
+     * Adds an Offering to the collection
+     * @param offering the Offering to add
+     */
+    private void addOffering(Offering offering) {
+        Offerings.add(offering);
+        Courses.add(offering.getCourseName());
+    }
+
+     /**
+      *  Check to see if an Offering Exists in the collection
+      * @param cName course name e.g. "CS350"
+      * @param instr instructor assigned to this offering
+      * @param group cross-list group to identify related sections
+      * @return True if match found, otherwise false
+      */
+    private boolean checkForOffering(String cName, String instr, String group) {
+        for(Offering offering: Offerings) {
+            if(group.equals(offering.getXlstGroup()) && cName.equals(offering.getCourseName()) 
+            && instr.equals(offering.getInstructor())) {
+                return true;
+            }
+        }
+        return false; // NO MATCH FOUND
+    }
+
+    /**
+     * Add a Section to an existing Offering
+     * @param cName course name e.g. "CS350"
+     * @param instr instructor assigned to this offering
+     * @param group cross-list group to identify related sections
+     * @param section the Section to add
+     */
+    private void addSectionToOffering(String cName, String instr, String group, Section section) {
+        for(Offering offering: Offerings) {
+            if(group.equals(offering.getXlstGroup()) && cName.equals(offering.getCourseName()) 
+            && instr.equals(offering.getInstructor())) {
+                offering.addSection(section);
+            }
+        }
+    }
+
+    /**
      * Used to Collect Snapshot Data From CSV File
      * Generates A List of Offerings
      * @param path Path to Snapshot Source File (CSV)
-     * @throws IOException
-     * @throws CsvValidationException
+     * @throws Exception
      */
-    private void collectSnapshotData(String path_to_csv) throws Exception {
+    public void collectSnapshotData(String path_to_csv) throws Exception {
         // Read CSV File and Skip Header Line
         CSVReader csvReader = new CSVReaderBuilder(new FileReader(path_to_csv))
                                     .withSkipLines(1).build();
@@ -82,41 +166,41 @@ public class EnrollmentSnapshot
                 // GENERATE NEW OFFERING AND SECTION
                 Offering offering = new Offering(SUBJ + CRSE, INSTRUCTOR, CAP, GROUP);
                 Section section = new Section(SUBJ, CRSE, CRN, XCAP, ENR);
-
                 // IF GROUP IS BLANK OR OFFERING DOES NOT EXIST
                 if(GROUP == "" || !checkForOffering(SUBJ + CRSE, INSTRUCTOR, GROUP)) {
                     offering.addSection(section);
                     addOffering(offering);
                 } else {
-                    addSectionToOffering(GROUP, section);
+                    addSectionToOffering(SUBJ + CRSE, INSTRUCTOR, GROUP, section);
                 }
             }
         }
     }
 
     /**
-     * Check to see if an Offering with Xlist Group Exists in Snapshot
-     * @param group cross-list group to identify related sections
-     * @return True if match found, otherwise false
+     * Generate clone of this object with deep copy
+     * @return clone of this Snapshot
      */
-    public boolean checkForOffering(String cName, String instr, String group) {
-        for(Offering offering: Offerings) {
-            if(group != "" && group.equals(offering.getXlstGroup())) return true;
-        }
-        // No Matching Offering Was Found
-        return false;
+    public EnrollmentSnapshot clone() {
+        EnrollmentSnapshot copy = new EnrollmentSnapshot(this);
+        return copy;
     }
 
-    private void addOffering(Offering newOffering) {
-        Offerings.add(newOffering);
+    /**
+     * Check for equality between two EnrollmentSnapshots
+     * @return True if Equal, False if Not Equal
+     */
+    public boolean equals(Object rhs) {
+        // Check if same object type
+        if(!(rhs instanceof EnrollmentSnapshot)) return false;
+        // Convert object type to EnrollmentSnapshot
+        EnrollmentSnapshot rhsSnapshot = (EnrollmentSnapshot)rhs;
+        // Validate EnrollmentSnapshot Data Members
+        if(SnapshotDate != rhsSnapshot.SnapshotDate) return false;
+        if(!Courses.equals(rhsSnapshot.Courses)) return false;
+        if(getNumOfOfferings() != rhsSnapshot.getNumOfOfferings()) return false;
+        return Offerings.equals(rhsSnapshot.Offerings);
     }
 
-    private void addSectionToOffering(String group, Section newSection) {
-        for(Offering offering: Offerings) {
-            if(group != "" && group.equals(offering.getXlstGroup())){
-                offering.addSection(newSection);
-            }
-        }
-    }
 
 }

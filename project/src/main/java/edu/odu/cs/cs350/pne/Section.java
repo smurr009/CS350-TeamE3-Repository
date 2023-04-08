@@ -101,13 +101,12 @@ public class Section extends Course {
         if(!(rhs instanceof Section)) return false;
         // Convert object type to Section
         Section rhsSection = (Section)rhs;
-        
-        if(Subject != rhsSection.Subject) return false;
-        if(CourseNumber != rhsSection.CourseNumber) return false;
-        if(CRN != rhsSection.CRN) return false;
+        // Validate Section Data Members
+        if(!Subject.equals(rhsSection.Subject)) return false;
+        if(!CourseNumber.equals(rhsSection.CourseNumber)) return false;
+        if(!CRN.equals(rhsSection.CRN)) return false;
         if(EnrollmentCap != rhsSection.EnrollmentCap) return false;
         if(Enrolled != rhsSection.Enrolled) return false;
-        
         // Must be the same, so return True
         return true;
     }

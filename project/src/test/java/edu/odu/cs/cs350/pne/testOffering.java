@@ -10,12 +10,14 @@ public class testOffering {
     Section s1;
     Section s2;
     Section s3;
+    Section s4;
 
     @BeforeEach
     public void setup() {
         s1 = new Section("CS", "350", "12345", 20, 15);
         s2 = new Section("CS", "350", "13569", 20, 5);
         s3 = new Section("CS", "350", "14821", 20, 10);
+        s4 = new Section("CS", "350", "12345", 20, 15); // same as s1
     }
 
     @Test
@@ -147,17 +149,25 @@ public class testOffering {
         o1.addSection(s2);
         o1.addSection(s3);
         assertThat(o1, equalTo(o1)); // Now the same
+
+        Offering o3 = new Offering("CS250", "SOMEONE", 20, "GG100");
+        Offering o4 = new Offering("CS250", "SOMEONE", 20, "GG100");
+        o3.addSection(s1);
+        o3.addSection(s2);
+        o4.addSection(s4);
+        o4.addSection(s2);
+        assertThat(o3.equals(o4), is(true));
     }
 
     @Test
     public void testClone() {
-        // Create two Offerings to play with
+        // Create Offerings to play with
         Offering o1 = new Offering();
         o1.addSection(s1);
         o1.addSection(s2);
         o1.addSection(s3);
         // Generate Offering with Copy Constructor
-        Offering o2 = o1;
+        Offering o2 = new Offering(o1);
         assertThat(o1, equalTo(o2));
         // Generate Clone of Offering
         Offering o3 = o1.clone();
