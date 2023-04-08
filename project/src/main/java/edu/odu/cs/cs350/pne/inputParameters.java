@@ -3,12 +3,15 @@ package edu.odu.cs.cs350.pne;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 // each parameter entered in CLI.java would become a new inputParameter(int val)
 public class inputParameters{
 
     int type;
     String userInput;
+    List <File> semesterDirList = new ArrayList<File>();
 
     // creation of an object of a type
     public inputParameters(int val)
@@ -26,6 +29,16 @@ public class inputParameters{
     public String getString()
     {
         return this.userInput;
+    }
+
+    public void AddToList(String dirName) throws FileNotFoundException
+    {
+        File fileLocation = new File("/CS350-TeamE3-Repository/project/src/test/data/History/" + dirName);
+
+        if (fileLocation.exists() == true){this.semesterDirList.add(fileLocation);}
+        else {
+            throw new FileNotFoundException("directory does not exist");
+        }
     }
 
     public File findEnrollmentHistory(String directoryName) throws IllegalStateException, FileNotFoundException
