@@ -6,6 +6,26 @@ package edu.odu.cs.cs350.pne;
 
 public class CLI {
 
+    public static void CreateInputObjects(String input1, String input2, String input3, String input4)
+    {
+        inputParameters stringOne = new inputParameters(1);
+        stringOne.setString(input1);
+        stringOne.executeCLI();
+
+        inputParameters stringTwo = new inputParameters(2);
+        stringTwo.setString(input1);
+        stringTwo.executeCLI();
+
+        inputParameters stringThree = new inputParameters(3);
+        stringThree.setString(input1);
+        stringThree.executeCLI();
+
+        inputParameters stringFour = new inputParameters(4);
+        stringFour.setString(input1);
+        stringFour.executeCLI();
+
+    }
+
     public static void main (String [] args){
 
         String parameter1 = "";
@@ -49,7 +69,11 @@ public class CLI {
                 parameter4 = args[userInputLength-1];
 
             }
+
+            // create the relevant input parameter objects 
+            CreateInputObjects(parameter1, parameter2, parameter3, parameter4);
         }
+
     }
 
 }
