@@ -38,8 +38,8 @@ public class testCommandLine {
        try{
        input.setString("202110");
        input.AddToList(input.getString());
-       assertFalse(semesterDirList.empty());
-       } catch (FileNotFoundException e);
+       assertFalse(input.semesterDirList.isEmpty());
+       } catch (FileNotFoundException e) {};
     }
 
     // test the attachment of the input parameters type 2
