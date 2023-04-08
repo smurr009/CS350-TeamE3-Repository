@@ -40,6 +40,14 @@ public class testCommandLine {
        input.AddToList(input.getString());
        assertFalse(input.semesterDirList.isEmpty());
        } catch (FileNotFoundException e) {};
+    
+       // what if the user provides an inaccurate dir name
+       inputParameters input2 = new inputParameters(1);
+       try{
+       input2.setString("204710");
+       input2.AddToList(input.getString());
+       fail("Expected FileNotFoundException");
+       } catch (FileNotFoundException e) {};
     }
 
     // test the attachment of the input parameters type 2
