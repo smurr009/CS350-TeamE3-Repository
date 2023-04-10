@@ -3,6 +3,7 @@ package edu.odu.cs.cs350.pne;
 //imports from apache 
 //import org.apache.commons.cli.CommandLine;
 //import org.apache.commons.cli.CommandLineParser;
+//import edu.odu.cs.cs350.pne.inputParameters;
 
 public class CLI {
 
@@ -13,15 +14,15 @@ public class CLI {
         stringOne.executeCLI();
 
         inputParameters stringTwo = new inputParameters(2);
-        stringTwo.setString(input1);
+        stringTwo.setString(input2);
         stringTwo.executeCLI();
 
         inputParameters stringThree = new inputParameters(3);
-        stringThree.setString(input1);
+        stringThree.setString(input3);
         stringThree.executeCLI();
 
         inputParameters stringFour = new inputParameters(4);
-        stringFour.setString(input1);
+        stringFour.setString(input4);
         stringFour.executeCLI();
 
     }
