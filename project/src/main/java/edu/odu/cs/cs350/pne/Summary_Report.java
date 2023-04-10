@@ -60,6 +60,7 @@ public class Summary_Report {
         System.out.print(percent);
         System.out.println("% of enrollment period has elapsed. \n");
         System.out.println("Course Enrollment Projected Cap \n");
+        //while()
         System.out.print("CS");
         System.out.println(obj2.getCourseNumber());
     }
