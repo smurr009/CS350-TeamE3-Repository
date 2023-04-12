@@ -6,15 +6,16 @@
 <title>Index (project API)</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="stylesheet.css" title="Style">
-<link rel="stylesheet" type="text/css" href="jquery/jquery-ui.css" title="Style">
+<link rel="stylesheet" type="text/css" href="jquery/jquery-ui.min.css" title="Style">
+<link rel="stylesheet" type="text/css" href="jquery-ui.overrides.css" title="Style">
 <script type="text/javascript" src="script.js"></script>
 <script type="text/javascript" src="jquery/jszip/dist/jszip.min.js"></script>
 <script type="text/javascript" src="jquery/jszip-utils/dist/jszip-utils.min.js"></script>
 <!--[if IE]>
 <script type="text/javascript" src="jquery/jszip-utils/dist/jszip-utils-ie.min.js"></script>
 <![endif]-->
-<script type="text/javascript" src="jquery/jquery-3.5.1.js"></script>
-<script type="text/javascript" src="jquery/jquery-ui.js"></script>
+<script type="text/javascript" src="jquery/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="jquery/jquery-ui.min.js"></script>
 </head>
 <body>
 <script type="text/javascript"><!--
@@ -100,25 +101,28 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Adds a Section to this Offering
  Section is not added if another with the same CRN already exists</div>
 </dd>
-<dt><span class="memberNameLink"><a href="edu/odu/cs/cs350/pne/inputParameters.html#AddToList(java.lang.String)">AddToList(String)</a></span> - Method in class edu.odu.cs.cs350.pne.<a href="edu/odu/cs/cs350/pne/inputParameters.html" title="class in edu.odu.cs.cs350.pne">inputParameters</a></dt>
-<dd>&nbsp;</dd>
 </dl>
 <a id="I:C">
 <!--   -->
 </a>
 <h2 class="title">C</h2>
 <dl>
-<dt><span class="memberNameLink"><a href="edu/odu/cs/cs350/pne/EnrollmentSnapshot.html#checkForOffering(java.lang.String,java.lang.String,java.lang.String)">checkForOffering(String, String, String)</a></span> - Method in class edu.odu.cs.cs350.pne.<a href="edu/odu/cs/cs350/pne/EnrollmentSnapshot.html" title="class in edu.odu.cs.cs350.pne">EnrollmentSnapshot</a></dt>
-<dd>
-<div class="block">Check to see if an Offering with Xlist Group Exists in Snapshot</div>
-</dd>
 <dt><a href="edu/odu/cs/cs350/pne/CLI.html" title="class in edu.odu.cs.cs350.pne"><span class="typeNameLink">CLI</span></a> - Class in <a href="edu/odu/cs/cs350/pne/package-summary.html">edu.odu.cs.cs350.pne</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="edu/odu/cs/cs350/pne/CLI.html#%3Cinit%3E()">CLI()</a></span> - Constructor for class edu.odu.cs.cs350.pne.<a href="edu/odu/cs/cs350/pne/CLI.html" title="class in edu.odu.cs.cs350.pne">CLI</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="edu/odu/cs/cs350/pne/EnrollmentSnapshot.html#clone()">clone()</a></span> - Method in class edu.odu.cs.cs350.pne.<a href="edu/odu/cs/cs350/pne/EnrollmentSnapshot.html" title="class in edu.odu.cs.cs350.pne">EnrollmentSnapshot</a></dt>
+<dd>
+<div class="block">Generate clone of this object with deep copy</div>
+</dd>
 <dt><span class="memberNameLink"><a href="edu/odu/cs/cs350/pne/Offering.html#clone()">clone()</a></span> - Method in class edu.odu.cs.cs350.pne.<a href="edu/odu/cs/cs350/pne/Offering.html" title="class in edu.odu.cs.cs350.pne">Offering</a></dt>
 <dd>
 <div class="block">Generate clone of this object with deep copy</div>
+</dd>
+<dt><span class="memberNameLink"><a href="edu/odu/cs/cs350/pne/EnrollmentSnapshot.html#collectSnapshotData(java.lang.String)">collectSnapshotData(String)</a></span> - Method in class edu.odu.cs.cs350.pne.<a href="edu/odu/cs/cs350/pne/EnrollmentSnapshot.html" title="class in edu.odu.cs.cs350.pne">EnrollmentSnapshot</a></dt>
+<dd>
+<div class="block">Used to Collect Snapshot Data From CSV File
+ Generates A List of Offerings</div>
 </dd>
 <dt><a href="edu/odu/cs/cs350/pne/Course.html" title="class in edu.odu.cs.cs350.pne"><span class="typeNameLink">Course</span></a> - Class in <a href="edu/odu/cs/cs350/pne/package-summary.html">edu.odu.cs.cs350.pne</a></dt>
 <dd>&nbsp;</dd>
@@ -133,8 +137,6 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Create new Course</div>
 </dd>
 <dt><span class="memberNameLink"><a href="edu/odu/cs/cs350/pne/Course.html#CourseNumber">CourseNumber</a></span> - Variable in class edu.odu.cs.cs350.pne.<a href="edu/odu/cs/cs350/pne/Course.html" title="class in edu.odu.cs.cs350.pne">Course</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="edu/odu/cs/cs350/pne/CLI.html#CreateInputObjects(java.lang.String,java.lang.String,java.lang.String,java.lang.String)">CreateInputObjects(String, String, String, String)</a></span> - Static method in class edu.odu.cs.cs350.pne.<a href="edu/odu/cs/cs350/pne/CLI.html" title="class in edu.odu.cs.cs350.pne">CLI</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="edu/odu/cs/cs350/pne/inputParameters.html#createOutputFile(java.lang.String)">createOutputFile(String)</a></span> - Method in class edu.odu.cs.cs350.pne.<a href="edu/odu/cs/cs350/pne/inputParameters.html" title="class in edu.odu.cs.cs350.pne">inputParameters</a></dt>
 <dd>&nbsp;</dd>
@@ -180,9 +182,17 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Create new Enrollment_Snapshot</div>
 </dd>
+<dt><span class="memberNameLink"><a href="edu/odu/cs/cs350/pne/EnrollmentSnapshot.html#%3Cinit%3E(edu.odu.cs.cs350.pne.EnrollmentSnapshot)">EnrollmentSnapshot(EnrollmentSnapshot)</a></span> - Constructor for class edu.odu.cs.cs350.pne.<a href="edu/odu/cs/cs350/pne/EnrollmentSnapshot.html" title="class in edu.odu.cs.cs350.pne">EnrollmentSnapshot</a></dt>
+<dd>
+<div class="block">EnrollmentSnapshot Copy Constructor</div>
+</dd>
 <dt><span class="memberNameLink"><a href="edu/odu/cs/cs350/pne/EnrollmentSnapshot.html#%3Cinit%3E(java.time.LocalDate,java.lang.String)">EnrollmentSnapshot(LocalDate, String)</a></span> - Constructor for class edu.odu.cs.cs350.pne.<a href="edu/odu/cs/cs350/pne/EnrollmentSnapshot.html" title="class in edu.odu.cs.cs350.pne">EnrollmentSnapshot</a></dt>
 <dd>
 <div class="block">Create new Enrollment_Snapshot</div>
+</dd>
+<dt><span class="memberNameLink"><a href="edu/odu/cs/cs350/pne/EnrollmentSnapshot.html#equals(java.lang.Object)">equals(Object)</a></span> - Method in class edu.odu.cs.cs350.pne.<a href="edu/odu/cs/cs350/pne/EnrollmentSnapshot.html" title="class in edu.odu.cs.cs350.pne">EnrollmentSnapshot</a></dt>
+<dd>
+<div class="block">Check for equality between two EnrollmentSnapshots</div>
 </dd>
 <dt><span class="memberNameLink"><a href="edu/odu/cs/cs350/pne/Offering.html#equals(java.lang.Object)">equals(Object)</a></span> - Method in class edu.odu.cs.cs350.pne.<a href="edu/odu/cs/cs350/pne/Offering.html" title="class in edu.odu.cs.cs350.pne">Offering</a></dt>
 <dd>
@@ -192,8 +202,6 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Check for equality between two Offerings</div>
 </dd>
-<dt><span class="memberNameLink"><a href="edu/odu/cs/cs350/pne/inputParameters.html#executeCLI()">executeCLI()</a></span> - Method in class edu.odu.cs.cs350.pne.<a href="edu/odu/cs/cs350/pne/inputParameters.html" title="class in edu.odu.cs.cs350.pne">inputParameters</a></dt>
-<dd>&nbsp;</dd>
 </dl>
 <a id="I:F">
 <!--   -->
@@ -225,6 +233,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="edu/odu/cs/cs350/pne/Course.html#getCourseNumber()">getCourseNumber()</a></span> - Method in class edu.odu.cs.cs350.pne.<a href="edu/odu/cs/cs350/pne/Course.html" title="class in edu.odu.cs.cs350.pne">Course</a></dt>
 <dd>
 <div class="block">Get Course Number for this Course</div>
+</dd>
+<dt><span class="memberNameLink"><a href="edu/odu/cs/cs350/pne/EnrollmentSnapshot.html#getCourses()">getCourses()</a></span> - Method in class edu.odu.cs.cs350.pne.<a href="edu/odu/cs/cs350/pne/EnrollmentSnapshot.html" title="class in edu.odu.cs.cs350.pne">EnrollmentSnapshot</a></dt>
+<dd>
+<div class="block">Get All Courses Contained in this Snapshot</div>
 </dd>
 <dt><span class="memberNameLink"><a href="edu/odu/cs/cs350/pne/Section.html#getCRN()">getCRN()</a></span> - Method in class edu.odu.cs.cs350.pne.<a href="edu/odu/cs/cs350/pne/Section.html" title="class in edu.odu.cs.cs350.pne">Section</a></dt>
 <dd>
@@ -262,9 +274,17 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Get Overall Capacity of this Offering</div>
 </dd>
+<dt><span class="memberNameLink"><a href="edu/odu/cs/cs350/pne/EnrollmentSnapshot.html#getOverallCap(java.lang.String)">getOverallCap(String)</a></span> - Method in class edu.odu.cs.cs350.pne.<a href="edu/odu/cs/cs350/pne/EnrollmentSnapshot.html" title="class in edu.odu.cs.cs350.pne">EnrollmentSnapshot</a></dt>
+<dd>
+<div class="block">Get Total Capacity for all Offerings of selected Course</div>
+</dd>
 <dt><span class="memberNameLink"><a href="edu/odu/cs/cs350/pne/Offering.html#getOverallEnrollment()">getOverallEnrollment()</a></span> - Method in class edu.odu.cs.cs350.pne.<a href="edu/odu/cs/cs350/pne/Offering.html" title="class in edu.odu.cs.cs350.pne">Offering</a></dt>
 <dd>
 <div class="block">Get Total Students Enrolled in all Sections of this Offering</div>
+</dd>
+<dt><span class="memberNameLink"><a href="edu/odu/cs/cs350/pne/EnrollmentSnapshot.html#getOverallEnrollment(java.lang.String)">getOverallEnrollment(String)</a></span> - Method in class edu.odu.cs.cs350.pne.<a href="edu/odu/cs/cs350/pne/EnrollmentSnapshot.html" title="class in edu.odu.cs.cs350.pne">EnrollmentSnapshot</a></dt>
+<dd>
+<div class="block">Get Total Enrolled Students for Course</div>
 </dd>
 <dt><span class="memberNameLink"><a href="edu/odu/cs/cs350/pne/Summary_Report.html#getPercentage()">getPercentage()</a></span> - Method in class edu.odu.cs.cs350.pne.<a href="edu/odu/cs/cs350/pne/Summary_Report.html" title="class in edu.odu.cs.cs350.pne">Summary_Report</a></dt>
 <dd>

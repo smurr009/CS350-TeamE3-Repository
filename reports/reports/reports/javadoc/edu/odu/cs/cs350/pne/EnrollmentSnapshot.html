@@ -6,15 +6,16 @@
 <title>EnrollmentSnapshot (project API)</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
-<link rel="stylesheet" type="text/css" href="../../../../../jquery/jquery-ui.css" title="Style">
+<link rel="stylesheet" type="text/css" href="../../../../../jquery/jquery-ui.min.css" title="Style">
+<link rel="stylesheet" type="text/css" href="../../../../../jquery-ui.overrides.css" title="Style">
 <script type="text/javascript" src="../../../../../script.js"></script>
 <script type="text/javascript" src="../../../../../jquery/jszip/dist/jszip.min.js"></script>
 <script type="text/javascript" src="../../../../../jquery/jszip-utils/dist/jszip-utils.min.js"></script>
 <!--[if IE]>
 <script type="text/javascript" src="../../../../../jquery/jszip-utils/dist/jszip-utils-ie.min.js"></script>
 <![endif]-->
-<script type="text/javascript" src="../../../../../jquery/jquery-3.5.1.js"></script>
-<script type="text/javascript" src="../../../../../jquery/jquery-ui.js"></script>
+<script type="text/javascript" src="../../../../../jquery/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../../../../../jquery/jquery-ui.min.js"></script>
 </head>
 <body>
 <script type="text/javascript"><!--
@@ -26,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -138,7 +139,7 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
-<section role="region">
+<section>
 <ul class="blockList">
 <li class="blockList"><a id="constructor.summary">
 <!--   -->
@@ -157,6 +158,12 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr class="rowColor">
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(edu.odu.cs.cs350.pne.EnrollmentSnapshot)">EnrollmentSnapshot</a></span>&#8203;(<a href="EnrollmentSnapshot.html" title="class in edu.odu.cs.cs350.pne">EnrollmentSnapshot</a>&nbsp;src)</code></th>
+<td class="colLast">
+<div class="block">EnrollmentSnapshot Copy Constructor</div>
+</td>
+</tr>
+<tr class="altColor">
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.time.LocalDate,java.lang.String)">EnrollmentSnapshot</a></span>&#8203;(java.time.LocalDate&nbsp;sDate,
                   java.lang.String&nbsp;path_to_csv)</code></th>
 <td class="colLast">
@@ -168,7 +175,7 @@ extends java.lang.Object</pre>
 </ul>
 </section>
 <!-- ========== METHOD SUMMARY =========== -->
-<section role="region">
+<section>
 <ul class="blockList">
 <li class="blockList"><a id="method.summary">
 <!--   -->
@@ -182,22 +189,56 @@ extends java.lang.Object</pre>
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code>boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#checkForOffering(java.lang.String,java.lang.String,java.lang.String)">checkForOffering</a></span>&#8203;(java.lang.String&nbsp;cName,
-                java.lang.String&nbsp;instr,
-                java.lang.String&nbsp;group)</code></th>
+<td class="colFirst"><code><a href="EnrollmentSnapshot.html" title="class in edu.odu.cs.cs350.pne">EnrollmentSnapshot</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#clone()">clone</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Check to see if an Offering with Xlist Group Exists in Snapshot</div>
+<div class="block">Generate clone of this object with deep copy</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#collectSnapshotData(java.lang.String)">collectSnapshotData</a></span>&#8203;(java.lang.String&nbsp;path_to_csv)</code></th>
+<td class="colLast">
+<div class="block">Used to Collect Snapshot Data From CSV File
+ Generates A List of Offerings</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#equals(java.lang.Object)">equals</a></span>&#8203;(java.lang.Object&nbsp;rhs)</code></th>
+<td class="colLast">
+<div class="block">Check for equality between two EnrollmentSnapshots</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>java.util.Set&lt;java.lang.String&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getCourses()">getCourses</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Get All Courses Contained in this Snapshot</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getNumOfOfferings()">getNumOfOfferings</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Get Number of Offerings in this Snapshot</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getOverallCap(java.lang.String)">getOverallCap</a></span>&#8203;(java.lang.String&nbsp;courseName)</code></th>
+<td class="colLast">
+<div class="block">Get Total Capacity for all Offerings of selected Course</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getOverallEnrollment(java.lang.String)">getOverallEnrollment</a></span>&#8203;(java.lang.String&nbsp;courseName)</code></th>
+<td class="colLast">
+<div class="block">Get Total Enrolled Students for Course</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>java.time.LocalDate</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSnapshotDate()">getSnapshotDate</a></span>()</code></th>
 <td class="colLast">
@@ -210,7 +251,7 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;java.lang.Object</h3>
-<code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></li>
+<code>finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></li>
 </ul>
 </li>
 </ul>
@@ -222,7 +263,7 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
-<section role="region">
+<section>
 <ul class="blockList">
 <li class="blockList"><a id="constructor.detail">
 <!--   -->
@@ -241,7 +282,7 @@ extends java.lang.Object</pre>
 <a id="&lt;init&gt;(java.time.LocalDate,java.lang.String)">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>EnrollmentSnapshot</h4>
 <pre>public&nbsp;EnrollmentSnapshot&#8203;(java.time.LocalDate&nbsp;sDate,
@@ -251,11 +292,23 @@ extends java.lang.Object</pre>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>sDate</code> - Date of Snapshot</dd>
-<dd><code>path</code> - Path to Snapshot Source File (CSV)</dd>
+<dd><code>path_to_csv</code> - Path to Snapshot Source File (CSV)</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>java.io.IOException</code></dd>
-<dd><code>com.opencsv.exceptions.CsvValidationException</code></dd>
 <dd><code>java.lang.Exception</code></dd>
+</dl>
+</li>
+</ul>
+<a id="&lt;init&gt;(edu.odu.cs.cs350.pne.EnrollmentSnapshot)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>EnrollmentSnapshot</h4>
+<pre>public&nbsp;EnrollmentSnapshot&#8203;(<a href="EnrollmentSnapshot.html" title="class in edu.odu.cs.cs350.pne">EnrollmentSnapshot</a>&nbsp;src)</pre>
+<div class="block">EnrollmentSnapshot Copy Constructor</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>src</code> - source EnrollmentSnapshot to copy</dd>
 </dl>
 </li>
 </ul>
@@ -263,7 +316,7 @@ extends java.lang.Object</pre>
 </ul>
 </section>
 <!-- ============ METHOD DETAIL ========== -->
-<section role="region">
+<section>
 <ul class="blockList">
 <li class="blockList"><a id="method.detail">
 <!--   -->
@@ -297,21 +350,99 @@ extends java.lang.Object</pre>
 </dl>
 </li>
 </ul>
-<a id="checkForOffering(java.lang.String,java.lang.String,java.lang.String)">
+<a id="getCourses()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCourses</h4>
+<pre class="methodSignature">public&nbsp;java.util.Set&lt;java.lang.String&gt;&nbsp;getCourses()</pre>
+<div class="block">Get All Courses Contained in this Snapshot</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Set of Course Names from this Snapshot</dd>
+</dl>
+</li>
+</ul>
+<a id="getOverallEnrollment(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getOverallEnrollment</h4>
+<pre class="methodSignature">public&nbsp;int&nbsp;getOverallEnrollment&#8203;(java.lang.String&nbsp;courseName)</pre>
+<div class="block">Get Total Enrolled Students for Course</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>courseName</code> - Desired Course Name e.g. "CS350"</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Number of Enrolled Students</dd>
+</dl>
+</li>
+</ul>
+<a id="getOverallCap(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getOverallCap</h4>
+<pre class="methodSignature">public&nbsp;int&nbsp;getOverallCap&#8203;(java.lang.String&nbsp;courseName)</pre>
+<div class="block">Get Total Capacity for all Offerings of selected Course</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>courseName</code> - Desired Course Name e.g. "CS350"</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Overall Capacity of all Offerings of Course</dd>
+</dl>
+</li>
+</ul>
+<a id="collectSnapshotData(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>collectSnapshotData</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;collectSnapshotData&#8203;(java.lang.String&nbsp;path_to_csv)
+                         throws java.lang.Exception</pre>
+<div class="block">Used to Collect Snapshot Data From CSV File
+ Generates A List of Offerings</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>path_to_csv</code> - Path to Snapshot Source File (CSV)</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.lang.Exception</code></dd>
+</dl>
+</li>
+</ul>
+<a id="clone()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>clone</h4>
+<pre class="methodSignature">public&nbsp;<a href="EnrollmentSnapshot.html" title="class in edu.odu.cs.cs350.pne">EnrollmentSnapshot</a>&nbsp;clone()</pre>
+<div class="block">Generate clone of this object with deep copy</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code>clone</code>&nbsp;in class&nbsp;<code>java.lang.Object</code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>clone of this Snapshot</dd>
+</dl>
+</li>
+</ul>
+<a id="equals(java.lang.Object)">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>checkForOffering</h4>
-<pre class="methodSignature">public&nbsp;boolean&nbsp;checkForOffering&#8203;(java.lang.String&nbsp;cName,
-                                java.lang.String&nbsp;instr,
-                                java.lang.String&nbsp;group)</pre>
-<div class="block">Check to see if an Offering with Xlist Group Exists in Snapshot</div>
+<h4>equals</h4>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;equals&#8203;(java.lang.Object&nbsp;rhs)</pre>
+<div class="block">Check for equality between two EnrollmentSnapshots</div>
 <dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>group</code> - cross-list group to identify related sections</dd>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code>equals</code>&nbsp;in class&nbsp;<code>java.lang.Object</code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>True if match found, otherwise false</dd>
+<dd>True if Equal, False if Not Equal</dd>
 </dl>
 </li>
 </ul>
