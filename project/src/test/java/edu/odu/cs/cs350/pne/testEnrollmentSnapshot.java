@@ -16,7 +16,7 @@ public class testEnrollmentSnapshot {
     @Test
     public void testDefaultConstructor() {
         EnrollmentSnapshot e1 = new EnrollmentSnapshot();
-        assertThat(e1.getSnapshotDate(), is(today));
+        assertThat(e1.getDate(), is(today));
         assertThat(e1.getNumOfOfferings(), is(0));
         assertThat(e1.getCourses().size(), is(0));
     }
@@ -34,14 +34,14 @@ public class testEnrollmentSnapshot {
         // Create Valid Snapshot
         try {
             EnrollmentSnapshot e1 = new EnrollmentSnapshot(anyDay, "src/test/data/TestFile.csv");
-            assertThat(e1.getSnapshotDate(), is(anyDay));
+            assertThat(e1.getDate(), is(anyDay));
             assertThat(e1.getNumOfOfferings(), is(4));
             assertThat(e1.getCourses().size(), is(1));
             assertThat(e1.getCourses().contains("CS250"), is(true));
             assertThat(e1.getOverallEnrollment("CS250"), is(84));
             assertThat(e1.getOverallCap("CS250"), is(200));
             EnrollmentSnapshot e2 = new EnrollmentSnapshot(anyDay, "src/test/data/BigTestFile.csv");
-            assertThat(e2.getSnapshotDate(), is(anyDay));
+            assertThat(e2.getDate(), is(anyDay));
             assertThat(e2.getNumOfOfferings(), is(258));
             assertThat(e2.getCourses().size(), is(80));
             assertThat(e2.getCourses().contains("CS250"), is(true));
@@ -53,13 +53,13 @@ public class testEnrollmentSnapshot {
     @Test
     public void testDataCollection() {
         EnrollmentSnapshot e1 = new EnrollmentSnapshot();
-        assertThat(e1.getSnapshotDate(), is(today));
+        assertThat(e1.getDate(), is(today));
         assertThat(e1.getNumOfOfferings(), is(0));
         assertThat(e1.getCourses().size(), is(0));
         try {
             // Call to Collect Snapshot Data
             e1.collectSnapshotData("src/test/data/TestFile.csv");
-            assertThat(e1.getSnapshotDate(), is(today));
+            assertThat(e1.getDate(), is(today));
             assertThat(e1.getNumOfOfferings(), is(4));
             assertThat(e1.getCourses().size(), is(1));
             assertThat(e1.getCourses().contains("CS250"), is(true));

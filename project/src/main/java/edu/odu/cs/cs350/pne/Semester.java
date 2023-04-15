@@ -2,8 +2,9 @@ package edu.odu.cs.cs350.pne;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
-
+import java.util.Set;
 import java.io.File;
 import java.io.FileReader;
 import java.io.BufferedReader;
@@ -15,6 +16,7 @@ public class Semester {
     private LocalDate PreRegistration;
     private LocalDate AddDeadline;
     private List<EnrollmentSnapshot> Snapshots = new ArrayList<>();
+    private Set<LocalDate> SnapshotDates = new HashSet<LocalDate>();
     public boolean lastSnapshot = false;
 
     /**
@@ -42,6 +44,7 @@ public class Semester {
         PreRegistration = src.PreRegistration;
         AddDeadline = src.AddDeadline;
         Snapshots = src.Snapshots;
+        SnapshotDates = src.SnapshotDates;
         lastSnapshot = src.lastSnapshot;
     }
     
@@ -88,6 +91,26 @@ public class Semester {
             case "30": return "Summer " + SemesterCode.substring(0, 4);
             default: return "";
         }
+    }
+
+    public Set<LocalDate> getSnapshotDates() {
+        return SnapshotDates;
+    }
+
+    /**
+     * Get Latest Snapshot up to date provided
+     * @param target_date date of interest
+     * @return the EnrollmentSnapshot on or directly before the date
+     */
+    public EnrollmentSnapshot getSnapshot(LocalDate target_date) {
+        EnrollmentSnapshot snapshot_match = new EnrollmentSnapshot();
+        for(EnrollmentSnapshot snapshot: Snapshots) {
+            if(target_date.isAfter(snapshot.getDate()) || 
+                target_date.isEqual(snapshot.getDate())) {
+                    snapshot_match = snapshot.clone();
+            }
+        }
+        return snapshot_match;
     }
 
     /**
@@ -177,6 +200,7 @@ public class Semester {
         String path_to_csv = Directory + file.getName();
         // Add New Snapshot to Snapshot Collection
         Snapshots.add(new EnrollmentSnapshot(snapshotDate, path_to_csv));
+        SnapshotDates.add(snapshotDate);
         // When snapshotDate is after Add Deadline, the last snapshot has been found
         if(snapshotDate.isAfter(AddDeadline)) lastSnapshot = true;
     }
@@ -203,6 +227,7 @@ public class Semester {
         if(!SemesterCode.equals(semester.SemesterCode)) return false;
         if(!PreRegistration.isEqual(semester.PreRegistration)) return false;
         if(!AddDeadline.isEqual(semester.AddDeadline)) return false;
+        if(!SnapshotDates.equals(semester.SnapshotDates)) return false;
         return Snapshots.equals(semester.Snapshots);
     }
 

@@ -48,7 +48,7 @@ public class EnrollmentSnapshot {
      * Get Snapshot Date
      * @return Date of this Snapshot
      */
-    public LocalDate getSnapshotDate() { return SnapshotDate; }
+    public LocalDate getDate() { return SnapshotDate; }
 
     /**
      * Get Number of Offerings in this Snapshot

@@ -25,7 +25,6 @@ public class testSemester{
     }
   
 
-    /* This test will examine the semester code functionality of each semester directory */
     @Test
     public void testDefaultConstructor() {
         // Test Semester With Empty Path
@@ -90,6 +89,22 @@ public class testSemester{
             Semester s3 = s1.clone();
             assertThat(s1, equalTo(s3));
             assertThat(s2, equalTo(s3));
+        } catch(Exception ex) { fail(ex.getMessage()); }
+    }
+
+    @Test
+    public void testDataExtraction() {
+        try {
+            // Create Test Semester to Read From
+            Semester s1 = new Semester(goodPath1);
+            // Get an Enrollment Snapshot by Target Date
+            EnrollmentSnapshot snapshot = s1.getSnapshot(LocalDate.of(2020, 5, 6));
+            // Inspect A Couple Offerings From Snapshot
+            assertThat(snapshot.getDate(), is(LocalDate.of(2020, 5, 3)));
+            assertThat(snapshot.getOverallCap("CS330"), is(151));
+            assertThat(snapshot.getOverallEnrollment("CS330"), is(115));
+            assertThat(snapshot.getOverallCap("CS121G"), is(220));
+            assertThat(snapshot.getOverallEnrollment("CS121G"), is(95));
         } catch(Exception ex) { fail(ex.getMessage()); }
     }
     
