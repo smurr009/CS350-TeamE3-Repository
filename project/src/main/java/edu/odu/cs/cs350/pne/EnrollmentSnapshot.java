@@ -1,15 +1,15 @@
 package edu.odu.cs.cs350.pne;
 
-import java.io.FileReader;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import java.io.IOException;
+import java.io.FileReader;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
-import com.opencsv.exceptions.CsvValidationException;
 
 public class EnrollmentSnapshot {
     private List<Offering> Offerings = new ArrayList<>();
@@ -27,9 +27,9 @@ public class EnrollmentSnapshot {
      * Create new Enrollment_Snapshot
      * @param sDate Date of Snapshot
      * @param path_to_csv Path to Snapshot Source File (CSV)
-     * @throws Exception
+     * @throws IOException when unable to read from CSV file
      */
-    public EnrollmentSnapshot(LocalDate sDate, String path_to_csv) throws Exception {
+    public EnrollmentSnapshot(LocalDate sDate, String path_to_csv) throws IOException {
         SnapshotDate = sDate;
         collectSnapshotData(path_to_csv);
     }
@@ -137,42 +137,46 @@ public class EnrollmentSnapshot {
      * Used to Collect Snapshot Data From CSV File
      * Generates A List of Offerings
      * @param path_to_csv Path to Snapshot Source File (CSV)
-     * @throws Exception
+     * @throws IOException when unable to read from CSV file
      */
-    public void collectSnapshotData(String path_to_csv) throws Exception {
-        // Read CSV File and Skip Header Line
-        CSVReader csvReader = new CSVReaderBuilder(new FileReader(path_to_csv))
-                                    .withSkipLines(1).build();
-        String[] currentLine;
-        // Loop Through All Lines in CSV File
-        while((currentLine = csvReader.readNext()) != null) {
-            // MAPPING VARIABLES TO DATA IN CSV FILE
-            String CRN = currentLine[1];
-            String SUBJ = currentLine[2];
-            String CRSE = currentLine[3];
-            int XCAP = Integer.parseInt(currentLine[6]);
-            int ENR = Integer.parseInt(currentLine[7]);
-            String LINK = currentLine[8];
-            String GROUP = currentLine[9];
-            String INSTRUCTOR = currentLine[20];
-            int CAP = 0;
-            if(currentLine[22] != "") CAP = Integer.parseInt(currentLine[22]);
-            else CAP = XCAP;
+    public void collectSnapshotData(String path_to_csv) throws IOException {
+        try {
+            // Read CSV File and Skip Header Line
+            CSVReader csvReader = new CSVReaderBuilder(new FileReader(path_to_csv))
+                                        .withSkipLines(1).build();
+            String[] currentLine;
+            // Loop Through All Lines in CSV File
+            while((currentLine = csvReader.readNext()) != null) {
+                // MAPPING VARIABLES TO DATA IN CSV FILE
+                String CRN = currentLine[1];
+                String SUBJ = currentLine[2];
+                String CRSE = currentLine[3];
+                int XCAP = Integer.parseInt(currentLine[6]);
+                int ENR = Integer.parseInt(currentLine[7]);
+                String LINK = currentLine[8];
+                String GROUP = currentLine[9];
+                String INSTRUCTOR = currentLine[20];
+                int CAP = 0;
+                if(currentLine[22] != "") CAP = Integer.parseInt(currentLine[22]);
+                else CAP = XCAP;
 
-            // EMPTY LINK OR LINK CONTAINING '1' INDICATES LECTURE SECTION
-            // DISREGARD ALL OTHER CASES (LABS OR RECITATION)
-            if(LINK == "" || LINK.contains("1")) {
-                // GENERATE NEW OFFERING AND SECTION
-                Offering offering = new Offering(SUBJ + CRSE, INSTRUCTOR, CAP, GROUP);
-                Section section = new Section(SUBJ, CRSE, CRN, XCAP, ENR);
-                // IF GROUP IS BLANK OR OFFERING DOES NOT EXIST
-                if(GROUP == "" || !checkForOffering(SUBJ + CRSE, INSTRUCTOR, GROUP)) {
-                    offering.addSection(section);
-                    addOffering(offering);
-                } else {
-                    addSectionToOffering(SUBJ + CRSE, INSTRUCTOR, GROUP, section);
+                // EMPTY LINK OR LINK CONTAINING '1' INDICATES LECTURE SECTION
+                // DISREGARD ALL OTHER CASES (LABS OR RECITATION)
+                if(LINK == "" || LINK.contains("1")) {
+                    // GENERATE NEW OFFERING AND SECTION
+                    Offering offering = new Offering(SUBJ + CRSE, INSTRUCTOR, CAP, GROUP);
+                    Section section = new Section(SUBJ, CRSE, CRN, XCAP, ENR);
+                    // IF GROUP IS BLANK OR OFFERING DOES NOT EXIST
+                    if(GROUP == "" || !checkForOffering(SUBJ + CRSE, INSTRUCTOR, GROUP)) {
+                        offering.addSection(section);
+                        addOffering(offering);
+                    } else {
+                        addSectionToOffering(SUBJ + CRSE, INSTRUCTOR, GROUP, section);
+                    }
                 }
             }
+        } catch(Exception ex) {
+            throw new IOException("Unable to Read CSV File");
         }
     }
 
