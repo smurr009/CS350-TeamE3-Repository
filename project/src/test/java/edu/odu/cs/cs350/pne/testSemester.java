@@ -64,6 +64,34 @@ public class testSemester{
         } catch(Exception ex) { fail(ex.getMessage()); }
 
     }
+
+
+    @Test
+    public void testEquality() {
+        try {
+            Semester s1 = new Semester(goodPath1);
+            Semester s2 = new Semester(goodPath1);
+            Semester s3 = new Semester(goodPath2);
+            Semester s4 = new Semester(goodPath3);
+            assertThat(s1, equalTo(s2));
+            assertThat(s1, not(equals(s3)));
+            assertThat(s1, not(equals(s4)));
+            assertThat(s3, not(equals(s4)));
+        } catch(Exception ex) { fail(ex.getMessage()); }
+    }
+
+
+    @Test
+    public void testClone() {
+        try {
+            Semester s1 = new Semester(goodPath1);
+            Semester s2 = new Semester(goodPath1);
+            assertThat(s1, equalTo(s2));
+            Semester s3 = s1.clone();
+            assertThat(s1, equalTo(s3));
+            assertThat(s2, equalTo(s3));
+        } catch(Exception ex) { fail(ex.getMessage()); }
+    }
     
 
 }

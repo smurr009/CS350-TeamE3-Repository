@@ -185,8 +185,7 @@ public class EnrollmentSnapshot {
      * @return clone of this Snapshot
      */
     public EnrollmentSnapshot clone() {
-        EnrollmentSnapshot copy = new EnrollmentSnapshot(this);
-        return copy;
+        return new EnrollmentSnapshot(this);
     }
 
     /**
@@ -199,11 +198,9 @@ public class EnrollmentSnapshot {
         // Convert object type to EnrollmentSnapshot
         EnrollmentSnapshot rhsSnapshot = (EnrollmentSnapshot)rhs;
         // Validate EnrollmentSnapshot Data Members
-        if(SnapshotDate != rhsSnapshot.SnapshotDate) return false;
+        if(!SnapshotDate.isEqual(rhsSnapshot.SnapshotDate)) return false;
         if(!Courses.equals(rhsSnapshot.Courses)) return false;
         if(getNumOfOfferings() != rhsSnapshot.getNumOfOfferings()) return false;
         return Offerings.equals(rhsSnapshot.Offerings);
     }
-
-
 }

@@ -26,11 +26,11 @@ public class testEnrollmentSnapshot {
         // Attempt To Create Snapshot With Empty Path
         try { 
             EnrollmentSnapshot ebad1 = new EnrollmentSnapshot(anyDay, "");
-        } catch(Exception ex) {  }
+        } catch(Exception ex) { assertThat(ex.getMessage(), is("Unable to Read CSV File")); }
         // Attempt To Create Snapshot With Bad Path
         try { 
             EnrollmentSnapshot ebad2 = new EnrollmentSnapshot(anyDay, "/path_to_nowhere");
-        } catch(Exception ex) {  }
+        } catch(Exception ex) { assertThat(ex.getMessage(), is("Unable to Read CSV File")); }
         // Create Valid Snapshot
         try {
             EnrollmentSnapshot e1 = new EnrollmentSnapshot(anyDay, "src/test/data/TestFile.csv");
@@ -47,7 +47,7 @@ public class testEnrollmentSnapshot {
             assertThat(e2.getCourses().contains("CS250"), is(true));
             assertThat(e2.getOverallEnrollment("CS250"), is(84));
             assertThat(e2.getOverallCap("CS250"), is(200));
-        } catch(Exception ex) { fail("File Does Exist"); }
+        } catch(Exception ex) { fail(ex.getMessage()); }
     }
 
     @Test
@@ -65,7 +65,7 @@ public class testEnrollmentSnapshot {
             assertThat(e1.getCourses().contains("CS250"), is(true));
             assertThat(e1.getOverallEnrollment("CS250"), is(84));
             assertThat(e1.getOverallCap("CS250"), is(200));
-        } catch(Exception ex) { fail("File Does Exist"); }
+        } catch(Exception ex) { fail(ex.getMessage()); }
     }
 
     @Test
@@ -74,10 +74,11 @@ public class testEnrollmentSnapshot {
             EnrollmentSnapshot e1 = new EnrollmentSnapshot(today, "src/test/data/TestFile.csv");
             EnrollmentSnapshot e2 = new EnrollmentSnapshot(today, "src/test/data/TestFile.csv");
             EnrollmentSnapshot e3 = new EnrollmentSnapshot(today, "src/test/data/BigTestFile.csv");
+            EnrollmentSnapshot e4 = new EnrollmentSnapshot(anyDay, "src/test/data/BigTestFile.csv");
             assertThat(e1, equalTo(e2));
             assertThat(e1, not(equals(e3)));
-        } catch(Exception ex) { fail("File Does Exist"); }
-        
+            assertThat(e4, not(equals(e3)));
+        } catch(Exception ex) { fail(ex.getMessage()); }
     }   
 
     @Test
@@ -89,7 +90,7 @@ public class testEnrollmentSnapshot {
             EnrollmentSnapshot e3 = e1.clone();
             assertThat(e1, equalTo(e3));
             assertThat(e2, equalTo(e3));
-        } catch(Exception ex) { fail("File Does Exist"); }
+        } catch(Exception ex) { fail(ex.getMessage()); }
     }
 
 }

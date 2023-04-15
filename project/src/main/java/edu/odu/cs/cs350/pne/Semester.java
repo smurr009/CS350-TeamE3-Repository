@@ -31,6 +31,19 @@ public class Semester {
             GenerateSnapshots();
         } else throw new IOException("Invalid Path Provided");
     }
+
+    /**
+     * Semester Copy Constructor
+     * @param src source Semester to copy
+     */
+    public Semester(Semester src) {
+        Directory = src.Directory;
+        SemesterCode = src.SemesterCode;
+        PreRegistration = src.PreRegistration;
+        AddDeadline = src.AddDeadline;
+        Snapshots = src.Snapshots;
+        lastSnapshot = src.lastSnapshot;
+    }
     
     /**
      * Get Directory for Semester
@@ -125,11 +138,11 @@ public class Semester {
 
     /**
      * Converts a filename into Date
-     * @param filename Filename to be parsed (must be 4 characters at end)
+     * @param filename Filename to be parsed (must end with ".csv")
      * @return LocalDate extracted from filename
      */
     private LocalDate DateFromFilename(String filename) {
-        return LocalDate.parse(filename.substring(0, filename.length() - 4));
+        return LocalDate.parse(filename.replace(".csv", ""));
     }
 
     /**
@@ -159,9 +172,38 @@ public class Semester {
      * @throws Exception if unable to read snapshot data
      */
     private void InsertSnapshot(File file) throws IOException {
-        LocalDate csv_date = DateFromFilename(file.getName());
+        // Get Snapshot Date and CSV Path
+        LocalDate snapshotDate = DateFromFilename(file.getName());
         String path_to_csv = Directory + file.getName();
-        Snapshots.add(new EnrollmentSnapshot(csv_date, path_to_csv));
-        if(csv_date.isAfter(AddDeadline)) lastSnapshot = true;
+        // Add New Snapshot to Snapshot Collection
+        Snapshots.add(new EnrollmentSnapshot(snapshotDate, path_to_csv));
+        // When snapshotDate is after Add Deadline, the last snapshot has been found
+        if(snapshotDate.isAfter(AddDeadline)) lastSnapshot = true;
     }
+
+    /**
+     * Generate clone of this object with deep copy
+     * @return clone of this Semster
+     */
+    public Semester clone() {
+        return new Semester(this);
+    }
+
+    /**
+     * Check for equality between two Semesters
+     * @return Ture if Equal, False if Not Equal
+     */
+    public boolean equals(Object rhs) {
+        // Check if same object type
+        if(!(rhs instanceof Semester)) return false;
+        // Convert object type to Semester
+        Semester semester = (Semester)rhs;
+        // Validate Semester Data Members
+        if(!Directory.equals(semester.Directory)) return false;
+        if(!SemesterCode.equals(semester.SemesterCode)) return false;
+        if(!PreRegistration.isEqual(semester.PreRegistration)) return false;
+        if(!AddDeadline.isEqual(semester.AddDeadline)) return false;
+        return Snapshots.equals(semester.Snapshots);
+    }
+
 }
