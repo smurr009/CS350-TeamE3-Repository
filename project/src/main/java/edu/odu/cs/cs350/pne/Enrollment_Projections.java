@@ -1,50 +1,41 @@
 package edu.odu.cs.cs350.pne;
-
-import java.time.LocalDate;
+import java.util.List;
+import java.util.ArrayList;
 
 //Needs to get data from EnrollmentSpanshots
 public class Enrollment_Projections {
-    LocalDate currentEndDate;
-    LocalDate historicalEndDate;
-
+    private List<Semester> Semesters = new ArrayList<>();
     /**
      * The default Constructor
      */
     public Enrollment_Projections()
     {
-        currentEndDate = LocalDate.now();
-        historicalEndDate =  LocalDate.now();
+        
     }
     
     /**
-     * Create a new Enrollment_Projection
-     * @param ceDate
-     * @param heDate
+     * Copy Constructor
+     * @param src Source Enrollment Projections Copy
      */
-    public Enrollment_Projections(LocalDate ceDate, LocalDate heDate)
+    public Enrollment_Projections(Enrollment_Projections src)
     {
-        currentEndDate = ceDate;
-        historicalEndDate = heDate;
+        
     }
     /**
      * Calculates the projection for the future semester with data from the current and historical snapshots
-     * @param cDate
-     * @param hDate
+     *  
      */
-    public void Enrollment_Projection_Formula(LocalDate cDate, LocalDate hDate)
+    public void Enrollment_Projection_Formula()
     {
         
     }
     
     /**
      * Calculates the interpolation between the current and historical snapshots
-     * @param cDate
-     * @param haDate
-     * @param hbDate
+     * 
      */
-    public void Interpolation(LocalDate cDate, LocalDate haDate, LocalDate hbDate)
+    public void Interpolation()
     {
-        //Current and historical enrollments as well (I don't understand the formula all that well)
-        //Fill in later
+        
     }
 }
