@@ -3,31 +3,16 @@ package edu.odu.cs.cs350.pne;
 //imports from apache 
 //import org.apache.commons.cli.CommandLine;
 //import org.apache.commons.cli.CommandLineParser;
-//import edu.odu.cs.cs350.pne.inputParameters;
+import edu.odu.cs.cs350.pne.inputParameters;
 
 public class CLI {
 
     public static void CreateInputObjects(String input1, String input2, String input3, String input4)
     {
-        inputParameters stringOne = new inputParameters(1);
-        stringOne.setString(input1);
-        stringOne.executeCLI();
-
-        inputParameters stringTwo = new inputParameters(2);
-        stringTwo.setString(input2);
-        stringTwo.executeCLI();
-
-        inputParameters stringThree = new inputParameters(3);
-        stringThree.setString(input3);
-        stringThree.executeCLI();
-
-        inputParameters stringFour = new inputParameters(4);
-        stringFour.setString(input4);
-        stringFour.executeCLI();
 
     }
 
-    public static void main (String [] args){
+    public static void main(String [] args){
 
         String parameter1 = "";
         String parameter2 = "";
@@ -71,8 +56,24 @@ public class CLI {
 
             }
 
-            // create the relevant input parameter objects 
-            CreateInputObjects(parameter1, parameter2, parameter3, parameter4);
+            // create the relevant input parameter objects
+            inputParameters stringOne = new inputParameters(1);
+            stringOne.setString(parameter1);
+            stringOne.executeCLI();
+    
+            inputParameters stringTwo = new inputParameters(2);
+            stringTwo.setString(parameter2);
+            stringTwo.executeCLI();
+    
+            inputParameters stringThree = new inputParameters(3);
+            stringThree.setString(parameter3);
+            stringThree.executeCLI();
+    
+            inputParameters stringFour = new inputParameters(4);
+            stringFour.setString(parameter4);
+            stringFour.executeCLI();
+
+            //CreateInputObjects(parameter1, parameter2, parameter3, parameter4);
         }
 
     }
