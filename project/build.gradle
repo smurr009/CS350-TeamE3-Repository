@@ -26,7 +26,7 @@ configurations{
     intTestImplementation.extendsFrom implementation
     intTestRunTimeOnly.extendsFrom runtimeOnly
 }
-dependcies{
+dependencies{
     intTestImplementation 'org,junit.jupiter:junit-jupiter:5.7.1'
 }
 application { 
@@ -60,7 +60,7 @@ spotbugsMain {
     effort = 'max'
     reportLevel = 'medium'
     reports{
-        xml.enalbed = ignoreFailures
+        xml.enabled = ignoreFailures
         html.enabled = true
     }
 }
