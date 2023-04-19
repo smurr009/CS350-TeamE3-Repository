@@ -160,12 +160,12 @@ public class Offering {
         // Convert object type to Offering
         Offering rhsOffering = (Offering)rhs;
         // Validate Offering Data Members
-        if(CourseName != rhsOffering.CourseName) return false;
-        if(Instructor != rhsOffering.Instructor) return false;
+        if(!CourseName.equals(rhsOffering.CourseName)) return false;
+        if(!Instructor.equals(rhsOffering.Instructor)) return false;
+        if(!XlstGroup.equals(rhsOffering.XlstGroup)) return false;
         if(OverallCap != rhsOffering.OverallCap) return false;
-        if(XlstGroup != rhsOffering.XlstGroup) return false;
         // Validate List of Sections as Final Step
-        return this.Sections.equals(rhsOffering.Sections);
+        return Sections.equals(rhsOffering.Sections);
     }
 
 }

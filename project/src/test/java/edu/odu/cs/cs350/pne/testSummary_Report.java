@@ -5,6 +5,9 @@ import org.junit.jupiter.api.Test;
 //import static org.junit.jupiter.api.Assertions.*;
 import static org.hamcrest.MatcherAssert.assertThat; 
 import static org.hamcrest.Matchers.*;
+// import java.io.File;  // Import the File class
+// import java.io.FileNotFoundException;  // Import this class to handle errors
+// import java.util.Scanner; // Import the Scanner class to read text files
 
 public class testSummary_Report {
  
@@ -26,3 +29,4 @@ public class testSummary_Report {
         //assertThat(c.getCourseName(), is("CS350"));
     }
 }
+//To Do: write a test that will input schedule from a file and output
