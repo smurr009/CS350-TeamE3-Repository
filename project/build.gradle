@@ -1,6 +1,8 @@
 plugins {
    id 'java'
    id 'application'
+   id 'jacoco'
+   id "com.github.spotbugs" version "5.0.14"
 }
 
 java {
@@ -10,7 +12,23 @@ java {
 repositories {
     mavenCentral()
 }
-
+///////////////////////SYSTEM INTEGRATION TEST//////////////////////
+sourceSets{
+    intTest{
+        compileClasspath += sourceSets.main.output
+        runtimeClasspath += sourceSets.main.output
+        java{
+            srcDirs = ['edu/odu/cs/cs350/pne/SystemTest.java']
+        }
+    }
+}
+configurations{
+    intTestImplementation.extendsFrom implementation
+    intTestRunTimeOnly.extendsFrom runtimeOnly
+}
+dependcies{
+    intTestImplementation 'org,junit.jupiter:junit-jupiter:5.7.1'
+}
 application { 
     mainClass = 'packages.edu.odu.cs.cs350.pne.Enrollment_Projections'
 }
@@ -22,7 +40,33 @@ dependencies {
     implementation 'org.apache.poi:poi:5.1.0'
     implementation 'org.apache.poi:poi-ooxml:5.1.0'
 }
+tasks.register('integrationTest', Test){
+    description = 'Runs Integration tests.'
+    group = 'verification'
 
+    testClassesDirs = sourceSets.intTest.output.testClassesDirs
+    classPath = sourceSets.intTest.runtimeClasspath
+    shouldRunAfter Test
+
+    useJunitPlatforms()
+
+    testLogging{
+        events 'passed'
+    }
+}
+////////////////////////////End Integration Test//////////////////////
+spotbugsMain {
+    ignoreFailures = true
+    effort = 'max'
+    reportLevel = 'medium'
+    reports{
+        xml.enalbed = ignoreFailures
+        html.enabled = true
+    }
+}
+
+spotbugsTest.enabled = false 
+archivesBaseName = 'EnrollmentProjection'
 test {
     ignoreFailures = true
     useJUnitPlatform()
