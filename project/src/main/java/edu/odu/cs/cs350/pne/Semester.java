@@ -230,5 +230,4 @@ public class Semester {
         if(!SnapshotDates.equals(semester.SnapshotDates)) return false;
         return Snapshots.equals(semester.Snapshots);
     }
-
 }
