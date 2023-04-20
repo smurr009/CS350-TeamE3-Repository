@@ -28,6 +28,43 @@ public class testCommandLine {
         
     }
 
+    // test the users ability to create a list of desired directory locations to search
+    @Test
+    public void testInputParameters1()
+    {
+       // test user ability to request one directory to search (expecting YYYYSM format) 
+       // YYYY = year. SM = semester code.
+       inputParameters input = new inputParameters(1);
+       try{
+       input.setString("202110");
+       input.AddToList(input.getString());
+       assertFalse(input.semesterDirList.isEmpty());
+       assertEquals(input.semesterDirList.size(), 1);
+       } catch (FileNotFoundException e) {};
+    
+       // what if the user provides an inaccurate dir name
+       inputParameters input2 = new inputParameters(1);
+       try{
+       input2.setString("204710");
+       input2.AddToList(input.getString());
+       fail("Expected FileNotFoundException");
+       } catch (FileNotFoundException e) {};
+
+       // test the ability to add multiple directories to the list 
+       // the directories will be one complete string that needs to be parsed
+       inputParameters input3 = new inputParameters(1);
+       input3.setString("202010 202130");
+       try {
+       input3.AddToList(input3.getString());
+       assertFalse(input3.semesterDirList.isEmpty());
+       File testFile = new File("/CS350-TeamE3-Repository/project/src/test/data/History/" + "202010");
+       File testFile2 = new File("/CS350-TeamE3-Repository/project/src/test/data/History/" + "202130");
+       assertEquals(input3.semesterDirList.get(0), testFile);
+       assertEquals(input3.semesterDirList.get(1), testFile2);
+       } catch (FileNotFoundException e){};
+
+    }
+
     // test the attachment of the input parameters type 2
     // Type 2 being the connection to the enrollment projection files
     @Test
@@ -77,4 +114,5 @@ public class testCommandLine {
         } catch (IOException e){}
         assertTrue(outFile.exists());
     }
+
 }
