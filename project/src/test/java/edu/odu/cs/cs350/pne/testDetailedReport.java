@@ -20,4 +20,16 @@ public class testDetailedReport {
             test.WriteToExcel();
         } catch(Exception ex) { fail("failed to create excel"); }
     }
+
+
+
+    @Test
+    public void testSummaryReportChanges()
+    {
+        Detailed_Report test = new Detailed_Report();
+        try {
+            test.WriteToExcel();
+        } catch(Exception ex) { fail("failed to create excel"); }
+    }
+
 }
