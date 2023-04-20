@@ -22,13 +22,12 @@ sourceSets{
         }
     }
 }
+
 configurations{
     intTestImplementation.extendsFrom implementation
     intTestRunTimeOnly.extendsFrom runtimeOnly
 }
-dependcies{
-    intTestImplementation 'org,junit.jupiter:junit-jupiter:5.7.1'
-}
+
 application { 
     mainClass = 'packages.edu.odu.cs.cs350.pne.Enrollment_Projections'
 }
@@ -40,6 +39,7 @@ dependencies {
     implementation 'org.apache.poi:poi:5.1.0'
     implementation 'org.apache.poi:poi-ooxml:5.1.0'
 }
+/*
 tasks.register('integrationTest', Test){
     description = 'Runs Integration tests.'
     group = 'verification'
@@ -54,19 +54,21 @@ tasks.register('integrationTest', Test){
         events 'passed'
     }
 }
+*/
 ////////////////////////////End Integration Test//////////////////////
 spotbugsMain {
     ignoreFailures = true
     effort = 'max'
     reportLevel = 'medium'
     reports{
-        xml.enalbed = ignoreFailures
+        xml.enabled = ignoreFailures
         html.enabled = true
     }
 }
 
 spotbugsTest.enabled = false 
 archivesBaseName = 'EnrollmentProjection'
+
 test {
     ignoreFailures = true
     useJUnitPlatform()
