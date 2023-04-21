@@ -39,10 +39,5 @@ public class Detailed_Report
     {
         System.out.println("Starting detailed Summary report worksheet....");
         HSSFWorkbook workbook = new HSSFWorkbook();
-
-        for(int i = 0)
-        {
-            //I can use this to create sheets for courses
-        }
     }
 }
