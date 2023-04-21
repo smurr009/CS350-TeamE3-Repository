@@ -5,23 +5,21 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.math.*;
 //Needs to get data from EnrollmentSpanshots
 public class Enrollment_Projections {
+    private  Map<String, Integer> Course_and_Enrollment = new HashMap<String, Integer>();
     private List<Semester> Semesters = new ArrayList<>();
 
     /**
      * Calculates the projection for the future semester with data from the current and historical snapshots
      *  
      */
-    public int Enrollment_Projection_Formula(LocalDate targetDate)
+    void Enrollment_Projection_Formula(LocalDate targetDate)
     {
      /**
-      *  Current (projection) = [current(last day) /historical(last day)] historical (enrollment on add deadline)
+      *  Current (projection) = [current(last day) /historical(last day)] * historical (enrollment on add deadline)
       */
-      
-      //This is to hold the enrollment Projections for all of the courses
-      Vector<Integer> enrollment_Projections = new Vector<Integer>();
-      Map<String, Integer> Course_and_Enrollment = new HashMap<String, Integer>();
       //For two semesters (one historical and one current)
       if(Semesters.size() == 2)
       {
@@ -34,22 +32,32 @@ public class Enrollment_Projections {
         for(String courseName : historicalSnapshot.getCourses())
         {
           //A list of courses and the number of students enrolled at this date and time
-          Course_and_Enrollment.put(courseName, historicalSnapshot.getOverallEnrollment(courseName));
+          int historicalATDead =  historicalSnapshot.getOverallEnrollment(courseName);
+          int currentAtTarget = currentSnapshot.getOverallEnrollment(courseName);
+          int historicalAtTarget = historical.getSnapshot(targetDate).getOverallEnrollment(courseName);
+          int currentAtDeadline = (currentAtTarget / historicalAtTarget) * historicalATDead;
+          Course_and_Enrollment.put(courseName, Math.round(currentAtDeadline));
         }
       }
       //For semesters where there's more than two
-      for(int i = 0; i < Semesters.size(); i++)
+      else
       {
-        Semester current = Semesters.get(Semesters.size() - 1);
-        //A vector to hold historical semesters
-        Vector <Semester> historicalSemesters = new Vector<Semester>();
-        for(int j = 0; j < Semesters.size()-1; i++)
-        {
-          historicalSemesters.add(Semesters.get(j));
-        }
         
-
+        for(int i = 0; i < Semesters.size(); i++)
+        {
+          Semester current = Semesters.get(Semesters.size() - 1);
+          EnrollmentSnapshot currenSnap = current.getSnapshot(targetDate);
+          //A vector to hold historical semesters
+          Vector <Semester> historicalSemesters = new Vector<Semester>();
+          Vector<EnrollmentSnapshot> historicalSnapshots = new Vector<EnrollmentSnapshot>();
+          for(int j = 0; j < Semesters.size()-1; i++)
+          {
+            historicalSemesters.add(Semesters.get(j)); //Add the historical semesters together
+            historicalSnapshots.add(historicalSemesters.get(j).getSnapshot(targetDate)); //Add all the historical snapshat at the target date together
+          }
+        }
       }
+      
     }
     
     /**
@@ -61,5 +69,10 @@ public class Enrollment_Projections {
       int interpolation = 0;
 
       return interpolation;  
+    }
+
+    public int getSpecificEnrollment(String SemCourseName)
+    {
+      return Course_and_Enrollment.get(SemCourseName);
     }
 }
