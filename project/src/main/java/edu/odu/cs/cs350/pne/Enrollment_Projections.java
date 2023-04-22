@@ -41,7 +41,7 @@ public class Enrollment_Projections {
         }
       }
       //For semesters where there's more than two
-      else
+      else if(Semesters.size() <= 4)
       {
         Semester current = Semesters.get(Semesters.size() - 1);
         EnrollmentSnapshot currenSnap = current.getSnapshot(targetDate);
@@ -58,6 +58,11 @@ public class Enrollment_Projections {
         int historicalAtTargetD;
         int currentATDeadline;
       }
+      //This goes for when there something like 5 semesters
+      else
+      {
+        Interpolation();
+      }
       
     }
     
@@ -65,24 +70,16 @@ public class Enrollment_Projections {
      * Calculates the interpolation between the current and historical snapshots
      * 
      */
-    public void Interpolation(LocalDate aDate, LocalDate bDate)
+    public void Interpolation()
     {
       int interpolation = 0;
-      if(Semesters.size() >= 4)
+      Semester current = Semesters.get(Semesters.size()-1);
+      Vector <Semester> historicalSemesters = new Vector<Semester>();
+      Vector <EnrollmentSnapshot> historicalSemestersSnapshots = new Vector<EnrollmentSnapshot>();
+      for(int k = 0; k < Semesters.size()-1; k++)
       {
-        Semester current = Semesters.get(Semesters.size()-1);
-        Vector <Semester> historicalSemesters = new Vector<Semester>();
-        Vector <EnrollmentSnapshot> historicalSemestersSnapshots = new Vector<EnrollmentSnapshot>();
-        for(int k = 0; k < Semesters.size()-1; k++)
-        {
-          historicalSemesters.add(Semesters.get(k));  //This gets the historical semesters
-        }
+        historicalSemesters.add(Semesters.get(k));  //This gets the historical semesters
       }
-      else
-      {
-
-      }
-       
     }
 
     public int getSpecificEnrollment(String SemCourseName)
