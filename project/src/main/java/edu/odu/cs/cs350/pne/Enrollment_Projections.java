@@ -8,6 +8,7 @@ import java.util.Map;
 import java.math.*;
 //Needs to get data from EnrollmentSpanshots
 public class Enrollment_Projections {
+    
     private  Map<String, Integer> Course_and_Enrollment = new HashMap<String, Integer>();
     private List<Semester> Semesters = new ArrayList<>();
 
@@ -42,7 +43,6 @@ public class Enrollment_Projections {
       //For semesters where there's more than two
       else
       {
-        
         for(int i = 0; i < Semesters.size(); i++)
         {
           Semester current = Semesters.get(Semesters.size() - 1);
@@ -50,12 +50,16 @@ public class Enrollment_Projections {
           //A vector to hold historical semesters
           Vector <Semester> historicalSemesters = new Vector<Semester>();
           Vector<EnrollmentSnapshot> historicalSnapshots = new Vector<EnrollmentSnapshot>();
+          ////Add the historical semesters and the snapshots together in the vectors
           for(int j = 0; j < Semesters.size()-1; i++)
           {
-            historicalSemesters.add(Semesters.get(j)); //Add the historical semesters together
-            historicalSnapshots.add(historicalSemesters.get(j).getSnapshot(targetDate)); //Add all the historical snapshat at the target date together
+            historicalSemesters.add(Semesters.get(j));  //This gets the historical semesters
+            historicalSnapshots.add(historicalSemesters.get(j).getSnapshot(targetDate)); //This gets the snapshots of the current date
           }
         }
+        int currentAtTargetD;
+        int historicalAtTargetD;
+        int currentATDeadline;
       }
       
     }
@@ -67,7 +71,6 @@ public class Enrollment_Projections {
     public int Interpolation()
     {
       int interpolation = 0;
-
       return interpolation;  
     }
 
