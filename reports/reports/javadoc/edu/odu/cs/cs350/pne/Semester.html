@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -88,13 +88,13 @@ loadScripts(document, 'script');</script>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
@@ -138,6 +138,29 @@ extends java.lang.Object</pre>
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<section>
+<ul class="blockList">
+<li class="blockList"><a id="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colSecond" scope="col">Field</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#lastSnapshot">lastSnapshot</a></span></code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+</section>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <section>
 <ul class="blockList">
@@ -152,10 +175,17 @@ extends java.lang.Object</pre>
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr class="altColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.time.LocalDate,java.time.LocalDate,int)">Semester</a></span>&#8203;(java.time.LocalDate&nbsp;start,
-        java.time.LocalDate&nbsp;end,
-        int&nbsp;semester)</code></th>
-<td class="colLast">&nbsp;</td>
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(edu.odu.cs.cs350.pne.Semester)">Semester</a></span>&#8203;(<a href="Semester.html" title="class in edu.odu.cs.cs350.pne">Semester</a>&nbsp;src)</code></th>
+<td class="colLast">
+<div class="block">Semester Copy Constructor</div>
+</td>
+</tr>
+<tr class="rowColor">
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.lang.String)">Semester</a></span>&#8203;(java.lang.String&nbsp;path_to_semester)</code></th>
+<td class="colLast">
+<div class="block">Create New Semester Object
+ Collects Registration Dates and Generates Snapshots On Creation</div>
+</td>
 </tr>
 </table>
 </li>
@@ -176,23 +206,73 @@ extends java.lang.Object</pre>
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code>java.time.LocalDate</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAddDeadlineDate()">getAddDeadlineDate</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colFirst"><code><a href="Semester.html" title="class in edu.odu.cs.cs350.pne">Semester</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#clone()">clone</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Generate clone of this object with deep copy</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code>java.time.LocalDate</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getPreRegistrationDate()">getPreRegistrationDate</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#equals(java.lang.Object)">equals</a></span>&#8203;(java.lang.Object&nbsp;rhs)</code></th>
+<td class="colLast">
+<div class="block">Check for equality between two Semesters</div>
+</td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code>int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSemesterCode()">getSemesterCode</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colFirst"><code>java.time.LocalDate</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAddDeadline()">getAddDeadline</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Get Add Deadline for this Semester</div>
+</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#nameString()">nameString</a></span>()</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getDirectory()">getDirectory</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Get Directory for Semester</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>java.time.LocalDate</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getPreRegistration()">getPreRegistration</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Get Pre-registration Date for this Semester</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSemesterCode()">getSemesterCode</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Get Semester Code for this Semester</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSemesterName()">getSemesterName</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Get Semester Name extracted from Semester Code
+ First 4 Characters: Academic Year
+ Last 2 Characters: 10 = Fall, 20 = Spring, 30 = Summer</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code><a href="EnrollmentSnapshot.html" title="class in edu.odu.cs.cs350.pne">EnrollmentSnapshot</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSnapshot(java.time.LocalDate)">getSnapshot</a></span>&#8203;(java.time.LocalDate&nbsp;target_date)</code></th>
+<td class="colLast">
+<div class="block">Get Latest Snapshot up to date provided</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSnapshotCount()">getSnapshotCount</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Get Number of Snapshots in Semester</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>java.util.Set&lt;java.time.LocalDate&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSnapshotDates()">getSnapshotDates</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 </table>
@@ -201,7 +281,7 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;java.lang.Object</h3>
-<code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></li>
+<code>finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></li>
 </ul>
 </li>
 </ul>
@@ -212,6 +292,25 @@ extends java.lang.Object</pre>
 <div class="details">
 <ul class="blockList">
 <li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<section>
+<ul class="blockList">
+<li class="blockList"><a id="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a id="lastSnapshot">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>lastSnapshot</h4>
+<pre>public&nbsp;boolean lastSnapshot</pre>
+</li>
+</ul>
+</li>
+</ul>
+</section>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <section>
 <ul class="blockList">
@@ -219,15 +318,36 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a id="&lt;init&gt;(java.time.LocalDate,java.time.LocalDate,int)">
+<a id="&lt;init&gt;(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>Semester</h4>
+<pre>public&nbsp;Semester&#8203;(java.lang.String&nbsp;path_to_semester)
+         throws java.io.IOException</pre>
+<div class="block">Create New Semester Object
+ Collects Registration Dates and Generates Snapshots On Creation</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>path_to_semester</code> - Path to Loaction of Semester Data</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.io.IOException</code> - when insufficent snapshot data is provided</dd>
+</dl>
+</li>
+</ul>
+<a id="&lt;init&gt;(edu.odu.cs.cs350.pne.Semester)">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>Semester</h4>
-<pre>public&nbsp;Semester&#8203;(java.time.LocalDate&nbsp;start,
-                java.time.LocalDate&nbsp;end,
-                int&nbsp;semester)</pre>
+<pre>public&nbsp;Semester&#8203;(<a href="Semester.html" title="class in edu.odu.cs.cs350.pne">Semester</a>&nbsp;src)</pre>
+<div class="block">Semester Copy Constructor</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>src</code> - source Semester to copy</dd>
+</dl>
 </li>
 </ul>
 </li>
@@ -240,22 +360,18 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a id="getPreRegistrationDate()">
+<a id="getDirectory()">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getPreRegistrationDate</h4>
-<pre class="methodSignature">public&nbsp;java.time.LocalDate&nbsp;getPreRegistrationDate()</pre>
-</li>
-</ul>
-<a id="getAddDeadlineDate()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getAddDeadlineDate</h4>
-<pre class="methodSignature">public&nbsp;java.time.LocalDate&nbsp;getAddDeadlineDate()</pre>
+<h4>getDirectory</h4>
+<pre class="methodSignature">public&nbsp;java.lang.String&nbsp;getDirectory()</pre>
+<div class="block">Get Directory for Semester</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Directory or Path To Semester Data</dd>
+</dl>
 </li>
 </ul>
 <a id="getSemesterCode()">
@@ -264,16 +380,127 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getSemesterCode</h4>
-<pre class="methodSignature">public&nbsp;int&nbsp;getSemesterCode()</pre>
+<pre class="methodSignature">public&nbsp;java.lang.String&nbsp;getSemesterCode()</pre>
+<div class="block">Get Semester Code for this Semester</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Semester Code</dd>
+</dl>
 </li>
 </ul>
-<a id="nameString()">
+<a id="getPreRegistration()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPreRegistration</h4>
+<pre class="methodSignature">public&nbsp;java.time.LocalDate&nbsp;getPreRegistration()</pre>
+<div class="block">Get Pre-registration Date for this Semester</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Pre-registration Date (Start of Registration Period)</dd>
+</dl>
+</li>
+</ul>
+<a id="getAddDeadline()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAddDeadline</h4>
+<pre class="methodSignature">public&nbsp;java.time.LocalDate&nbsp;getAddDeadline()</pre>
+<div class="block">Get Add Deadline for this Semester</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Add Deadline Date (End of Registration Period)</dd>
+</dl>
+</li>
+</ul>
+<a id="getSnapshotCount()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSnapshotCount</h4>
+<pre class="methodSignature">public&nbsp;int&nbsp;getSnapshotCount()</pre>
+<div class="block">Get Number of Snapshots in Semester</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Number of Snapshots</dd>
+</dl>
+</li>
+</ul>
+<a id="getSemesterName()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSemesterName</h4>
+<pre class="methodSignature">public&nbsp;java.lang.String&nbsp;getSemesterName()</pre>
+<div class="block">Get Semester Name extracted from Semester Code
+ First 4 Characters: Academic Year
+ Last 2 Characters: 10 = Fall, 20 = Spring, 30 = Summer</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Readable Semester Name e.g. "Fall 2020"</dd>
+</dl>
+</li>
+</ul>
+<a id="getSnapshotDates()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSnapshotDates</h4>
+<pre class="methodSignature">public&nbsp;java.util.Set&lt;java.time.LocalDate&gt;&nbsp;getSnapshotDates()</pre>
+</li>
+</ul>
+<a id="getSnapshot(java.time.LocalDate)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSnapshot</h4>
+<pre class="methodSignature">public&nbsp;<a href="EnrollmentSnapshot.html" title="class in edu.odu.cs.cs350.pne">EnrollmentSnapshot</a>&nbsp;getSnapshot&#8203;(java.time.LocalDate&nbsp;target_date)</pre>
+<div class="block">Get Latest Snapshot up to date provided</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>target_date</code> - date of interest</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the EnrollmentSnapshot on or directly before the date</dd>
+</dl>
+</li>
+</ul>
+<a id="clone()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>clone</h4>
+<pre class="methodSignature">public&nbsp;<a href="Semester.html" title="class in edu.odu.cs.cs350.pne">Semester</a>&nbsp;clone()</pre>
+<div class="block">Generate clone of this object with deep copy</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code>clone</code>&nbsp;in class&nbsp;<code>java.lang.Object</code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>clone of this Semster</dd>
+</dl>
+</li>
+</ul>
+<a id="equals(java.lang.Object)">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>nameString</h4>
-<pre class="methodSignature">public&nbsp;java.lang.String&nbsp;nameString()</pre>
+<h4>equals</h4>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;equals&#8203;(java.lang.Object&nbsp;rhs)</pre>
+<div class="block">Check for equality between two Semesters</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code>equals</code>&nbsp;in class&nbsp;<code>java.lang.Object</code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Ture if Equal, False if Not Equal</dd>
+</dl>
 </li>
 </ul>
 </li>
@@ -327,13 +554,13 @@ extends java.lang.Object</pre>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>

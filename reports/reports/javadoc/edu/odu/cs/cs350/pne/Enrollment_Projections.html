@@ -153,16 +153,7 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="altColor">
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E()">Enrollment_Projections</a></span>()</code></th>
-<td class="colLast">
-<div class="block">The default Constructor</div>
-</td>
-</tr>
-<tr class="rowColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.time.LocalDate,java.time.LocalDate)">Enrollment_Projections</a></span>&#8203;(java.time.LocalDate&nbsp;ceDate,
-                      java.time.LocalDate&nbsp;heDate)</code></th>
-<td class="colLast">
-<div class="block">Create a new Enrollment_Projection</div>
-</td>
+<td class="colLast">&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -183,18 +174,13 @@ extends java.lang.Object</pre>
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#Enrollment_Projection_Formula(java.time.LocalDate,java.time.LocalDate)">Enrollment_Projection_Formula</a></span>&#8203;(java.time.LocalDate&nbsp;cDate,
-                             java.time.LocalDate&nbsp;hDate)</code></th>
-<td class="colLast">
-<div class="block">Calculates the projection for the future semester with data from the current and historical snapshots</div>
-</td>
+<td class="colFirst"><code>int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSpecificEnrollment(java.lang.String)">getSpecificEnrollment</a></span>&#8203;(java.lang.String&nbsp;SemCourseName)</code></th>
+<td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#Interpolation(java.time.LocalDate,java.time.LocalDate,java.time.LocalDate)">Interpolation</a></span>&#8203;(java.time.LocalDate&nbsp;cDate,
-             java.time.LocalDate&nbsp;haDate,
-             java.time.LocalDate&nbsp;hbDate)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#Interpolation()">Interpolation</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Calculates the interpolation between the current and historical snapshots</div>
 </td>
@@ -226,27 +212,10 @@ extends java.lang.Object</pre>
 <a id="&lt;init&gt;()">
 <!--   -->
 </a>
-<ul class="blockList">
-<li class="blockList">
-<h4>Enrollment_Projections</h4>
-<pre>public&nbsp;Enrollment_Projections()</pre>
-<div class="block">The default Constructor</div>
-</li>
-</ul>
-<a id="&lt;init&gt;(java.time.LocalDate,java.time.LocalDate)">
-<!--   -->
-</a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>Enrollment_Projections</h4>
-<pre>public&nbsp;Enrollment_Projections&#8203;(java.time.LocalDate&nbsp;ceDate,
-                              java.time.LocalDate&nbsp;heDate)</pre>
-<div class="block">Create a new Enrollment_Projection</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>ceDate</code> - </dd>
-<dd><code>heDate</code> - </dd>
-</dl>
+<pre>public&nbsp;Enrollment_Projections()</pre>
 </li>
 </ul>
 </li>
@@ -259,38 +228,23 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a id="Enrollment_Projection_Formula(java.time.LocalDate,java.time.LocalDate)">
+<a id="Interpolation()">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>Enrollment_Projection_Formula</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;Enrollment_Projection_Formula&#8203;(java.time.LocalDate&nbsp;cDate,
-                                          java.time.LocalDate&nbsp;hDate)</pre>
-<div class="block">Calculates the projection for the future semester with data from the current and historical snapshots</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>cDate</code> - </dd>
-<dd><code>hDate</code> - </dd>
-</dl>
+<h4>Interpolation</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;Interpolation()</pre>
+<div class="block">Calculates the interpolation between the current and historical snapshots</div>
 </li>
 </ul>
-<a id="Interpolation(java.time.LocalDate,java.time.LocalDate,java.time.LocalDate)">
+<a id="getSpecificEnrollment(java.lang.String)">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>Interpolation</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;Interpolation&#8203;(java.time.LocalDate&nbsp;cDate,
-                          java.time.LocalDate&nbsp;haDate,
-                          java.time.LocalDate&nbsp;hbDate)</pre>
-<div class="block">Calculates the interpolation between the current and historical snapshots</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>cDate</code> - </dd>
-<dd><code>haDate</code> - </dd>
-<dd><code>hbDate</code> - </dd>
-</dl>
+<h4>getSpecificEnrollment</h4>
+<pre class="methodSignature">public&nbsp;int&nbsp;getSpecificEnrollment&#8203;(java.lang.String&nbsp;SemCourseName)</pre>
 </li>
 </ul>
 </li>

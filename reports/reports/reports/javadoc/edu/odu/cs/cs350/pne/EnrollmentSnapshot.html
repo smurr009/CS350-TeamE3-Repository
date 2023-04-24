@@ -218,31 +218,31 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr id="i4" class="altColor">
+<td class="colFirst"><code>java.time.LocalDate</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getDate()">getDate</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Get Snapshot Date</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getNumOfOfferings()">getNumOfOfferings</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Get Number of Offerings in this Snapshot</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getOverallCap(java.lang.String)">getOverallCap</a></span>&#8203;(java.lang.String&nbsp;courseName)</code></th>
 <td class="colLast">
 <div class="block">Get Total Capacity for all Offerings of selected Course</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getOverallEnrollment(java.lang.String)">getOverallEnrollment</a></span>&#8203;(java.lang.String&nbsp;courseName)</code></th>
 <td class="colLast">
 <div class="block">Get Total Enrolled Students for Course</div>
-</td>
-</tr>
-<tr id="i7" class="rowColor">
-<td class="colFirst"><code>java.time.LocalDate</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSnapshotDate()">getSnapshotDate</a></span>()</code></th>
-<td class="colLast">
-<div class="block">Get Snapshot Date</div>
 </td>
 </tr>
 </table>
@@ -287,14 +287,14 @@ extends java.lang.Object</pre>
 <h4>EnrollmentSnapshot</h4>
 <pre>public&nbsp;EnrollmentSnapshot&#8203;(java.time.LocalDate&nbsp;sDate,
                           java.lang.String&nbsp;path_to_csv)
-                   throws java.lang.Exception</pre>
+                   throws java.io.IOException</pre>
 <div class="block">Create new Enrollment_Snapshot</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>sDate</code> - Date of Snapshot</dd>
 <dd><code>path_to_csv</code> - Path to Snapshot Source File (CSV)</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>java.lang.Exception</code></dd>
+<dd><code>java.io.IOException</code> - when unable to read from CSV file</dd>
 </dl>
 </li>
 </ul>
@@ -322,13 +322,13 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a id="getSnapshotDate()">
+<a id="getDate()">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getSnapshotDate</h4>
-<pre class="methodSignature">public&nbsp;java.time.LocalDate&nbsp;getSnapshotDate()</pre>
+<h4>getDate</h4>
+<pre class="methodSignature">public&nbsp;java.time.LocalDate&nbsp;getDate()</pre>
 <div class="block">Get Snapshot Date</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -403,14 +403,14 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>collectSnapshotData</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;collectSnapshotData&#8203;(java.lang.String&nbsp;path_to_csv)
-                         throws java.lang.Exception</pre>
+                         throws java.io.IOException</pre>
 <div class="block">Used to Collect Snapshot Data From CSV File
  Generates A List of Offerings</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>path_to_csv</code> - Path to Snapshot Source File (CSV)</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>java.lang.Exception</code></dd>
+<dd><code>java.io.IOException</code> - when unable to read from CSV file</dd>
 </dl>
 </li>
 </ul>

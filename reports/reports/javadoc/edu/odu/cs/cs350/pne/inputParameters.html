@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -175,20 +175,25 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createOutputFile(java.lang.String)">createOutputFile</a></span>&#8203;(java.lang.String&nbsp;fileName)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#AddToList(java.lang.String)">AddToList</a></span>&#8203;(java.lang.String&nbsp;dirName)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createOutputFile(java.lang.String)">createOutputFile</a></span>&#8203;(java.lang.String&nbsp;fileName)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>java.io.File</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#findEnrollmentHistory(java.lang.String)">findEnrollmentHistory</a></span>&#8203;(java.lang.String&nbsp;directoryName)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getString()">getString</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setString(java.lang.String)">setString</a></span>&#8203;(java.lang.String&nbsp;val)</code></th>
 <td class="colLast">&nbsp;</td>
@@ -252,6 +257,20 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getString</h4>
 <pre class="methodSignature">public&nbsp;java.lang.String&nbsp;getString()</pre>
+</li>
+</ul>
+<a id="AddToList(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>AddToList</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;AddToList&#8203;(java.lang.String&nbsp;dirName)
+               throws java.io.FileNotFoundException</pre>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.io.FileNotFoundException</code></dd>
+</dl>
 </li>
 </ul>
 <a id="findEnrollmentHistory(java.lang.String)">
