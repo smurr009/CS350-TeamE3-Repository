@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<BugCollection version="4.7.3" sequence="0" timestamp="1682389298241" analysisTimestamp="1682389298241" release="">
+<BugCollection version="4.7.3" sequence="0" timestamp="1682391583256" analysisTimestamp="1682391583256" release="">
   <Project projectName="project (spotbugsMain)">
     <Jar>/home/runner/work/CS350-TeamE3-Repository/CS350-TeamE3-Repository/project/build/classes/java/main/edu/odu/cs/cs350/pne/Detailed_Report.class</Jar>
     <Jar>/home/runner/work/CS350-TeamE3-Repository/CS350-TeamE3-Repository/project/build/classes/java/main/edu/odu/cs/cs350/pne/CLI.class</Jar>
@@ -754,8 +754,8 @@
     <ShortMessage>Field names should start with a lower case letter</ShortMessage>
     <LongMessage>The field name edu.odu.cs.cs350.pne.Summary_Report.Course doesn&apos;t start with a lower case letter</LongMessage>
     <Class classname="edu.odu.cs.cs350.pne.Summary_Report" primary="true">
-      <SourceLine classname="edu.odu.cs.cs350.pne.Summary_Report" start="20" end="66" sourcefile="Summary_Report.java" sourcepath="edu/odu/cs/cs350/pne/Summary_Report.java" relSourcepath="java/edu/odu/cs/cs350/pne/Summary_Report.java">
-        <Message>At Summary_Report.java:[lines 20-66]</Message>
+      <SourceLine classname="edu.odu.cs.cs350.pne.Summary_Report" start="23" end="85" sourcefile="Summary_Report.java" sourcepath="edu/odu/cs/cs350/pne/Summary_Report.java" relSourcepath="java/edu/odu/cs/cs350/pne/Summary_Report.java">
+        <Message>At Summary_Report.java:[lines 23-85]</Message>
       </SourceLine>
       <Message>In class edu.odu.cs.cs350.pne.Summary_Report</Message>
     </Class>
@@ -769,34 +769,53 @@
       <Message>In Summary_Report.java</Message>
     </SourceLine>
   </BugInstance>
+  <BugInstance type="NM_FIELD_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="6ecc1a9a5aad5878e10cef09dece5d3e" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Field names should start with a lower case letter</ShortMessage>
+    <LongMessage>The field name edu.odu.cs.cs350.pne.Summary_Report.Projected doesn&apos;t start with a lower case letter</LongMessage>
+    <Class classname="edu.odu.cs.cs350.pne.Summary_Report" primary="true">
+      <SourceLine classname="edu.odu.cs.cs350.pne.Summary_Report" start="23" end="85" sourcefile="Summary_Report.java" sourcepath="edu/odu/cs/cs350/pne/Summary_Report.java" relSourcepath="java/edu/odu/cs/cs350/pne/Summary_Report.java">
+        <Message>At Summary_Report.java:[lines 23-85]</Message>
+      </SourceLine>
+      <Message>In class edu.odu.cs.cs350.pne.Summary_Report</Message>
+    </Class>
+    <Field classname="edu.odu.cs.cs350.pne.Summary_Report" name="Projected" signature="I" isStatic="false" primary="true">
+      <SourceLine classname="edu.odu.cs.cs350.pne.Summary_Report" sourcefile="Summary_Report.java" sourcepath="edu/odu/cs/cs350/pne/Summary_Report.java" relSourcepath="java/edu/odu/cs/cs350/pne/Summary_Report.java" synthetic="true">
+        <Message>In Summary_Report.java</Message>
+      </SourceLine>
+      <Message>Field edu.odu.cs.cs350.pne.Summary_Report.Projected</Message>
+    </Field>
+    <SourceLine classname="edu.odu.cs.cs350.pne.Summary_Report" sourcefile="Summary_Report.java" sourcepath="edu/odu/cs/cs350/pne/Summary_Report.java" relSourcepath="java/edu/odu/cs/cs350/pne/Summary_Report.java" synthetic="true">
+      <Message>In Summary_Report.java</Message>
+    </SourceLine>
+  </BugInstance>
   <BugInstance type="NM_METHOD_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="c2acbd6d00203653fd4d73df0441add4" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
     <ShortMessage>Method names should start with a lower case letter</ShortMessage>
     <LongMessage>The method name edu.odu.cs.cs350.pne.Summary_Report.Display() doesn&apos;t start with a lower case letter</LongMessage>
     <Class classname="edu.odu.cs.cs350.pne.Summary_Report" primary="true">
-      <SourceLine classname="edu.odu.cs.cs350.pne.Summary_Report" start="20" end="66" sourcefile="Summary_Report.java" sourcepath="edu/odu/cs/cs350/pne/Summary_Report.java" relSourcepath="java/edu/odu/cs/cs350/pne/Summary_Report.java">
-        <Message>At Summary_Report.java:[lines 20-66]</Message>
+      <SourceLine classname="edu.odu.cs.cs350.pne.Summary_Report" start="23" end="85" sourcefile="Summary_Report.java" sourcepath="edu/odu/cs/cs350/pne/Summary_Report.java" relSourcepath="java/edu/odu/cs/cs350/pne/Summary_Report.java">
+        <Message>At Summary_Report.java:[lines 23-85]</Message>
       </SourceLine>
       <Message>In class edu.odu.cs.cs350.pne.Summary_Report</Message>
     </Class>
     <Method classname="edu.odu.cs.cs350.pne.Summary_Report" name="Display" signature="()V" isStatic="false" primary="true">
-      <SourceLine classname="edu.odu.cs.cs350.pne.Summary_Report" start="57" end="66" startBytecode="0" endBytecode="167" sourcefile="Summary_Report.java" sourcepath="edu/odu/cs/cs350/pne/Summary_Report.java" relSourcepath="java/edu/odu/cs/cs350/pne/Summary_Report.java" synthetic="true"/>
+      <SourceLine classname="edu.odu.cs.cs350.pne.Summary_Report" start="76" end="85" startBytecode="0" endBytecode="167" sourcefile="Summary_Report.java" sourcepath="edu/odu/cs/cs350/pne/Summary_Report.java" relSourcepath="java/edu/odu/cs/cs350/pne/Summary_Report.java" synthetic="true"/>
       <Message>In method edu.odu.cs.cs350.pne.Summary_Report.Display()</Message>
     </Method>
-    <SourceLine classname="edu.odu.cs.cs350.pne.Summary_Report" start="57" end="66" startBytecode="0" endBytecode="167" sourcefile="Summary_Report.java" sourcepath="edu/odu/cs/cs350/pne/Summary_Report.java" relSourcepath="java/edu/odu/cs/cs350/pne/Summary_Report.java" synthetic="true">
-      <Message>At Summary_Report.java:[lines 57-66]</Message>
+    <SourceLine classname="edu.odu.cs.cs350.pne.Summary_Report" start="76" end="85" startBytecode="0" endBytecode="167" sourcefile="Summary_Report.java" sourcepath="edu/odu/cs/cs350/pne/Summary_Report.java" relSourcepath="java/edu/odu/cs/cs350/pne/Summary_Report.java" synthetic="true">
+      <Message>At Summary_Report.java:[lines 76-85]</Message>
     </SourceLine>
   </BugInstance>
   <BugInstance type="NP_UNWRITTEN_FIELD" priority="2" rank="8" abbrev="NP" category="CORRECTNESS" instanceHash="2746f3d0e831e70fbbf1846cd66a0349" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="476">
     <ShortMessage>Read of unwritten field</ShortMessage>
     <LongMessage>Read of unwritten field obj2 in edu.odu.cs.cs350.pne.Summary_Report.Display()</LongMessage>
     <Class classname="edu.odu.cs.cs350.pne.Summary_Report" primary="true">
-      <SourceLine classname="edu.odu.cs.cs350.pne.Summary_Report" start="20" end="66" sourcefile="Summary_Report.java" sourcepath="edu/odu/cs/cs350/pne/Summary_Report.java" relSourcepath="java/edu/odu/cs/cs350/pne/Summary_Report.java">
-        <Message>At Summary_Report.java:[lines 20-66]</Message>
+      <SourceLine classname="edu.odu.cs.cs350.pne.Summary_Report" start="23" end="85" sourcefile="Summary_Report.java" sourcepath="edu/odu/cs/cs350/pne/Summary_Report.java" relSourcepath="java/edu/odu/cs/cs350/pne/Summary_Report.java">
+        <Message>At Summary_Report.java:[lines 23-85]</Message>
       </SourceLine>
       <Message>In class edu.odu.cs.cs350.pne.Summary_Report</Message>
     </Class>
     <Method classname="edu.odu.cs.cs350.pne.Summary_Report" name="Display" signature="()V" isStatic="false" primary="true">
-      <SourceLine classname="edu.odu.cs.cs350.pne.Summary_Report" start="57" end="66" startBytecode="0" endBytecode="167" sourcefile="Summary_Report.java" sourcepath="edu/odu/cs/cs350/pne/Summary_Report.java" relSourcepath="java/edu/odu/cs/cs350/pne/Summary_Report.java"/>
+      <SourceLine classname="edu.odu.cs.cs350.pne.Summary_Report" start="76" end="85" startBytecode="0" endBytecode="167" sourcefile="Summary_Report.java" sourcepath="edu/odu/cs/cs350/pne/Summary_Report.java" relSourcepath="java/edu/odu/cs/cs350/pne/Summary_Report.java"/>
       <Message>In method edu.odu.cs.cs350.pne.Summary_Report.Display()</Message>
     </Method>
     <Field classname="edu.odu.cs.cs350.pne.Summary_Report" name="obj2" signature="Ledu/odu/cs/cs350/pne/Section;" isStatic="false" primary="true">
@@ -805,21 +824,21 @@
       </SourceLine>
       <Message>Field edu.odu.cs.cs350.pne.Summary_Report.obj2</Message>
     </Field>
-    <SourceLine classname="edu.odu.cs.cs350.pne.Summary_Report" primary="true" start="57" end="57" startBytecode="4" endBytecode="4" sourcefile="Summary_Report.java" sourcepath="edu/odu/cs/cs350/pne/Summary_Report.java" relSourcepath="java/edu/odu/cs/cs350/pne/Summary_Report.java">
-      <Message>At Summary_Report.java:[line 57]</Message>
+    <SourceLine classname="edu.odu.cs.cs350.pne.Summary_Report" primary="true" start="76" end="76" startBytecode="4" endBytecode="4" sourcefile="Summary_Report.java" sourcepath="edu/odu/cs/cs350/pne/Summary_Report.java" relSourcepath="java/edu/odu/cs/cs350/pne/Summary_Report.java">
+      <Message>At Summary_Report.java:[line 76]</Message>
     </SourceLine>
   </BugInstance>
   <BugInstance type="NP_UNWRITTEN_FIELD" priority="2" rank="8" abbrev="NP" category="CORRECTNESS" instanceHash="f983554a078d1236f59c9819bd8ed28e" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="476">
     <ShortMessage>Read of unwritten field</ShortMessage>
     <LongMessage>Read of unwritten field obj in edu.odu.cs.cs350.pne.Summary_Report.setCourseName(String)</LongMessage>
     <Class classname="edu.odu.cs.cs350.pne.Summary_Report" primary="true">
-      <SourceLine classname="edu.odu.cs.cs350.pne.Summary_Report" start="20" end="66" sourcefile="Summary_Report.java" sourcepath="edu/odu/cs/cs350/pne/Summary_Report.java" relSourcepath="java/edu/odu/cs/cs350/pne/Summary_Report.java">
-        <Message>At Summary_Report.java:[lines 20-66]</Message>
+      <SourceLine classname="edu.odu.cs.cs350.pne.Summary_Report" start="23" end="85" sourcefile="Summary_Report.java" sourcepath="edu/odu/cs/cs350/pne/Summary_Report.java" relSourcepath="java/edu/odu/cs/cs350/pne/Summary_Report.java">
+        <Message>At Summary_Report.java:[lines 23-85]</Message>
       </SourceLine>
       <Message>In class edu.odu.cs.cs350.pne.Summary_Report</Message>
     </Class>
     <Method classname="edu.odu.cs.cs350.pne.Summary_Report" name="setCourseName" signature="(Ljava/lang/String;)V" isStatic="false" primary="true">
-      <SourceLine classname="edu.odu.cs.cs350.pne.Summary_Report" start="49" end="50" startBytecode="0" endBytecode="64" sourcefile="Summary_Report.java" sourcepath="edu/odu/cs/cs350/pne/Summary_Report.java" relSourcepath="java/edu/odu/cs/cs350/pne/Summary_Report.java"/>
+      <SourceLine classname="edu.odu.cs.cs350.pne.Summary_Report" start="68" end="69" startBytecode="0" endBytecode="64" sourcefile="Summary_Report.java" sourcepath="edu/odu/cs/cs350/pne/Summary_Report.java" relSourcepath="java/edu/odu/cs/cs350/pne/Summary_Report.java"/>
       <Message>In method edu.odu.cs.cs350.pne.Summary_Report.setCourseName(String)</Message>
     </Method>
     <Field classname="edu.odu.cs.cs350.pne.Summary_Report" name="obj" signature="Ledu/odu/cs/cs350/pne/Course;" isStatic="false" primary="true">
@@ -828,16 +847,16 @@
       </SourceLine>
       <Message>Field edu.odu.cs.cs350.pne.Summary_Report.obj</Message>
     </Field>
-    <SourceLine classname="edu.odu.cs.cs350.pne.Summary_Report" primary="true" start="49" end="49" startBytecode="5" endBytecode="5" sourcefile="Summary_Report.java" sourcepath="edu/odu/cs/cs350/pne/Summary_Report.java" relSourcepath="java/edu/odu/cs/cs350/pne/Summary_Report.java">
-      <Message>At Summary_Report.java:[line 49]</Message>
+    <SourceLine classname="edu.odu.cs.cs350.pne.Summary_Report" primary="true" start="68" end="68" startBytecode="5" endBytecode="5" sourcefile="Summary_Report.java" sourcepath="edu/odu/cs/cs350/pne/Summary_Report.java" relSourcepath="java/edu/odu/cs/cs350/pne/Summary_Report.java">
+      <Message>At Summary_Report.java:[line 68]</Message>
     </SourceLine>
   </BugInstance>
   <BugInstance type="UWF_UNWRITTEN_FIELD" priority="2" rank="12" abbrev="UwF" category="CORRECTNESS" instanceHash="3d7a8ab5608640562d02cb25f2e232b2" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
     <ShortMessage>Unwritten field</ShortMessage>
     <LongMessage>Unwritten field: edu.odu.cs.cs350.pne.Summary_Report.obj</LongMessage>
     <Class classname="edu.odu.cs.cs350.pne.Summary_Report" primary="true">
-      <SourceLine classname="edu.odu.cs.cs350.pne.Summary_Report" start="20" end="66" sourcefile="Summary_Report.java" sourcepath="edu/odu/cs/cs350/pne/Summary_Report.java" relSourcepath="java/edu/odu/cs/cs350/pne/Summary_Report.java">
-        <Message>At Summary_Report.java:[lines 20-66]</Message>
+      <SourceLine classname="edu.odu.cs.cs350.pne.Summary_Report" start="23" end="85" sourcefile="Summary_Report.java" sourcepath="edu/odu/cs/cs350/pne/Summary_Report.java" relSourcepath="java/edu/odu/cs/cs350/pne/Summary_Report.java">
+        <Message>At Summary_Report.java:[lines 23-85]</Message>
       </SourceLine>
       <Message>In class edu.odu.cs.cs350.pne.Summary_Report</Message>
     </Class>
@@ -847,16 +866,16 @@
       </SourceLine>
       <Message>Field edu.odu.cs.cs350.pne.Summary_Report.obj</Message>
     </Field>
-    <SourceLine classname="edu.odu.cs.cs350.pne.Summary_Report" primary="true" start="49" end="49" startBytecode="1" endBytecode="1" sourcefile="Summary_Report.java" sourcepath="edu/odu/cs/cs350/pne/Summary_Report.java" relSourcepath="java/edu/odu/cs/cs350/pne/Summary_Report.java">
-      <Message>At Summary_Report.java:[line 49]</Message>
+    <SourceLine classname="edu.odu.cs.cs350.pne.Summary_Report" primary="true" start="68" end="68" startBytecode="1" endBytecode="1" sourcefile="Summary_Report.java" sourcepath="edu/odu/cs/cs350/pne/Summary_Report.java" relSourcepath="java/edu/odu/cs/cs350/pne/Summary_Report.java">
+      <Message>At Summary_Report.java:[line 68]</Message>
     </SourceLine>
   </BugInstance>
   <BugInstance type="UWF_UNWRITTEN_FIELD" priority="2" rank="12" abbrev="UwF" category="CORRECTNESS" instanceHash="b33c25a83871ccfd8f2c0a60b9c2c5aa" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
     <ShortMessage>Unwritten field</ShortMessage>
     <LongMessage>Unwritten field: edu.odu.cs.cs350.pne.Summary_Report.obj2</LongMessage>
     <Class classname="edu.odu.cs.cs350.pne.Summary_Report" primary="true">
-      <SourceLine classname="edu.odu.cs.cs350.pne.Summary_Report" start="20" end="66" sourcefile="Summary_Report.java" sourcepath="edu/odu/cs/cs350/pne/Summary_Report.java" relSourcepath="java/edu/odu/cs/cs350/pne/Summary_Report.java">
-        <Message>At Summary_Report.java:[lines 20-66]</Message>
+      <SourceLine classname="edu.odu.cs.cs350.pne.Summary_Report" start="23" end="85" sourcefile="Summary_Report.java" sourcepath="edu/odu/cs/cs350/pne/Summary_Report.java" relSourcepath="java/edu/odu/cs/cs350/pne/Summary_Report.java">
+        <Message>At Summary_Report.java:[lines 23-85]</Message>
       </SourceLine>
       <Message>In class edu.odu.cs.cs350.pne.Summary_Report</Message>
     </Class>
@@ -866,8 +885,8 @@
       </SourceLine>
       <Message>Field edu.odu.cs.cs350.pne.Summary_Report.obj2</Message>
     </Field>
-    <SourceLine classname="edu.odu.cs.cs350.pne.Summary_Report" primary="true" start="57" end="57" startBytecode="1" endBytecode="1" sourcefile="Summary_Report.java" sourcepath="edu/odu/cs/cs350/pne/Summary_Report.java" relSourcepath="java/edu/odu/cs/cs350/pne/Summary_Report.java">
-      <Message>At Summary_Report.java:[line 57]</Message>
+    <SourceLine classname="edu.odu.cs.cs350.pne.Summary_Report" primary="true" start="76" end="76" startBytecode="1" endBytecode="1" sourcefile="Summary_Report.java" sourcepath="edu/odu/cs/cs350/pne/Summary_Report.java" relSourcepath="java/edu/odu/cs/cs350/pne/Summary_Report.java">
+      <Message>At Summary_Report.java:[line 76]</Message>
     </SourceLine>
   </BugInstance>
   <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="165e443d62609d7be15462ae00092dab" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
@@ -1291,7 +1310,7 @@ block for an <code>if</code> statement:</p>
     <Description>Confusing method name</Description>
   </BugCode>
   <Errors errors="0" missingClasses="0"></Errors>
-  <FindBugsSummary timestamp="Tue, 25 Apr 2023 02:21:38 +0000" total_classes="0" referenced_classes="0" total_bugs="45" total_size="0" num_packages="1" java_version="11.0.19" vm_version="11.0.19+7" cpu_seconds="7.40" clock_seconds="5.83" peak_mbytes="217.14" alloc_mbytes="1736.00" gc_seconds="0.17" priority_2="32" priority_1="13">
+  <FindBugsSummary timestamp="Tue, 25 Apr 2023 02:59:43 +0000" total_classes="0" referenced_classes="0" total_bugs="46" total_size="0" num_packages="1" java_version="11.0.19" vm_version="11.0.19+7" cpu_seconds="8.46" clock_seconds="6.97" peak_mbytes="193.07" alloc_mbytes="1736.00" gc_seconds="0.17" priority_2="33" priority_1="13">
     <FileStats path="edu/odu/cs/cs350/pne/CLI.java" bugCount="5" size="0" bugHash="ebcba92c395b052de71fbfaaa85a9a86"/>
     <FileStats path="edu/odu/cs/cs350/pne/Course.java" bugCount="2" size="0" bugHash="2b12a5f7b8b12a86b8b08cc952c1448e"/>
     <FileStats path="edu/odu/cs/cs350/pne/Detailed_Report.java" bugCount="3" size="0" bugHash="008ea449203f103a3ef3759b5774451f"/>
@@ -1300,7 +1319,7 @@ block for an <code>if</code> statement:</p>
     <FileStats path="edu/odu/cs/cs350/pne/Offering.java" bugCount="2" size="0" bugHash="29ca94656dd40deff6ed807df4bcb0e3"/>
     <FileStats path="edu/odu/cs/cs350/pne/Section.java" bugCount="1" size="0" bugHash="79dd574dcc0ac7582a876a1402f512bf"/>
     <FileStats path="edu/odu/cs/cs350/pne/Semester.java" bugCount="5" size="0" bugHash="21e10eed0b1fd8af43a51e29d413fbac"/>
-    <FileStats path="edu/odu/cs/cs350/pne/Summary_Report.java" bugCount="6" size="0" bugHash="720acfb18a2499068738e305c51f3c2a"/>
+    <FileStats path="edu/odu/cs/cs350/pne/Summary_Report.java" bugCount="7" size="0" bugHash="a076af72b17290f89a72dd9d03f77805"/>
     <FileStats path="edu/odu/cs/cs350/pne/inputParameters.java" bugCount="5" size="0" bugHash="7589b7d8257910435792386e2987faa8"/>
     <FindBugsProfile></FindBugsProfile>
   </FindBugsSummary>
