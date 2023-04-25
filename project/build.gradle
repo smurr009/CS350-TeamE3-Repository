@@ -80,12 +80,12 @@ task copyJavaDocs(type: Copy, dependsOn: 'javadoc') {
     into "build/reports"
 }
 
-task copyHTML(type: Copy, dependsOn: 'build'){
+task reports(type: Copy, dependsOn: 'build'){
     from ("src/main/html")
     into ("build/reports")
 }
 
-task reports (type: Copy, dependsOn: 'copyHTML') {
+task copyReadme (type: Copy, dependsOn: 'reports') {
     from ("../README.md")
     into ("build/reports")
 }
@@ -113,7 +113,7 @@ task workTree(dependsOn: ['clearPages']) {
     }
 }
 
-task copyReports (type: Copy, dependsOn: ['workTree', 'copyJavaDocs', 'copyHTML', 'reports']) {
+task copyReports (type: Copy, dependsOn: ['workTree', 'copyJavaDocs', 'copyHTML', 'copyReadme']) {
     from 'build/reports'
     into pagesDir
 }
