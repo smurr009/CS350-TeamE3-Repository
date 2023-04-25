@@ -26,6 +26,10 @@ public class testSummary_Report {
         Summary_Report c = new Summary_Report("CS350", 15);
         assertThat(c.getCourse(), is("CS350"));
         assertThat(c.getPercentage(), is(15));
+        System.out.print(c.getPercentage());
+        System.out.println("% of enrollment period has elapsed. \n");
+        System.out.println("Course Enrollment Projected Cap \n");
+        System.out.print(c.getCourse());
         //assertThat(c.getCourseName(), is("CS350"));
     }
 }
