@@ -1,0 +1,1146 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta charset="UTF-8"/>
+      <title>SpotBugs Report</title>
+      <style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+				color: red;
+				font-weight: bold;
+		}
+		.priority-2 {
+				color: orange;
+				font-weight: bold;
+		}
+		.priority-3 {
+				color: green;
+				font-weight: bold;
+		}
+		.priority-4 {
+				color: blue;
+				font-weight: bold;
+		}
+		</style>
+      <script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+   </head>
+   <body>
+      <h1>
+         <a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+      <h2>Project Information</h2>
+      <p>Project: 
+		project (spotbugsMain)</p>
+      <p>SpotBugs version: 4.7.3</p>
+      <p>Code analyzed:</p>
+      <ul>
+         <li>/home/runner/work/CS350-TeamE3-Repository/CS350-TeamE3-Repository/project/build/classes/java/main/edu/odu/cs/cs350/pne/Detailed_Report.class</li>
+         <li>/home/runner/work/CS350-TeamE3-Repository/CS350-TeamE3-Repository/project/build/classes/java/main/edu/odu/cs/cs350/pne/CLI.class</li>
+         <li>/home/runner/work/CS350-TeamE3-Repository/CS350-TeamE3-Repository/project/build/classes/java/main/edu/odu/cs/cs350/pne/Offering.class</li>
+         <li>/home/runner/work/CS350-TeamE3-Repository/CS350-TeamE3-Repository/project/build/classes/java/main/edu/odu/cs/cs350/pne/inputParameters.class</li>
+         <li>/home/runner/work/CS350-TeamE3-Repository/CS350-TeamE3-Repository/project/build/classes/java/main/edu/odu/cs/cs350/pne/Summary_Report.class</li>
+         <li>/home/runner/work/CS350-TeamE3-Repository/CS350-TeamE3-Repository/project/build/classes/java/main/edu/odu/cs/cs350/pne/Enrollment_Projections.class</li>
+         <li>/home/runner/work/CS350-TeamE3-Repository/CS350-TeamE3-Repository/project/build/classes/java/main/edu/odu/cs/cs350/pne/Section.class</li>
+         <li>/home/runner/work/CS350-TeamE3-Repository/CS350-TeamE3-Repository/project/build/classes/java/main/edu/odu/cs/cs350/pne/EnrollmentSnapshot.class</li>
+         <li>/home/runner/work/CS350-TeamE3-Repository/CS350-TeamE3-Repository/project/build/classes/java/main/edu/odu/cs/cs350/pne/Semester.class</li>
+         <li>/home/runner/work/CS350-TeamE3-Repository/CS350-TeamE3-Repository/project/build/classes/java/main/edu/odu/cs/cs350/pne/Course.class</li>
+      </ul>
+      <p>
+         <br/>
+         <br/>
+      </p>
+      <h2>Metrics</h2>
+      <p>543 lines of code analyzed,
+	in 10 classes, 
+	in 1 packages.</p>
+      <table width="500" cellpadding="5" cellspacing="2">
+         <tr class="tableheader">
+            <th align="left">Metric</th>
+            <th align="right">Total</th>
+            <th align="right">Density*</th>
+         </tr>
+         <tr class="tablerow0">
+            <td>High Priority Warnings</td>
+            <td align="right">13</td>
+            <td align="right">23.94</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>Medium Priority Warnings</td>
+            <td align="right">33</td>
+            <td align="right">60.77</td>
+         </tr>
+         <tr class="$totalClass">
+            <td>
+               <b>Total Warnings</b>
+            </td>
+            <td align="right">
+               <b>46</b>
+            </td>
+            <td align="right">
+               <b>84.71</b>
+            </td>
+         </tr>
+      </table>
+      <p>
+         <i>(* Defects per Thousand lines of non-commenting source statements)</i>
+      </p>
+      <p>
+         <br/>
+         <br/>
+      </p>
+      <h2>Contents</h2>
+      <ul>
+         <li>
+            <a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+         </li>
+         <li>
+            <a href="#Warnings_CORRECTNESS">Correctness Warnings</a>
+         </li>
+         <li>
+            <a href="#Warnings_I18N">Internationalization Warnings</a>
+         </li>
+         <li>
+            <a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+         </li>
+         <li>
+            <a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+         </li>
+         <li>
+            <a href="#Warnings_STYLE">Dodgy code Warnings</a>
+         </li>
+         <li>
+            <a href="#Details">Details</a>
+         </li>
+      </ul>
+      <h1>Summary</h1>
+      <table width="500" cellpadding="5" cellspacing="2">
+         <tr class="tableheader">
+            <th align="left">Warning Type</th>
+            <th align="right">Number</th>
+         </tr>
+         <tr class="tablerow0">
+            <td>
+               <a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+            </td>
+            <td align="right">20</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>
+               <a href="#Warnings_CORRECTNESS">Correctness Warnings</a>
+            </td>
+            <td align="right">5</td>
+         </tr>
+         <tr class="tablerow0">
+            <td>
+               <a href="#Warnings_I18N">Internationalization Warnings</a>
+            </td>
+            <td align="right">2</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>
+               <a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+            </td>
+            <td align="right">2</td>
+         </tr>
+         <tr class="tablerow0">
+            <td>
+               <a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+            </td>
+            <td align="right">2</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>
+               <a href="#Warnings_STYLE">Dodgy code Warnings</a>
+            </td>
+            <td align="right">15</td>
+         </tr>
+         <tr class="tablerow0">
+            <td>
+               <b>Total</b>
+            </td>
+            <td align="right">
+               <b>46</b>
+            </td>
+         </tr>
+      </table>
+      <h1>Warnings</h1>
+      <p>Click on a warning row to see full context information.</p>
+      <h2>
+         <a name="Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e188');">
+            <td>
+               <span class="priority-1">CN</span>
+            </td>
+            <td>edu.odu.cs.cs350.pne.EnrollmentSnapshot defines clone() but doesn't implement Cloneable</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e188" style="display: none;">
+                  <a href="#CN_IMPLEMENTS_CLONE_BUT_NOT_CLONEABLE">Bug type CN_IMPLEMENTS_CLONE_BUT_NOT_CLONEABLE (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.pne.EnrollmentSnapshot<br/>In method edu.odu.cs.cs350.pne.EnrollmentSnapshot.clone()<br/>At EnrollmentSnapshot.java:[line 188]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e439');">
+            <td>
+               <span class="priority-1">CN</span>
+            </td>
+            <td>edu.odu.cs.cs350.pne.Offering defines clone() but doesn't implement Cloneable</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e439" style="display: none;">
+                  <a href="#CN_IMPLEMENTS_CLONE_BUT_NOT_CLONEABLE">Bug type CN_IMPLEMENTS_CLONE_BUT_NOT_CLONEABLE (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.pne.Offering<br/>In method edu.odu.cs.cs350.pne.Offering.clone()<br/>At Offering.java:[lines 149-150]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e475');">
+            <td>
+               <span class="priority-1">CN</span>
+            </td>
+            <td>edu.odu.cs.cs350.pne.Semester defines clone() but doesn't implement Cloneable</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e475" style="display: none;">
+                  <a href="#CN_IMPLEMENTS_CLONE_BUT_NOT_CLONEABLE">Bug type CN_IMPLEMENTS_CLONE_BUT_NOT_CLONEABLE (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.pne.Semester<br/>In method edu.odu.cs.cs350.pne.Semester.clone()<br/>At Semester.java:[line 213]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e231');">
+            <td>
+               <span class="priority-2">ES</span>
+            </td>
+            <td>Comparison of String objects using == or != in edu.odu.cs.cs350.pne.EnrollmentSnapshot.collectSnapshotData(String)</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e231" style="display: none;">
+                  <a href="#ES_COMPARING_STRINGS_WITH_EQ">Bug type ES_COMPARING_STRINGS_WITH_EQ (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.pne.EnrollmentSnapshot<br/>In method edu.odu.cs.cs350.pne.EnrollmentSnapshot.collectSnapshotData(String)<br/>Actual type String<br/>String constant ""<br/>Value loaded from GROUP<br/>At EnrollmentSnapshot.java:[line 170]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e252');">
+            <td>
+               <span class="priority-2">ES</span>
+            </td>
+            <td>Comparison of String objects using == or != in edu.odu.cs.cs350.pne.EnrollmentSnapshot.collectSnapshotData(String)</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e252" style="display: none;">
+                  <a href="#ES_COMPARING_STRINGS_WITH_EQ">Bug type ES_COMPARING_STRINGS_WITH_EQ (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.pne.EnrollmentSnapshot<br/>In method edu.odu.cs.cs350.pne.EnrollmentSnapshot.collectSnapshotData(String)<br/>Actual type String<br/>String constant ""<br/>Value loaded from LINK<br/>At EnrollmentSnapshot.java:[line 165]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e273');">
+            <td>
+               <span class="priority-2">ES</span>
+            </td>
+            <td>Comparison of String objects using == or != in edu.odu.cs.cs350.pne.EnrollmentSnapshot.collectSnapshotData(String)</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e273" style="display: none;">
+                  <a href="#ES_COMPARING_STRINGS_WITH_EQ">Bug type ES_COMPARING_STRINGS_WITH_EQ (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.pne.EnrollmentSnapshot<br/>In method edu.odu.cs.cs350.pne.EnrollmentSnapshot.collectSnapshotData(String)<br/>Actual type String<br/>String constant ""<br/>At EnrollmentSnapshot.java:[line 160]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e292');">
+            <td>
+               <span class="priority-1">HE</span>
+            </td>
+            <td>edu.odu.cs.cs350.pne.EnrollmentSnapshot defines equals and uses Object.hashCode()</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e292" style="display: none;">
+                  <a href="#HE_EQUALS_USE_HASHCODE">Bug type HE_EQUALS_USE_HASHCODE (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.pne.EnrollmentSnapshot<br/>In method edu.odu.cs.cs350.pne.EnrollmentSnapshot.equals(Object)<br/>At EnrollmentSnapshot.java:[lines 197-204]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e451');">
+            <td>
+               <span class="priority-1">HE</span>
+            </td>
+            <td>edu.odu.cs.cs350.pne.Offering defines equals and uses Object.hashCode()</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e451" style="display: none;">
+                  <a href="#HE_EQUALS_USE_HASHCODE">Bug type HE_EQUALS_USE_HASHCODE (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.pne.Offering<br/>In method edu.odu.cs.cs350.pne.Offering.equals(Object)<br/>At Offering.java:[lines 159-168]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e463');">
+            <td>
+               <span class="priority-1">HE</span>
+            </td>
+            <td>edu.odu.cs.cs350.pne.Section defines equals and uses Object.hashCode()</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e463" style="display: none;">
+                  <a href="#HE_EQUALS_USE_HASHCODE">Bug type HE_EQUALS_USE_HASHCODE (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.pne.Section<br/>In method edu.odu.cs.cs350.pne.Section.equals(Object)<br/>At Section.java:[lines 101-111]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e519');">
+            <td>
+               <span class="priority-1">HE</span>
+            </td>
+            <td>edu.odu.cs.cs350.pne.Semester defines equals and uses Object.hashCode()</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e519" style="display: none;">
+                  <a href="#HE_EQUALS_USE_HASHCODE">Bug type HE_EQUALS_USE_HASHCODE (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.pne.Semester<br/>In method edu.odu.cs.cs350.pne.Semester.equals(Object)<br/>At Semester.java:[lines 222-231]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e120');">
+            <td>
+               <span class="priority-2">Nm</span>
+            </td>
+            <td>The field name edu.odu.cs.cs350.pne.Course.CourseNumber doesn't start with a lower case letter</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e120" style="display: none;">
+                  <a href="#NM_FIELD_NAMING_CONVENTION">Bug type NM_FIELD_NAMING_CONVENTION (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.pne.Course<br/>Field edu.odu.cs.cs350.pne.Course.CourseNumber<br/>In Course.java</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e133');">
+            <td>
+               <span class="priority-2">Nm</span>
+            </td>
+            <td>The field name edu.odu.cs.cs350.pne.Course.Subject doesn't start with a lower case letter</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e133" style="display: none;">
+                  <a href="#NM_FIELD_NAMING_CONVENTION">Bug type NM_FIELD_NAMING_CONVENTION (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.pne.Course<br/>Field edu.odu.cs.cs350.pne.Course.Subject<br/>In Course.java</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e163');">
+            <td>
+               <span class="priority-2">Nm</span>
+            </td>
+            <td>The method name edu.odu.cs.cs350.pne.Detailed_Report.WriteMultipleToExcel() doesn't start with a lower case letter</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e163" style="display: none;">
+                  <a href="#NM_METHOD_NAMING_CONVENTION">Bug type NM_METHOD_NAMING_CONVENTION (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.pne.Detailed_Report<br/>In method edu.odu.cs.cs350.pne.Detailed_Report.WriteMultipleToExcel()<br/>At Detailed_Report.java:[lines 40-42]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e175');">
+            <td>
+               <span class="priority-2">Nm</span>
+            </td>
+            <td>The method name edu.odu.cs.cs350.pne.Detailed_Report.WriteToExcel() doesn't start with a lower case letter</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e175" style="display: none;">
+                  <a href="#NM_METHOD_NAMING_CONVENTION">Bug type NM_METHOD_NAMING_CONVENTION (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.pne.Detailed_Report<br/>In method edu.odu.cs.cs350.pne.Detailed_Report.WriteToExcel()<br/>At Detailed_Report.java:[lines 18-36]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e379');">
+            <td>
+               <span class="priority-2">Nm</span>
+            </td>
+            <td>The method name edu.odu.cs.cs350.pne.Enrollment_Projections.Interpolation() doesn't start with a lower case letter</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e379" style="display: none;">
+                  <a href="#NM_METHOD_NAMING_CONVENTION">Bug type NM_METHOD_NAMING_CONVENTION (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.pne.Enrollment_Projections<br/>In method edu.odu.cs.cs350.pne.Enrollment_Projections.Interpolation()<br/>At Enrollment_Projections.java:[lines 75-83]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e547');">
+            <td>
+               <span class="priority-2">Nm</span>
+            </td>
+            <td>The field name edu.odu.cs.cs350.pne.Summary_Report.Course doesn't start with a lower case letter</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e547" style="display: none;">
+                  <a href="#NM_FIELD_NAMING_CONVENTION">Bug type NM_FIELD_NAMING_CONVENTION (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.pne.Summary_Report<br/>Field edu.odu.cs.cs350.pne.Summary_Report.Course<br/>In Summary_Report.java</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e560');">
+            <td>
+               <span class="priority-2">Nm</span>
+            </td>
+            <td>The field name edu.odu.cs.cs350.pne.Summary_Report.Projected doesn't start with a lower case letter</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e560" style="display: none;">
+                  <a href="#NM_FIELD_NAMING_CONVENTION">Bug type NM_FIELD_NAMING_CONVENTION (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.pne.Summary_Report<br/>Field edu.odu.cs.cs350.pne.Summary_Report.Projected<br/>In Summary_Report.java</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e573');">
+            <td>
+               <span class="priority-2">Nm</span>
+            </td>
+            <td>The method name edu.odu.cs.cs350.pne.Summary_Report.Display() doesn't start with a lower case letter</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e573" style="display: none;">
+                  <a href="#NM_METHOD_NAMING_CONVENTION">Bug type NM_METHOD_NAMING_CONVENTION (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.pne.Summary_Report<br/>In method edu.odu.cs.cs350.pne.Summary_Report.Display()<br/>At Summary_Report.java:[lines 76-85]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e643');">
+            <td>
+               <span class="priority-2">Nm</span>
+            </td>
+            <td>The class name edu.odu.cs.cs350.pne.inputParameters doesn't start with an upper case letter</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e643" style="display: none;">
+                  <a href="#NM_CLASS_NAMING_CONVENTION">Bug type NM_CLASS_NAMING_CONVENTION (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.pne.inputParameters<br/>At inputParameters.java:[lines 14-106]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e652');">
+            <td>
+               <span class="priority-2">Nm</span>
+            </td>
+            <td>The method name edu.odu.cs.cs350.pne.inputParameters.AddToList(String) doesn't start with a lower case letter</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e652" style="display: none;">
+                  <a href="#NM_METHOD_NAMING_CONVENTION">Bug type NM_METHOD_NAMING_CONVENTION (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.pne.inputParameters<br/>In method edu.odu.cs.cs350.pne.inputParameters.AddToList(String)<br/>At inputParameters.java:[lines 37-52]</p>
+            </td>
+         </tr>
+      </table>
+      <h2>
+         <a name="Warnings_CORRECTNESS">Correctness Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e367');">
+            <td>
+               <span class="priority-2">ICAST</span>
+            </td>
+            <td>int value cast to float and then passed to Math.round in edu.odu.cs.cs350.pne.Enrollment_Projections.Enrollment_Projection_Formula(LocalDate)</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e367" style="display: none;">
+                  <a href="#ICAST_INT_CAST_TO_FLOAT_PASSED_TO_ROUND">Bug type ICAST_INT_CAST_TO_FLOAT_PASSED_TO_ROUND (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.pne.Enrollment_Projections<br/>In method edu.odu.cs.cs350.pne.Enrollment_Projections.Enrollment_Projection_Formula(LocalDate)<br/>At Enrollment_Projections.java:[line 40]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e585');">
+            <td>
+               <span class="priority-2">NP</span>
+            </td>
+            <td>Read of unwritten field obj2 in edu.odu.cs.cs350.pne.Summary_Report.Display()</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e585" style="display: none;">
+                  <a href="#NP_UNWRITTEN_FIELD">Bug type NP_UNWRITTEN_FIELD (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.pne.Summary_Report<br/>In method edu.odu.cs.cs350.pne.Summary_Report.Display()<br/>Field edu.odu.cs.cs350.pne.Summary_Report.obj2<br/>At Summary_Report.java:[line 76]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e601');">
+            <td>
+               <span class="priority-2">NP</span>
+            </td>
+            <td>Read of unwritten field obj in edu.odu.cs.cs350.pne.Summary_Report.setCourseName(String)</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e601" style="display: none;">
+                  <a href="#NP_UNWRITTEN_FIELD">Bug type NP_UNWRITTEN_FIELD (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.pne.Summary_Report<br/>In method edu.odu.cs.cs350.pne.Summary_Report.setCourseName(String)<br/>Field edu.odu.cs.cs350.pne.Summary_Report.obj<br/>At Summary_Report.java:[line 68]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e617');">
+            <td>
+               <span class="priority-2">UwF</span>
+            </td>
+            <td>Unwritten field: edu.odu.cs.cs350.pne.Summary_Report.obj</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e617" style="display: none;">
+                  <a href="#UWF_UNWRITTEN_FIELD">Bug type UWF_UNWRITTEN_FIELD (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.pne.Summary_Report<br/>Field edu.odu.cs.cs350.pne.Summary_Report.obj<br/>At Summary_Report.java:[line 68]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e630');">
+            <td>
+               <span class="priority-2">UwF</span>
+            </td>
+            <td>Unwritten field: edu.odu.cs.cs350.pne.Summary_Report.obj2</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e630" style="display: none;">
+                  <a href="#UWF_UNWRITTEN_FIELD">Bug type UWF_UNWRITTEN_FIELD (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.pne.Summary_Report<br/>Field edu.odu.cs.cs350.pne.Summary_Report.obj2<br/>At Summary_Report.java:[line 76]</p>
+            </td>
+         </tr>
+      </table>
+      <h2>
+         <a name="Warnings_I18N">Internationalization Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e200');">
+            <td>
+               <span class="priority-1">Dm</span>
+            </td>
+            <td>Found reliance on default encoding in edu.odu.cs.cs350.pne.EnrollmentSnapshot.collectSnapshotData(String): new java.io.FileReader(String)</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e200" style="display: none;">
+                  <a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.pne.EnrollmentSnapshot<br/>In method edu.odu.cs.cs350.pne.EnrollmentSnapshot.collectSnapshotData(String)<br/>Called method new java.io.FileReader(String)<br/>At EnrollmentSnapshot.java:[line 145]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e487');">
+            <td>
+               <span class="priority-1">Dm</span>
+            </td>
+            <td>Found reliance on default encoding in edu.odu.cs.cs350.pne.Semester.CollectRegistrationDates(): new java.io.FileReader(String)</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e487" style="display: none;">
+                  <a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.pne.Semester<br/>In method edu.odu.cs.cs350.pne.Semester.CollectRegistrationDates()<br/>Called method new java.io.FileReader(String)<br/>At Semester.java:[line 136]</p>
+            </td>
+         </tr>
+      </table>
+      <h2>
+         <a name="Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e215');">
+            <td>
+               <span class="priority-2">EI</span>
+            </td>
+            <td>edu.odu.cs.cs350.pne.EnrollmentSnapshot.getCourses() may expose internal representation by returning EnrollmentSnapshot.Courses</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e215" style="display: none;">
+                  <a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.pne.EnrollmentSnapshot<br/>In method edu.odu.cs.cs350.pne.EnrollmentSnapshot.getCourses()<br/>Field edu.odu.cs.cs350.pne.EnrollmentSnapshot.Courses<br/>At EnrollmentSnapshot.java:[line 63]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e502');">
+            <td>
+               <span class="priority-2">EI</span>
+            </td>
+            <td>edu.odu.cs.cs350.pne.Semester.getSnapshotDates() may expose internal representation by returning Semester.SnapshotDates</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e502" style="display: none;">
+                  <a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.pne.Semester<br/>In method edu.odu.cs.cs350.pne.Semester.getSnapshotDates()<br/>Field edu.odu.cs.cs350.pne.Semester.SnapshotDates<br/>At Semester.java:[line 97]</p>
+            </td>
+         </tr>
+      </table>
+      <h2>
+         <a name="Warnings_PERFORMANCE">Performance Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e108');">
+            <td>
+               <span class="priority-2">SBSC</span>
+            </td>
+            <td>edu.odu.cs.cs350.pne.CLI.main(String[]) concatenates strings using + in a loop</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e108" style="display: none;">
+                  <a href="#SBSC_USE_STRINGBUFFER_CONCATENATION">Bug type SBSC_USE_STRINGBUFFER_CONCATENATION (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.pne.CLI<br/>In method edu.odu.cs.cs350.pne.CLI.main(String[])<br/>At CLI.java:[line 44]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e689');">
+            <td>
+               <span class="priority-2">UrF</span>
+            </td>
+            <td>Unread field: edu.odu.cs.cs350.pne.inputParameters.filepath</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e689" style="display: none;">
+                  <a href="#URF_UNREAD_FIELD">Bug type URF_UNREAD_FIELD (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.pne.inputParameters<br/>Field edu.odu.cs.cs350.pne.inputParameters.filepath<br/>At inputParameters.java:[line 85]</p>
+            </td>
+         </tr>
+      </table>
+      <h2>
+         <a name="Warnings_STYLE">Dodgy code Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e35');">
+            <td>
+               <span class="priority-2">DLS</span>
+            </td>
+            <td>Dead store to parameter1 in edu.odu.cs.cs350.pne.CLI.main(String[])</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e35" style="display: none;">
+                  <a href="#DLS_DEAD_LOCAL_STORE">Bug type DLS_DEAD_LOCAL_STORE (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.pne.CLI<br/>In method edu.odu.cs.cs350.pne.CLI.main(String[])<br/>Local variable named parameter1<br/>At CLI.java:[line 32]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e51');">
+            <td>
+               <span class="priority-2">DLS</span>
+            </td>
+            <td>Dead store to parameter2 in edu.odu.cs.cs350.pne.CLI.main(String[])</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e51" style="display: none;">
+                  <a href="#DLS_DEAD_LOCAL_STORE">Bug type DLS_DEAD_LOCAL_STORE (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.pne.CLI<br/>In method edu.odu.cs.cs350.pne.CLI.main(String[])<br/>Local variable named parameter2<br/>At CLI.java:[line 33]<br/>Another occurrence at CLI.java:[line 47]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e70');">
+            <td>
+               <span class="priority-2">DLS</span>
+            </td>
+            <td>Dead store to parameter3 in edu.odu.cs.cs350.pne.CLI.main(String[])</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e70" style="display: none;">
+                  <a href="#DLS_DEAD_LOCAL_STORE">Bug type DLS_DEAD_LOCAL_STORE (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.pne.CLI<br/>In method edu.odu.cs.cs350.pne.CLI.main(String[])<br/>Local variable named parameter3<br/>At CLI.java:[line 34]<br/>Another occurrence at CLI.java:[line 48]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e89');">
+            <td>
+               <span class="priority-2">DLS</span>
+            </td>
+            <td>Dead store to parameter4 in edu.odu.cs.cs350.pne.CLI.main(String[])</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e89" style="display: none;">
+                  <a href="#DLS_DEAD_LOCAL_STORE">Bug type DLS_DEAD_LOCAL_STORE (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.pne.CLI<br/>In method edu.odu.cs.cs350.pne.CLI.main(String[])<br/>Local variable named parameter4<br/>At CLI.java:[line 35]<br/>Another occurrence at CLI.java:[line 49]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e146');">
+            <td>
+               <span class="priority-1">DLS</span>
+            </td>
+            <td>Dead store to workbook in edu.odu.cs.cs350.pne.Detailed_Report.WriteMultipleToExcel()</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e146" style="display: none;">
+                  <a href="#DLS_DEAD_LOCAL_STORE">Bug type DLS_DEAD_LOCAL_STORE (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.pne.Detailed_Report<br/>In method edu.odu.cs.cs350.pne.Detailed_Report.WriteMultipleToExcel()<br/>Local variable named workbook<br/>At Detailed_Report.java:[line 41]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e316');">
+            <td>
+               <span class="priority-1">DLS</span>
+            </td>
+            <td>Dead store to historicalSemestersSnapshots in edu.odu.cs.cs350.pne.Enrollment_Projections.Interpolation()</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e316" style="display: none;">
+                  <a href="#DLS_DEAD_LOCAL_STORE">Bug type DLS_DEAD_LOCAL_STORE (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.pne.Enrollment_Projections<br/>In method edu.odu.cs.cs350.pne.Enrollment_Projections.Interpolation()<br/>Local variable named historicalSemestersSnapshots<br/>At Enrollment_Projections.java:[line 78]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e333');">
+            <td>
+               <span class="priority-2">DLS</span>
+            </td>
+            <td>Dead store to currenSnap in edu.odu.cs.cs350.pne.Enrollment_Projections.Enrollment_Projection_Formula(LocalDate)</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e333" style="display: none;">
+                  <a href="#DLS_DEAD_LOCAL_STORE">Bug type DLS_DEAD_LOCAL_STORE (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.pne.Enrollment_Projections<br/>In method edu.odu.cs.cs350.pne.Enrollment_Projections.Enrollment_Projection_Formula(LocalDate)<br/>Local variable named currenSnap<br/>At Enrollment_Projections.java:[line 47]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e350');">
+            <td>
+               <span class="priority-2">DLS</span>
+            </td>
+            <td>Dead store to current in edu.odu.cs.cs350.pne.Enrollment_Projections.Interpolation()</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e350" style="display: none;">
+                  <a href="#DLS_DEAD_LOCAL_STORE">Bug type DLS_DEAD_LOCAL_STORE (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.pne.Enrollment_Projections<br/>In method edu.odu.cs.cs350.pne.Enrollment_Projections.Interpolation()<br/>Local variable named current<br/>At Enrollment_Projections.java:[line 76]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e531');">
+            <td>
+               <span class="priority-2">NP</span>
+            </td>
+            <td>Possible null pointer dereference in edu.odu.cs.cs350.pne.Semester.GenerateSnapshots() due to return value of called method</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e531" style="display: none;">
+                  <a href="#NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE">Bug type NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.pne.Semester<br/>In method edu.odu.cs.cs350.pne.Semester.GenerateSnapshots()<br/>Value loaded from files<br/>Dereferenced at Semester.java:[line 153]<br/>Known null at Semester.java:[line 152]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e304');">
+            <td>
+               <span class="priority-2">REC</span>
+            </td>
+            <td>Exception is caught when Exception is not thrown in edu.odu.cs.cs350.pne.EnrollmentSnapshot.collectSnapshotData(String)</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e304" style="display: none;">
+                  <a href="#REC_CATCH_EXCEPTION">Bug type REC_CATCH_EXCEPTION (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.pne.EnrollmentSnapshot<br/>In method edu.odu.cs.cs350.pne.EnrollmentSnapshot.collectSnapshotData(String)<br/>At EnrollmentSnapshot.java:[line 178]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e391');">
+            <td>
+               <span class="priority-2">UC</span>
+            </td>
+            <td>Useless object stored in variable historicalSnapshots of method edu.odu.cs.cs350.pne.Enrollment_Projections.Enrollment_Projection_Formula(LocalDate)</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e391" style="display: none;">
+                  <a href="#UC_USELESS_OBJECT">Bug type UC_USELESS_OBJECT (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.pne.Enrollment_Projections<br/>In method edu.odu.cs.cs350.pne.Enrollment_Projections.Enrollment_Projection_Formula(LocalDate)<br/>Value historicalSnapshots<br/>Type java.util.Vector<br/>At Enrollment_Projections.java:[line 50]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e409');">
+            <td>
+               <span class="priority-2">UC</span>
+            </td>
+            <td>Useless object stored in variable historicalSemesters of method edu.odu.cs.cs350.pne.Enrollment_Projections.Interpolation()</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e409" style="display: none;">
+                  <a href="#UC_USELESS_OBJECT">Bug type UC_USELESS_OBJECT (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.pne.Enrollment_Projections<br/>In method edu.odu.cs.cs350.pne.Enrollment_Projections.Interpolation()<br/>Value historicalSemesters<br/>Type java.util.Vector<br/>At Enrollment_Projections.java:[line 77]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e427');">
+            <td>
+               <span class="priority-1">UC</span>
+            </td>
+            <td>Method edu.odu.cs.cs350.pne.Enrollment_Projections.Interpolation() seems to be useless</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e427" style="display: none;">
+                  <a href="#UC_USELESS_VOID_METHOD">Bug type UC_USELESS_VOID_METHOD (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.pne.Enrollment_Projections<br/>In method edu.odu.cs.cs350.pne.Enrollment_Projections.Interpolation()<br/>At Enrollment_Projections.java:[line 83]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e677');">
+            <td>
+               <span class="priority-1">UC</span>
+            </td>
+            <td>Method edu.odu.cs.cs350.pne.inputParameters.executeCLI() seems to be useless</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e677" style="display: none;">
+                  <a href="#UC_USELESS_VOID_METHOD">Bug type UC_USELESS_VOID_METHOD (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.pne.inputParameters<br/>In method edu.odu.cs.cs350.pne.inputParameters.executeCLI()<br/>At inputParameters.java:[line 106]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e665');">
+            <td>
+               <span class="priority-2">UCF</span>
+            </td>
+            <td>Useless control flow in edu.odu.cs.cs350.pne.inputParameters.executeCLI()</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e665" style="display: none;">
+                  <a href="#UCF_USELESS_CONTROL_FLOW">Bug type UCF_USELESS_CONTROL_FLOW (click for details)</a>
+                  <br/>In class edu.odu.cs.cs350.pne.inputParameters<br/>In method edu.odu.cs.cs350.pne.inputParameters.executeCLI()<br/>At inputParameters.java:[line 104]</p>
+            </td>
+         </tr>
+      </table>
+      <h1>
+         <a name="Details">Details</a>
+      </h1>
+      <h2>
+         <a name="CN_IMPLEMENTS_CLONE_BUT_NOT_CLONEABLE">CN_IMPLEMENTS_CLONE_BUT_NOT_CLONEABLE: Class defines clone() but doesn't implement Cloneable</a>
+      </h2>
+
+<p> This class defines a clone() method but the class doesn't implement Cloneable.
+There are some situations in which this is OK (e.g., you want to control how subclasses
+can clone themselves), but just make sure that this is what you intended.
+</p>
+
+    <h2>
+         <a name="DLS_DEAD_LOCAL_STORE">DLS_DEAD_LOCAL_STORE: Dead store to local variable</a>
+      </h2>
+
+<p>
+This instruction assigns a value to a local variable,
+but the value is not read or used in any subsequent instruction.
+Often, this indicates an error, because the value computed is never
+used.
+</p>
+<p>
+Note that Sun's javac compiler often generates dead stores for
+final local variables. Because SpotBugs is a bytecode-based tool,
+there is no easy way to eliminate these false positives.
+</p>
+
+    <h2>
+         <a name="DM_DEFAULT_ENCODING">DM_DEFAULT_ENCODING: Reliance on default encoding</a>
+      </h2>
+
+<p> Found a call to a method which will perform a byte to String (or String to byte) conversion,
+and will assume that the default platform encoding is suitable. This will cause the application
+behavior to vary between platforms. Use an alternative API and specify a charset name or Charset
+object explicitly.</p>
+
+      <h2>
+         <a name="EI_EXPOSE_REP">EI_EXPOSE_REP: May expose internal representation by returning reference to mutable object</a>
+      </h2>
+
+  <p> Returning a reference to a mutable object value stored in one of the object's fields
+  exposes the internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Returning a new copy of the object is better approach in many situations.</p>
+
+    <h2>
+         <a name="ES_COMPARING_STRINGS_WITH_EQ">ES_COMPARING_STRINGS_WITH_EQ: Comparison of String objects using == or !=</a>
+      </h2>
+
+  <p>This code compares <code>java.lang.String</code> objects for reference
+equality using the == or != operators.
+Unless both strings are either constants in a source file, or have been
+interned using the <code>String.intern()</code> method, the same string
+value may be represented by two different String objects. Consider
+using the <code>equals(Object)</code> method instead.</p>
+
+    <h2>
+         <a name="HE_EQUALS_USE_HASHCODE">HE_EQUALS_USE_HASHCODE: Class defines equals() and uses Object.hashCode()</a>
+      </h2>
+
+  <p> This class overrides <code>equals(Object)</code>, but does not
+  override <code>hashCode()</code>, and inherits the implementation of
+  <code>hashCode()</code> from <code>java.lang.Object</code> (which returns
+  the identity hash code, an arbitrary value assigned to the object
+  by the VM).&nbsp; Therefore, the class is very likely to violate the
+  invariant that equal objects must have equal hashcodes.</p>
+
+<p>If you don't think instances of this class will ever be inserted into a HashMap/HashTable,
+the recommended <code>hashCode</code> implementation to use is:</p>
+<pre><code>public int hashCode() {
+    assert false : "hashCode not designed";
+    return 42; // any arbitrary constant will do
+}
+</code></pre>
+
+    <h2>
+         <a name="ICAST_INT_CAST_TO_FLOAT_PASSED_TO_ROUND">ICAST_INT_CAST_TO_FLOAT_PASSED_TO_ROUND: int value cast to float and then passed to Math.round</a>
+      </h2>
+
+<p>
+This code converts an int value to a float precision
+floating point number and then
+passing the result to the Math.round() function, which returns the int/long closest
+to the argument. This operation should always be a no-op,
+since converting an integer to a float should give a number with no fractional part.
+It is likely that the operation that generated the value to be passed
+to Math.round was intended to be performed using
+floating point arithmetic.
+</p>
+
+
+    <h2>
+         <a name="NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE">NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE: Possible null pointer dereference due to return value of called method</a>
+      </h2>
+      
+<p> The return value from a method is dereferenced without a null check,
+and the return value of that method is one that should generally be checked
+for null.  This may lead to a <code>NullPointerException</code> when the code is executed.
+</p>
+      
+   <h2>
+         <a name="NP_UNWRITTEN_FIELD">NP_UNWRITTEN_FIELD: Read of unwritten field</a>
+      </h2>
+
+  <p> The program is dereferencing a field that does not seem to ever have a non-null value written to it.
+Unless the field is initialized via some mechanism not seen by the analysis,
+dereferencing this value will generate a null pointer exception.
+</p>
+
+    <h2>
+         <a name="NM_CLASS_NAMING_CONVENTION">NM_CLASS_NAMING_CONVENTION: Class names should start with an upper case letter</a>
+      </h2>
+
+  <p> Class names should be nouns, in mixed case with the first letter of each internal word capitalized. Try to keep your class names simple and descriptive. Use whole words-avoid acronyms and abbreviations (unless the abbreviation is much more widely used than the long form, such as URL or HTML).
+</p>
+
+    <h2>
+         <a name="NM_FIELD_NAMING_CONVENTION">NM_FIELD_NAMING_CONVENTION: Field names should start with a lower case letter</a>
+      </h2>
+
+  <p>
+Names of fields that are not final should be in mixed case with a lowercase first letter and the first letters of subsequent words capitalized.
+</p>
+
+    <h2>
+         <a name="NM_METHOD_NAMING_CONVENTION">NM_METHOD_NAMING_CONVENTION: Method names should start with a lower case letter</a>
+      </h2>
+
+  <p>
+Methods should be verbs, in mixed case with the first letter lowercase, with the first letter of each internal word capitalized.
+</p>
+
+    <h2>
+         <a name="REC_CATCH_EXCEPTION">REC_CATCH_EXCEPTION: Exception is caught when Exception is not thrown</a>
+      </h2>
+  
+  <p>
+  This method uses a try-catch block that catches Exception objects, but Exception is not
+  thrown within the try block, and RuntimeException is not explicitly caught.  It is a common bug pattern to
+  say try { ... } catch (Exception e) { something } as a shorthand for catching a number of types of exception
+  each of whose catch blocks is identical, but this construct also accidentally catches RuntimeException as well,
+  masking potential bugs.
+  </p>
+  <p>A better approach is to either explicitly catch the specific exceptions that are thrown,
+  or to explicitly catch RuntimeException exception, rethrow it, and then catch all non-Runtime Exceptions, as shown below:</p>
+<pre><code>try {
+    ...
+} catch (RuntimeException e) {
+    throw e;
+} catch (Exception e) {
+    ... deal with all non-runtime exceptions ...
+}
+</code></pre>
+  
+     <h2>
+         <a name="SBSC_USE_STRINGBUFFER_CONCATENATION">SBSC_USE_STRINGBUFFER_CONCATENATION: Method concatenates strings using + in a loop</a>
+      </h2>
+
+<p> The method seems to be building a String using concatenation in a loop.
+In each iteration, the String is converted to a StringBuffer/StringBuilder,
+   appended to, and converted back to a String.
+   This can lead to a cost quadratic in the number of iterations,
+   as the growing string is recopied in each iteration. </p>
+
+<p>Better performance can be obtained by using
+a StringBuffer (or StringBuilder in Java 5) explicitly.</p>
+
+<p> For example:</p>
+<pre><code>// This is bad
+String s = "";
+for (int i = 0; i &lt; field.length; ++i) {
+    s = s + field[i];
+}
+
+// This is better
+StringBuffer buf = new StringBuffer();
+for (int i = 0; i &lt; field.length; ++i) {
+    buf.append(field[i]);
+}
+String s = buf.toString();
+</code></pre>
+
+    <h2>
+         <a name="UC_USELESS_VOID_METHOD">UC_USELESS_VOID_METHOD: Useless non-empty void method</a>
+      </h2>
+
+<p>Our analysis shows that this non-empty void method does not actually perform any useful work.
+Please check it: probably there's a mistake in its code or its body can be fully removed.
+</p>
+<p>We are trying to reduce the false positives as much as possible, but in some cases this warning might be wrong.
+Common false-positive cases include:</p>
+<ul>
+<li>The method is intended to trigger loading of some class which may have a side effect.</li>
+<li>The method is intended to implicitly throw some obscure exception.</li>
+</ul>
+
+    <h2>
+         <a name="UC_USELESS_OBJECT">UC_USELESS_OBJECT: Useless object created</a>
+      </h2>
+
+<p>Our analysis shows that this object is useless.
+It's created and modified, but its value never go outside of the method or produce any side-effect.
+Either there is a mistake and object was intended to be used or it can be removed.</p>
+<p>This analysis rarely produces false-positives. Common false-positive cases include:</p>
+<p>- This object used to implicitly throw some obscure exception.</p>
+<p>- This object used as a stub to generalize the code.</p>
+<p>- This object used to hold strong references to weak/soft-referenced objects.</p>
+
+    <h2>
+         <a name="UCF_USELESS_CONTROL_FLOW">UCF_USELESS_CONTROL_FLOW: Useless control flow</a>
+      </h2>
+
+<p> This method contains a useless control flow statement, where
+control flow continues onto the same place regardless of whether or not
+the branch is taken. For example,
+this is caused by having an empty statement
+block for an <code>if</code> statement:</p>
+<pre><code>if (argv.length == 0) {
+    // TODO: handle this case
+}
+</code></pre>
+
+    <h2>
+         <a name="URF_UNREAD_FIELD">URF_UNREAD_FIELD: Unread field</a>
+      </h2>
+
+  <p> This field is never read.&nbsp; Consider removing it from the class.</p>
+
+    <h2>
+         <a name="UWF_UNWRITTEN_FIELD">UWF_UNWRITTEN_FIELD: Unwritten field</a>
+      </h2>
+
+  <p> This field is never written.&nbsp; All reads of it will return the default
+value. Check for errors (should it have been initialized?), or remove it if it is useless.</p>
+
+    </body>
+</html>
