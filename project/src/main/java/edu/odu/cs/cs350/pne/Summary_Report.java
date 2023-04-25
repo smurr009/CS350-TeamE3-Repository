@@ -10,6 +10,9 @@ public class Summary_Report {
      *
      */
     public int percent;
+    public int enrollment;
+    public int Projected;
+    public int cap;
     //string course;
 
 
@@ -20,14 +23,19 @@ public class Summary_Report {
     public Summary_Report() {
         Course = "";
         percent = 0;
+        enrollment = 0;
+        cap = 0;
     }
 
     /**
      * Create new copy of the current Course
      */
-    public Summary_Report(String c, int p) {
+    public Summary_Report(String c, int p, int e, int pr, int ca) {
         Course = c;
         percent = p;
+        enrollment = e;
+        Projected = pr;
+        cap = ca;
     }
 /**
  * Return the course name
@@ -45,6 +53,17 @@ public class Summary_Report {
         return percent;
 }
 
+public int getEnrollment(){
+    return enrollment;
+}
+
+public int getEnrollmentCap(){
+    return cap;
+}
+
+public int getProjected(){
+    return Projected;
+}
     public void setCourseName(String c){
         obj.setSubject(c);
     }
