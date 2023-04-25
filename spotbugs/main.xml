@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<BugCollection version="4.7.3" sequence="0" timestamp="1682389295384" analysisTimestamp="1682389295384" release="">
+<BugCollection version="4.7.3" sequence="0" timestamp="1682389298241" analysisTimestamp="1682389298241" release="">
   <Project projectName="project (spotbugsMain)">
     <Jar>/home/runner/work/CS350-TeamE3-Repository/CS350-TeamE3-Repository/project/build/classes/java/main/edu/odu/cs/cs350/pne/Detailed_Report.class</Jar>
     <Jar>/home/runner/work/CS350-TeamE3-Repository/CS350-TeamE3-Repository/project/build/classes/java/main/edu/odu/cs/cs350/pne/CLI.class</Jar>
@@ -1291,7 +1291,7 @@ block for an <code>if</code> statement:</p>
     <Description>Confusing method name</Description>
   </BugCode>
   <Errors errors="0" missingClasses="0"></Errors>
-  <FindBugsSummary timestamp="Tue, 25 Apr 2023 02:21:35 +0000" total_classes="0" referenced_classes="0" total_bugs="45" total_size="0" num_packages="1" java_version="11.0.19" vm_version="11.0.19+7" cpu_seconds="6.85" clock_seconds="6.27" peak_mbytes="177.93" alloc_mbytes="1736.00" gc_seconds="0.14" priority_2="32" priority_1="13">
+  <FindBugsSummary timestamp="Tue, 25 Apr 2023 02:21:38 +0000" total_classes="0" referenced_classes="0" total_bugs="45" total_size="0" num_packages="1" java_version="11.0.19" vm_version="11.0.19+7" cpu_seconds="7.40" clock_seconds="5.83" peak_mbytes="217.14" alloc_mbytes="1736.00" gc_seconds="0.17" priority_2="32" priority_1="13">
     <FileStats path="edu/odu/cs/cs350/pne/CLI.java" bugCount="5" size="0" bugHash="ebcba92c395b052de71fbfaaa85a9a86"/>
     <FileStats path="edu/odu/cs/cs350/pne/Course.java" bugCount="2" size="0" bugHash="2b12a5f7b8b12a86b8b08cc952c1448e"/>
     <FileStats path="edu/odu/cs/cs350/pne/Detailed_Report.java" bugCount="3" size="0" bugHash="008ea449203f103a3ef3759b5774451f"/>
