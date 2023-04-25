@@ -21,7 +21,7 @@ jobs:
     - name: Build and test
       working-directory: ./project
       timeout-minutes: 20
-      run: ../gradlew reports
+      run: ../gradlew copyHTML
     - name: Deploy Reports
       uses: JamesIves/github-pages-deploy-action@v4
       with:
