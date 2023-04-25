@@ -76,12 +76,11 @@ test {
 
 // Copies files prior to any website creation 
 task copyJavaDocs(type: Copy, dependsOn: 'javadoc') {
-    dependsOn 'javadoc'
     from "build/docs"
     into "build/reports"
 }
 
-task copyHTML(type: Copy, dependsOn: 'copyJavaDocs'){
+task copyHTML(type: Copy, dependsOn: 'build'){
     from ("src/main/html")
     into ("build/reports")
 }
